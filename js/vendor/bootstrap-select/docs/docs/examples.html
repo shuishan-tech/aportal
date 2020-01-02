@@ -1,0 +1,751 @@
+<h1 id="Basic-examples"><a href="#Basic-examples" class="headerlink" title="Basic examples"></a>Basic examples</h1><hr>
+<h2 id="Standard-select-boxes"><a href="#Standard-select-boxes" class="headerlink" title="Standard select boxes"></a>Standard select boxes</h2><div class="bs-docs-example">
+  <p>Make this:</p>
+
+  <select>
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+
+  <p>Become this:</p>
+
+  <select class="selectpicker">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<div id="optgroup"></div>
+## Select boxes with optgroups
+
+<div class="bs-docs-example">
+  <select class="selectpicker">
+    <optgroup label="Picnic">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </optgroup>
+    <optgroup label="Camping">
+      <option>Tent</option>
+      <option>Flashlight</option>
+      <option>Toilet Paper</option>
+    </optgroup>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">"Picnic"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">"Camping"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Tent<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Flashlight<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Toilet Paper<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Multiple-select-boxes"><a href="#Multiple-select-boxes" class="headerlink" title="Multiple select boxes"></a>Multiple select boxes</h2><div class="bs-docs-example">
+  <select class="selectpicker" multiple>
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">multiple</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h1 id="Live-search"><a href="#Live-search" class="headerlink" title="Live search"></a>Live search</h1><hr>
+<h2 id="Live-search-1"><a href="#Live-search-1" class="headerlink" title="Live search"></a>Live search</h2><p>You can add a search input by passing <code>data-live-search=&quot;true&quot;</code> attribute:</p>
+<div class="bs-docs-example no-code">
+  <select class="selectpicker" data-live-search="true" data-width="fit">
+    <option>Hot Dog, Fries and a Soda</option>
+    <option>Burger, Shake and a Smile</option>
+    <option>Sugar, Spice and all things nice</option>
+  </select>
+</div>
+
+<h2 id="Key-words"><a href="#Key-words" class="headerlink" title="Key words"></a>Key words</h2><p>Add key words to options to improve their searchability using <code>data-tokens</code>.</p>
+<div class="bs-docs-example">
+  <select class="selectpicker" data-live-search="true" data-width="fit">
+    <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+    <option data-tokens="mustard">Burger, Shake and a Smile</option>
+    <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-live-search</span>=<span class="string">"true"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">data-tokens</span>=<span class="string">"ketchup mustard"</span>&gt;</span>Hot Dog, Fries and a Soda<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">data-tokens</span>=<span class="string">"mustard"</span>&gt;</span>Burger, Shake and a Smile<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">data-tokens</span>=<span class="string">"frosting"</span>&gt;</span>Sugar, Spice and all things nice<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h1 id="Limit-the-number-of-selections"><a href="#Limit-the-number-of-selections" class="headerlink" title="Limit the number of selections"></a>Limit the number of selections</h1><p>Limit the number of options that can be selected via the <code>data-max-options</code> attribute. It also works for option groups. Customize the message displayed when the limit is reached with <code>maxOptionsText</code>.</p>
+<div class="bs-docs-example">
+  <select class="selectpicker" multiple data-max-options="2">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+
+  <select class="selectpicker" multiple>
+    <optgroup label="Condiments" data-max-options="2">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </optgroup>
+    <optgroup label="Breads" data-max-options="2">
+      <option>Plain</option>
+      <option>Steamed</option>
+      <option>Toasted</option>
+    </optgroup>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">multiple</span> <span class="attr">data-max-options</span>=<span class="string">"2"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">multiple</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">"Condiments"</span> <span class="attr">data-max-options</span>=<span class="string">"2"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">"Breads"</span> <span class="attr">data-max-options</span>=<span class="string">"2"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Plain<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Steamed<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Toasted<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h1 id="Custom-button-text"><a href="#Custom-button-text" class="headerlink" title="Custom button text"></a>Custom button text</h1><hr>
+<h2 id="Placeholder"><a href="#Placeholder" class="headerlink" title="Placeholder"></a>Placeholder</h2><p id="titleMultiples"></p>
+Using the `title` attribute will set the default placeholder text when nothing is selected. This works for both multiple and standard select boxes:
+
+<div class="bs-docs-example">
+  <div class="form-group">
+    <label>Multiple</label>
+    <select class="selectpicker" multiple title="Choose one of the following..." data-width="fit">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Standard</label>
+    <select class="selectpicker" title="Choose one of the following..." data-width="fit">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </select>
+  </div>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">multiple</span> <span class="attr">title</span>=<span class="string">"Choose one of the following..."</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Selected-text"><a href="#Selected-text" class="headerlink" title="Selected text"></a>Selected text</h2><p id="title"></p>
+Set the `title` attribute on individual options to display alternative text when the option is selected:
+
+<div class="bs-docs-example no-code">
+  <select class="selectpicker">
+    <option title="Combo 1">Hot Dog, Fries and a Soda</option>
+    <option title="Combo 2">Burger, Shake and a Smile</option>
+    <option title="Combo 3">Sugar, Spice and all things nice</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">title</span>=<span class="string">"Combo 1"</span>&gt;</span>Hot Dog, Fries and a Soda<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">title</span>=<span class="string">"Combo 2"</span>&gt;</span>Burger, Shake and a Smile<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">title</span>=<span class="string">"Combo 3"</span>&gt;</span>Sugar, Spice and all things nice<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Selected-text-format"><a href="#Selected-text-format" class="headerlink" title="Selected text format"></a>Selected text format</h2><p id="titleMultiplesFormat"></p>
+Specify how the selection is displayed with the `data-selected-text-format` attribute on a multiple select.
+
+<p>The supported values are:</p>
+<ul>
+<li><code>values</code>: A comma delimited list of selected values (default)</li>
+<li><code>count</code>: If one item is selected, then the option value is shown. If more than one is selected then the number of selected items is displayed, e.g. <code>2 of 6 selected</code></li>
+<li><code>count &gt; x</code>: Where <code>x</code> is the number of items selected when the display format changes from <code>values</code> to <code>count</code></li>
+<li><code>static</code>: Always show the select title (placeholder), regardless of selection</li>
+</ul>
+<div class="bs-docs-example">
+  <select class="selectpicker" multiple data-selected-text-format="count">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">multiple</span> <span class="attr">data-selected-text-format</span>=<span class="string">"count"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<div class="bs-docs-example">
+  <select class="selectpicker" multiple data-selected-text-format="count > 3">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+    <option>Onions</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">multiple</span> <span class="attr">data-selected-text-format</span>=<span class="string">"count &gt; 3"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Onions<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h1 id="Styling"><a href="#Styling" class="headerlink" title="Styling"></a>Styling</h1><hr>
+<h2 id="Button-classes"><a href="#Button-classes" class="headerlink" title="Button classes"></a>Button classes</h2><p>You can set the button classes via the <code>data-style</code> attribute:</p>
+<div class="bs-docs-example">
+  <div class="form-group">
+    <select class="selectpicker" data-style="btn-primary">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="selectpicker" data-style="btn-info">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="selectpicker" data-style="btn-success">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="selectpicker" data-style="btn-warning">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="selectpicker" data-style="btn-danger">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </select>
+  </div>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-style</span>=<span class="string">"btn-primary"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-style</span>=<span class="string">"btn-info"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-style</span>=<span class="string">"btn-success"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-style</span>=<span class="string">"btn-warning"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-style</span>=<span class="string">"btn-danger"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Checkmark-on-selected-option"><a href="#Checkmark-on-selected-option" class="headerlink" title="Checkmark on selected option"></a>Checkmark on selected option</h2><p>You can also show the checkmark icon on standard select boxes with the <code>show-tick</code> class:</p>
+<div class="bs-docs-example">
+  <select class="selectpicker show-tick">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker show-tick"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Menu-arrow-deprecated"><a href="#Menu-arrow-deprecated" class="headerlink" title="Menu arrow (deprecated)"></a>Menu arrow <span class="text-muted small">(deprecated)</span></h2><p>The Bootstrap menu arrow can be added with the <code>show-menu-arrow</code> class:</p>
+<span class="alert alert-danger d-block" role="alert">
+  <strong>Note:</strong> This feature has been deprecated and will be removed in v2.0.0.
+</span>
+
+<div class="bs-docs-example">
+  <select class="selectpicker show-menu-arrow">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker show-menu-arrow"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Style-individual-options"><a href="#Style-individual-options" class="headerlink" title="Style individual options"></a>Style individual options</h2><p id="classes"></p>
+Classes and styles added to options are transferred to the select box:
+
+<div class="bs-docs-example">
+  <select class="selectpicker">
+    <option>Mustard</option>
+    <option class="special">Ketchup</option>
+    <option style="background: #5cb85c; color: #fff;">Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">class</span>=<span class="string">"special"</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">style</span>=<span class="string">"background: #5cb85c; color: #fff;"</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<pre><code class="css"><span class="selector-class">.special</span> {
+  <span class="attribute">font-weight</span>: bold <span class="meta">!important</span>;
+  <span class="attribute">color</span>: <span class="number">#fff</span> <span class="meta">!important</span>;
+  <span class="attribute">background</span>: <span class="number">#bc0000</span> <span class="meta">!important</span>;
+  <span class="attribute">text-transform</span>: uppercase;
+}</code></pre>
+<h2 id="Width"><a href="#Width" class="headerlink" title="Width"></a>Width</h2><p id="grid"></p>
+Wrap selects in grid columns, or any custom parent element, to easily enforce desired widths.
+
+<div class="bs-docs-example">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="form-group">
+        <select class="selectpicker form-control">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="form-group">
+        <select class="selectpicker form-control">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+       <div class="form-group">
+        <select class="selectpicker form-control">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-8">
+       <div class="form-group">
+        <select class="selectpicker form-control">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="form-group">
+        <select class="selectpicker form-control">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="form-group">
+        <select class="selectpicker form-control">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-sm-3"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker form-control"</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+      <span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
+<div id="data-width"></div>
+
+<p>Alternatively, use the <code>data-width</code> attribute to set the width of the select. Set <code>data-width</code> to <code>&#39;auto&#39;</code> to automatically adjust the width of the select to its widest option. <code>&#39;fit&#39;</code> automatically adjusts the width of the select to the width of its currently selected option. An exact value can also be specified, e.g., <code>300px</code> or <code>50%</code>.</p>
+<div class="bs-docs-example">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label>width: 'auto'</label>
+        <select class="selectpicker form-control" data-width="auto">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+          <option>All of the above (and much, much more!)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label>width: 'fit'</label>
+        <select class="selectpicker form-control" data-width="fit">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+          <option>All of the above (and much, much more!)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label>width: '100px'</label>
+        <select class="selectpicker form-control" data-width="100px">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+          <option>All of the above (and much, much more!)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label>width: '75%'</label>
+        <select class="selectpicker form-control" data-width="75%">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+          <option>All of the above (and much, much more!)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-width</span>=<span class="string">"auto"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-width</span>=<span class="string">"fit"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-width</span>=<span class="string">"100px"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-width</span>=<span class="string">"75%"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h1 id="Customize-options"><a href="#Customize-options" class="headerlink" title="Customize options"></a>Customize options</h1><hr>
+<h2 id="Icons"><a href="#Icons" class="headerlink" title="Icons"></a>Icons</h2><p>Add an icon to an option or optgroup with the <code>data-icon</code> attribute:</p>
+<span class="alert alert-info d-block" role="alert">
+  <strong>Note:</strong> Glyphicons are not included in Bootstrap 4. To use FontAwesome, or another icon library, you'll need to set `iconBase` to something other than `'glyphicon'`.
+</span>
+
+<div class="bs-docs-example">
+  <select class="selectpicker">
+    <option data-icon="fa-glass">Mustard</option>
+    <option data-icon="fa-heart">Ketchup</option>
+    <option data-icon="fa-film">Relish</option>
+    <option data-icon="fa-home">Mayonnaise</option>
+    <option data-icon="fa-print">Barbecue Sauce</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">data-icon</span>=<span class="string">"fa-heart"</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Custom-content"><a href="#Custom-content" class="headerlink" title="Custom content"></a>Custom content</h2><p>Insert custom HTML into the option with the <code>data-content</code> attribute:</p>
+<div class="bs-docs-example">
+  <select class="selectpicker">
+    <option data-content="<span class='badge badge-warning'>Mustard</span>">Mustard</option>
+    <option data-content="<span class='badge badge-danger label-important'>Ketchup</span>">Ketchup</option>
+    <option data-content="<span class='badge badge-success'>Relish</span>">Relish</option>
+    <option data-content="<span class='badge badge-info'>Mayonnaise</span>">Mayonnaise</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">data-content</span>=<span class="string">"&lt;span class='badge badge-success'&gt;Relish&lt;/span&gt;"</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Subtext"><a href="#Subtext" class="headerlink" title="Subtext"></a>Subtext</h2><p>Add subtext to an option or optgroup with the <code>data-subtext</code> attribute:</p>
+<div class="bs-docs-example">
+  <div class="form-group">
+    <select class="selectpicker">
+      <option data-subtext="French's">Mustard</option>
+      <option data-subtext="Heinz">Ketchup</option>
+      <option data-subtext="Sweet">Relish</option>
+      <option data-subtext="Miracle Whip">Mayonnaise</option>
+      <option data-divider="true"></option>
+      <option data-subtext="Honey">Barbecue Sauce</option>
+      <option data-subtext="Ranch">Salad Dressing</option>
+      <option data-subtext="Sweet & Spicy">Tabasco</option>
+      <option data-subtext="Chunky">Salsa</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <select class="selectpicker" data-show-subtext="true">
+      <option data-subtext="French's">Mustard</option>
+      <option data-subtext="Heinz">Ketchup</option>
+      <option data-subtext="Sweet">Relish</option>
+      <option data-subtext="Miracle Whip">Mayonnaise</option>
+      <option data-divider="true"></option>
+      <option data-subtext="Honey">Barbecue Sauce</option>
+      <option data-subtext="Ranch">Salad Dressing</option>
+      <option data-subtext="Sweet & Spicy">Tabasco</option>
+      <option data-subtext="Chunky">Salsa</option>
+    </select>
+    <span class="help-block">With <code>showSubtext</code> set to true.</span>
+  </div>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-size</span>=<span class="string">"5"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">data-subtext</span>=<span class="string">"Heinz"</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h1 id="Customize-menu"><a href="#Customize-menu" class="headerlink" title="Customize menu"></a>Customize menu</h1><hr>
+<h2 id="Menu-size"><a href="#Menu-size" class="headerlink" title="Menu size"></a>Menu size</h2><p>The <code>size</code> option is set to <code>&#39;auto&#39;</code> by default. When <code>size</code> is set to <code>&#39;auto&#39;</code>, the menu always opens up to show as many items as the window will allow without being cut off. Set <code>size</code> to <code>false</code> to always show all items. The size of the menu can also be specifed using the <code>data-size</code> attribute.</p>
+<div class="bs-docs-example">
+  <select class="selectpicker">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+    <option>Mayonnaise</option>
+    <option>Barbecue Sauce</option>
+    <option>Salad Dressing</option>
+    <option>Tabasco</option>
+    <option>Salsa</option>
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+    <option>Mayonnaise</option>
+    <option>Barbecue Sauce</option>
+    <option>Salad Dressing</option>
+    <option>Tabasco</option>
+    <option>Salsa</option>
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+    <option>Mayonnaise</option>
+    <option>Barbecue Sauce</option>
+    <option>Salad Dressing</option>
+    <option>Tabasco</option>
+    <option>Salsa</option>
+  </select>
+</div>
+
+<p id="data-size"></p>
+Specify a number for `data-size` to choose the maximum number of items to show in the menu.
+
+<div class="bs-docs-example">
+  <select class="selectpicker" data-size="5">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+    <option>Mayonnaise</option>
+    <option>Barbecue Sauce</option>
+    <option>Salad Dressing</option>
+    <option>Tabasco</option>
+    <option>Salsa</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-size</span>=<span class="string">"5"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Select-deselect-all-options"><a href="#Select-deselect-all-options" class="headerlink" title="Select/deselect all options"></a>Select/deselect all options</h2><p>Adds two buttons to the top of the menu - <strong>Select All</strong> &amp; <strong>Deselect All</strong> with <code>data-actions-box=&quot;true&quot;</code>.</p>
+<div class="bs-docs-example">
+  <select class="selectpicker" multiple data-actions-box="true">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">multiple</span> <span class="attr">data-actions-box</span>=<span class="string">"true"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Divider"><a href="#Divider" class="headerlink" title="Divider"></a>Divider</h2><p>Add <code>data-divider=&quot;true&quot;</code> to an option to turn it into a divider.</p>
+<div class="bs-docs-example">
+  <select class="selectpicker">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+    <option>Mayonnaise</option>
+    <option data-divider="true"></option>
+    <option>Barbecue Sauce</option>
+    <option>Salad Dressing</option>
+    <option>Tabasco</option>
+    <option>Salsa</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-size</span>=<span class="string">"5"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">data-divider</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Menu-header"><a href="#Menu-header" class="headerlink" title="Menu header"></a>Menu header</h2><p>Add a header to the dropdown menu, e.g. <code>header: &#39;Select a condiment&#39;</code> or <code>data-header=&quot;Select a condiment&quot;</code></p>
+<div class="bs-docs-example">
+  <div class="row">
+    <div class="col-md-3">
+      <select class="selectpicker form-control" data-header="Select a condiment">
+        <option data-subtext="French's">Mustard</option>
+        <option data-subtext="Heinz">Ketchup</option>
+        <option data-subtext="Sweet">Relish</option>
+        <option data-subtext="Miracle Whip">Mayonnaise</option>
+        <option data-divider="true"></option>
+        <option data-subtext="Honey">Barbecue Sauce</option>
+        <option data-subtext="Ranch">Salad Dressing</option>
+        <option data-subtext="Sweet & Spicy">Tabasco</option>
+        <option data-subtext="Chunky">Salsa</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-header</span>=<span class="string">"Select a condiment"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Container"><a href="#Container" class="headerlink" title="Container"></a>Container</h2><p>Append the select to a specific element, e.g. <code>container: &#39;body&#39;</code> or <code>data-container=&quot;.main-content&quot;</code></p>
+<div class="bs-docs-example" style="overflow:hidden;">
+  <div class="row">
+    <div class="col-md-3">
+      <select class="selectpicker form-control">
+        <option data-subtext="French's">Mustard</option>
+        <option data-subtext="Heinz">Ketchup</option>
+        <option data-subtext="Sweet">Relish</option>
+        <option data-subtext="Miracle Whip">Mayonnaise</option>
+        <option data-divider="true"></option>
+        <option data-subtext="Honey">Barbecue Sauce</option>
+        <option data-subtext="Ranch">Salad Dressing</option>
+        <option data-subtext="Sweet & Spicy">Tabasco</option>
+        <option data-subtext="Chunky">Salsa</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select class="selectpicker form-control" data-container="body">
+        <option data-subtext="French's">Mustard</option>
+        <option data-subtext="Heinz">Ketchup</option>
+        <option data-subtext="Sweet">Relish</option>
+        <option data-subtext="Miracle Whip">Mayonnaise</option>
+        <option data-divider="true"></option>
+        <option data-subtext="Honey">Barbecue Sauce</option>
+        <option data-subtext="Ranch">Salad Dressing</option>
+        <option data-subtext="Sweet & Spicy">Tabasco</option>
+        <option data-subtext="Chunky">Salsa</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"overflow:hidden;"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span>&gt;</span>
+    ...
+  <span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">data-container</span>=<span class="string">"body"</span>&gt;</span>
+    ...
+  <span class="tag">&lt;/<span class="name">select</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
+<h2 id="Dropup-menu"><a href="#Dropup-menu" class="headerlink" title="Dropup menu"></a>Dropup menu</h2><p><code>dropupAuto</code> is set to true by default, which automatically determines whether or not the menu should display above or below the select box. If <code>dropupAuto</code> is set to false, manually make the select a dropup menu by adding the <code>.dropup</code> class to the select.</p>
+<div class="bs-docs-example">
+  <select class="selectpicker dropup">
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker dropup"</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h1 id="Disabled"><a href="#Disabled" class="headerlink" title="Disabled"></a>Disabled</h1><hr>
+<h2 id="Disabled-select-box"><a href="#Disabled-select-box" class="headerlink" title="Disabled select box"></a>Disabled select box</h2><div class="bs-docs-example">
+  <select class="selectpicker" disabled>
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span> <span class="attr">disabled</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Disabled-options"><a href="#Disabled-options" class="headerlink" title="Disabled options"></a>Disabled options</h2><div class="bs-docs-example">
+  <select class="selectpicker">
+    <option>Mustard</option>
+    <option disabled>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span> <span class="attr">disabled</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>
+<h2 id="Disabled-option-groups"><a href="#Disabled-option-groups" class="headerlink" title="Disabled option groups"></a>Disabled option groups</h2><div class="bs-docs-example">
+  <select class="selectpicker test">
+    <optgroup label="Picnic" disabled>
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </optgroup>
+    <optgroup label="Camping">
+      <option>Tent</option>
+      <option>Flashlight</option>
+      <option>Toilet Paper</option>
+    </optgroup>
+  </select>
+</div>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"selectpicker test"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">"Picnic"</span> <span class="attr">disabled</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Mustard<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Ketchup<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Relish<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">"Camping"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Tent<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Flashlight<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Toilet Paper<span class="tag">&lt;/<span class="name">option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">select</span>&gt;</span></code></pre>

@@ -1,0 +1,492 @@
+<p><img src="_tmp/logo-ion-range-slider.png" alt="ion.rangeSlider"></p>
+<blockquote>
+<p>English description | <a href="readme.ru.md">Описание на русском</a></p>
+</blockquote>
+<p>Ion.RangeSlider. Is an easy, flexible and responsive range slider with tons of options.</p>
+<hr>
+<ul>
+<li>Version: 2.2.0 | <em>Version 3.x is under development now</em></li>
+<li><a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html" target="_blank" rel="noopener external nofollow noreferrer">Project page and demos</a></li>
+<li><a href="http://ionden.com/a/plugins/ion.rangeSlider/ion.rangeSlider-2.2.0.zip" target="_blank" rel="noopener external nofollow noreferrer">Download ZIP</a></li>
+</ul>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><ul>
+<li>Ion.RangeSlider — cool, comfortable, responsive and easily customizable range slider</li>
+<li>Supports events and public methods, has flexible settings, can be completely altered with CSS</li>
+<li>Cross-browser: Google Chrome, Mozilla Firefox 3.6+, Opera 12+, Safari 5+, Internet Explorer 8+</li>
+<li>Ion.RangeSlider supports touch-devices (iPhone, iPad, Nexus, etc.).</li>
+<li>Ion.RangeSlider freely distributed under terms of <a href="http://ionden.com/a/plugins/licence.html" rel="external nofollow noreferrer" target="_blank">MIT licence</a>.</li>
+<li>With this plugin you will be able to build beautiful range sliders, like this:</li>
+</ul>
+<p><img src="http://ionden.com/a/plugins/ion.rangeSlider/static/img/ion-range-slider.png" alt="ion.rangeSlider"></p>
+<h2 id="Key-features"><a href="#Key-features" class="headerlink" title="Key features"></a>Key features</h2><ul>
+<li>Skin support. (5 skins included and PSD for skin creation)</li>
+<li>Any number of sliders at one page without conflicts and big performance problems</li>
+<li>Two slider types single (1 slider) and double (2 sliders)</li>
+<li>Support of negative and fractional values</li>
+<li>Ability to set custom step and snap grid to step</li>
+<li>Support of custom values diapason</li>
+<li>Customisable grid of values</li>
+<li>Ability to disable UI elements (min and max, current value, grid)</li>
+<li>Postfixes and prefixes for your numbers ($20, 20 &euro; etc.)</li>
+<li>Additional postfix for maximum value (eg. $0 — $100<b>+</b>)</li>
+<li>Ability to prettify large numbers (eg. 10000000 -&gt; 10 000 000 or 10.000.000)</li>
+<li>Slider writes its value right into input value field. This makes it easy to use in any html form</li>
+<li>Any slider value can be set through input data-attribute (eg. data-min=”10”)</li>
+<li>Slider supports disable param. You can set it true to make slider inactive</li>
+<li>Slider supports external methods (update, reset and remove) to control it after creation</li>
+<li>For advanced users slider has callbacks (onStart, onChange, onFinish, onUpdate). Slider pastes all its params to callback first argument as object</li>
+<li>Slider supports date and time</li>
+</ul>
+<h2 id="Demos"><a href="#Demos" class="headerlink" title="Demos"></a>Demos</h2><ul>
+<li><a href="http://ionden.com/a/plugins/ion.rangeSlider/demo.html" target="_blank" rel="noopener external nofollow noreferrer" class="switch__item">Basic demo</a></li>
+<li><a href="http://ionden.com/a/plugins/ion.rangeSlider/demo_advanced.html" target="_blank" rel="noopener external nofollow noreferrer" class="switch__item">Advanced demo</a></li>
+<li><a href="http://ionden.com/a/plugins/ion.rangeSlider/demo_interactions.html" target="_blank" rel="noopener external nofollow noreferrer" class="switch__item">Interactions demo</a></li>
+</ul>
+<h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><ul>
+<li><a href="http://jquery.com/" rel="external nofollow noreferrer" target="_blank">jQuery 1.8.x+</a></li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Add the following libraries to the page:</p>
+<ul>
+<li>jQuery</li>
+<li>ion.rangeSlider.min.js</li>
+</ul>
+<p>Add the following stylesheets to the page:</p>
+<ul>
+<li><a href="http://necolas.github.io/normalize.css/" rel="external nofollow noreferrer" target="_blank">normalize.css</a> (optional)</li>
+<li>ion.rangeSlider.css</li>
+</ul>
+<p>Plus, a skin for the slider. 5 skins are included. Choose one:</p>
+<ul>
+<li>ion.rangeSlider.skinFlat.css + sprite-skin-flat.png</li>
+<li>ion.rangeSlider.skinHTML5.css + no images</li>
+<li>ion.rangeSlider.skinModern.css + sprite-skin-modern.png</li>
+<li>ion.rangeSlider.skinNice.css + sprite-skin-nice.png</li>
+<li>ion.rangeSlider.skinSimple.css + sprite-skin-simple.png</li>
+</ul>
+<p>Or use the included PSD file and design a custom skin.</p>
+<h2 id="Install-with-bower"><a href="#Install-with-bower" class="headerlink" title="Install with bower"></a>Install with bower</h2><ul>
+<li>bower install ionrangeslider</li>
+</ul>
+<h2 id="Install-with-npm"><a href="#Install-with-npm" class="headerlink" title="Install with npm"></a>Install with npm</h2><ul>
+<li>npm install ion-rangeslider</li>
+</ul>
+<h2 id="Initialisation"><a href="#Initialisation" class="headerlink" title="Initialisation"></a>Initialisation</h2><p>The slider overrides a native text <code>input</code> element.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"example_id"</span> <span class="attr">name</span>=<span class="string">"example_name"</span> <span class="attr">value</span>=<span class="string">""</span> /&gt;</span></code></pre>
+<p>To initialise the slider, call ionRangeSlider on the element:</p>
+<pre><code class="javascript">$(<span class="string">"#example_id"</span>).ionRangeSlider();</code></pre>
+<h2 id="Demo-for-juniors"><a href="#Demo-for-juniors" class="headerlink" title="Demo for juniors"></a>Demo for juniors</h2><p>If your are new in web development and you are not sure how to correctly install the plugin to your web-page, please download<br><a href="http://ionden.com/a/plugins/ion.rangeSlider/ionRangeSliderDemo.zip" target="_blank" rel="noopener external nofollow noreferrer" class="button">this demo example</a></p>
+<h2 id="Experiments-playground"><a href="#Experiments-playground" class="headerlink" title="Experiments playground"></a><a href="http://jsfiddle.net/IonDen/qv6yrjrv/" rel="external nofollow noreferrer" target="_blank">Experiments playground</a></h2><p>Here you can find bunch of advanced JSFIDDLE demos with different, non-standart use cases:</p>
+<ul>
+<li><a href="http://jsfiddle.net/IonDen/gbmszmp4/" target="_blank" rel="noopener external nofollow noreferrer">Reverse or RTL</a></li>
+<li><a href="http://jsfiddle.net/IonDen/mvrfg2vc/" target="_blank" rel="noopener external nofollow noreferrer">1 handle bind to 1 input</a></li>
+<li><a href="http://jsfiddle.net/IonDen/r5aox84v/" target="_blank" rel="noopener external nofollow noreferrer">2 handles bind to 2 inputs</a></li>
+<li><a href="http://jsfiddle.net/IonDen/4k3d4y3s/" target="_blank" rel="noopener external nofollow noreferrer">2 sliders connected to each other</a></li>
+<li><a href="http://jsfiddle.net/IonDen/ctkouh69/" target="_blank" rel="noopener external nofollow noreferrer">1st slider disables/enables 2nd slider</a></li>
+<li><a href="http://jsfiddle.net/IonDen/pzjaoxe7/" target="_blank" rel="noopener external nofollow noreferrer">Non-linear slider</a></li>
+<li><a href="http://jsfiddle.net/IonDen/wsk7y08a/" target="_blank" rel="noopener external nofollow noreferrer">Plus and Minus buttons</a></li>
+<li><a href="http://codepen.io/anon/pen/QyzwJZ" target="_blank" rel="noopener external nofollow noreferrer">Calculating sum</a></li>
+<li><a href="http://jsfiddle.net/IonDen/st9eotpy/" target="_blank" rel="noopener external nofollow noreferrer">Adding one more diapazon on 1 slider</a></li>
+<li><a href="http://jsfiddle.net/IonDen/wL8gq4py/" target="_blank" rel="noopener external nofollow noreferrer">Live editing of Min and Max values</a></li>
+<li><a href="http://jsfiddle.net/IonDen/j0tLzgq1/" target="_blank" rel="noopener external nofollow noreferrer">Prettify and transform values at the same time</a></li>
+<li><a href="http://jsfiddle.net/IonDen/spez12kt/" target="_blank" rel="noopener external nofollow noreferrer">Custom marks on slider</a></li>
+<li><a href="http://jsfiddle.net/IonDen/vrqqL2Lw/" target="_blank" rel="noopener external nofollow noreferrer">Rendering money value n.nn</a></li>
+<li><a href="http://jsfiddle.net/tvn2ckj2/" target="_blank" rel="noopener external nofollow noreferrer">Rendering Dates with Moment.js</a></li>
+<li><a href="http://jsfiddle.net/IonDen/ca6ykae6/" target="_blank" rel="noopener external nofollow noreferrer">Changing step live</a></li>
+<li><a href="http://jsfiddle.net/IonDen/t936wtjv/" target="_blank" rel="noopener external nofollow noreferrer">Toggle slider</a></li>
+<li><a href="http://jsfiddle.net/IonDen/2sruxk4e/" target="_blank" rel="noopener external nofollow noreferrer">Using different skin color at the same time</a></li>
+<li><a href="http://jsfiddle.net/IonDen/n2sxswv2/" target="_blank" rel="noopener external nofollow noreferrer">2 dependant sliders</a></li>
+<li><a href="http://jsfiddle.net/IonDen/4qgq9bto/" target="_blank" rel="noopener external nofollow noreferrer">Skip some values</a></li>
+<li><a href="http://jsfiddle.net/IonDen/bvbvr0xs/" target="_blank" rel="noopener external nofollow noreferrer">Good Prettify example</a></li>
+</ul>
+<h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Data-Attr</th>
+<th>Defaults</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>type</code></td>
+<td><code>data-type</code></td>
+<td><code>single</code></td>
+<td>string</td>
+<td>Choose slider type, could be <code>single</code> - for one handle, or <code>double</code> for two handles</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td><code>data-min</code></td>
+<td><code>10</code></td>
+<td>number</td>
+<td>Set slider minimum value</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>data-max</code></td>
+<td><code>100</code></td>
+<td>number</td>
+<td>Set slider maximum value</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td><code>data-from</code></td>
+<td><code>min</code></td>
+<td>number</td>
+<td>Set start position for left handle (or for single handle)</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td><code>data-to</code></td>
+<td><code>max</code></td>
+<td>number</td>
+<td>Set start position for right handle</td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td><code>data-step</code></td>
+<td><code>1</code></td>
+<td>number</td>
+<td>Set sliders step. Always &gt; 0. Could be fractional</td>
+</tr>
+<tr>
+<td><code>min_interval</code></td>
+<td><code>data-min-interval</code></td>
+<td><code>-</code></td>
+<td>number</td>
+<td>Set minimum diapason between sliders. Only for <strong>double</strong> type</td>
+</tr>
+<tr>
+<td><code>max_interval</code></td>
+<td><code>data-max-interval</code></td>
+<td><code>-</code></td>
+<td>number</td>
+<td>Set minimum maximum between sliders. Only for <strong>double</strong> type</td>
+</tr>
+<tr>
+<td><code>max_drag_interval</code></td>
+<td><code>data-drag-interval</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Allow user to drag whole range. Only for <strong>double</strong> type</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td><code>data-values</code></td>
+<td><code>[]</code></td>
+<td>array</td>
+<td>Set up your own array of possible slider values. They could be numbers or strings. If the values array is set up, min, max and step param, can no longer be changed</td>
+</tr>
+<tr>
+<td><code>from_fixed</code></td>
+<td><code>data-from-fixed</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Fix position of left (or single) handle</td>
+</tr>
+<tr>
+<td><code>from_min</code></td>
+<td><code>data-from-min</code></td>
+<td><code>min</code></td>
+<td>number</td>
+<td>Set minimum limit for left (or single) handle</td>
+</tr>
+<tr>
+<td><code>from_max</code></td>
+<td><code>data-from-max</code></td>
+<td><code>max</code></td>
+<td>number</td>
+<td>Set maximum limit for left (or single) handle</td>
+</tr>
+<tr>
+<td><code>from_shadow</code></td>
+<td><code>data-from-shadow</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Highlight the limits for left handle</td>
+</tr>
+<tr>
+<td><code>to_fixed</code></td>
+<td><code>data-to-fixed</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Fix position of right handle</td>
+</tr>
+<tr>
+<td><code>to_min</code></td>
+<td><code>data-to-min</code></td>
+<td><code>min</code></td>
+<td>number</td>
+<td>Set minimum limit for right handle</td>
+</tr>
+<tr>
+<td><code>to_max</code></td>
+<td><code>data-to-max</code></td>
+<td><code>max</code></td>
+<td>number</td>
+<td>Set maximum limit for right handle</td>
+</tr>
+<tr>
+<td><code>to_shadow</code></td>
+<td><code>data-to-shadow</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Highlight the right handle</td>
+</tr>
+<tr>
+<td><code>prettify_enabled</code></td>
+<td><code>data-prettify-enabled</code></td>
+<td><code>true</code></td>
+<td>boolean</td>
+<td>Improve readability of long numbers: 10000000 &rarr; 10 000 000</td>
+</tr>
+<tr>
+<td><code>prettify_separator</code></td>
+<td><code>data-prettify-separator</code></td>
+<td><code></code></td>
+<td>string</td>
+<td>Set up your own separator for long numbers: 10000000 &rarr; 10,000,000 etc.</td>
+</tr>
+<tr>
+<td><code>prettify</code></td>
+<td><code>-</code></td>
+<td><code>null</code></td>
+<td>function</td>
+<td>Set up your own prettify function. Can be anything. For example, you can set up unix time as slider values and than transform them to cool looking dates</td>
+</tr>
+<tr>
+<td><code>force_edges</code></td>
+<td><code>data-force-edges</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Sliders handles and tooltips will be always inside it’s container</td>
+</tr>
+<tr>
+<td><code>keyboard</code></td>
+<td><code>data-keyboard</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Activates keyboard controls. Move left: &larr;, &darr;, A, S. Move right: &rarr;, &uarr;, W, D.</td>
+</tr>
+<tr>
+<td><code>grid</code></td>
+<td><code>data-grid</code></td>
+<td><code>true</code></td>
+<td>boolean</td>
+<td>Enables grid of values above the slider</td>
+</tr>
+<tr>
+<td><code>grid_margin</code></td>
+<td><code>data-grid-margin</code></td>
+<td><code>true</code></td>
+<td>boolean</td>
+<td>Set left and right grid gaps</td>
+</tr>
+<tr>
+<td><code>grid_num</code></td>
+<td><code>data-grid-num</code></td>
+<td><code>4</code></td>
+<td>number</td>
+<td>Number of grid units</td>
+</tr>
+<tr>
+<td><code>grid_snap</code></td>
+<td><code>data-grid-snap</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Snap grid to sliders step (step param). If activated, grid_num will not be used. Max steps = 50</td>
+</tr>
+<tr>
+<td><code>hide_min_max</code></td>
+<td><code>data-hide-min-max</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Hides <strong>min</strong> and <strong>max</strong> labels</td>
+</tr>
+<tr>
+<td><code>hide_from_to</code></td>
+<td><code>data-hide-from-to</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Hides <strong>from</strong> and <strong>to</strong> labels</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td><code>data-prefix</code></td>
+<td>``</td>
+<td>string</td>
+<td>Set prefix for values. Will be set up right before the number: <strong>$</strong>100</td>
+</tr>
+<tr>
+<td><code>postfix</code></td>
+<td><code>data-postfix</code></td>
+<td>``</td>
+<td>string</td>
+<td>Set postfix for values. Will be set up right after the number: 100<strong>k</strong></td>
+</tr>
+<tr>
+<td><code>max_postfix</code></td>
+<td><code>data-max-postfix</code></td>
+<td>``</td>
+<td>string</td>
+<td>Special postfix, used only for maximum value. Will be showed after handle will reach maximum right position. For example <strong>0 — 100+</strong></td>
+</tr>
+<tr>
+<td><code>decorate_both</code></td>
+<td><code>data-decorate-both</code></td>
+<td><code>true</code></td>
+<td>boolean</td>
+<td>Used for <strong>double</strong> type and only if prefix or postfix was set up. Determine how to decorate close values. For example: <strong>$10k — $100k</strong> or <strong>$10 — 100k</strong></td>
+</tr>
+<tr>
+<td><code>values_separator</code></td>
+<td><code>data-decorate-both</code></td>
+<td><code>-</code></td>
+<td>string</td>
+<td>Set your own separator for close values. Used for <strong>double</strong> type. Default: <strong>10 — 100</strong>. Or you may set: <strong>10 to 100, 10 + 100, 10 &rarr; 100</strong> etc.</td>
+</tr>
+<tr>
+<td><code>input_values_separator</code></td>
+<td><code>data-input-values-separator</code></td>
+<td><code>;</code></td>
+<td>string</td>
+<td>Separator for <strong>double</strong> values in input value property. <code>&lt;input value=&quot;25;42&quot;&gt;</code></td>
+</tr>
+<tr>
+<td><code>disable</code></td>
+<td><code>data-disable</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Locks slider and makes it inactive. Input is disabled too. Invisible to forms</td>
+</tr>
+<tr>
+<td><code>block</code></td>
+<td><code>data-blokc</code></td>
+<td><code>false</code></td>
+<td>boolean</td>
+<td>Locks slider and makes it inactive. Input is NOT disabled. Can be send with forms</td>
+</tr>
+<tr>
+<td><code>extra_classes</code></td>
+<td><code>data-extra-classes</code></td>
+<td><code>—</code></td>
+<td>string</td>
+<td>Traverse extra CSS-classes to sliders container</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>-</code></td>
+<td><code>null</code></td>
+<td>object</td>
+<td>Scope for callbacks. Pass any object</td>
+</tr>
+<tr>
+<td><code>onStart</code></td>
+<td><code>-</code></td>
+<td><code>null</code></td>
+<td>function</td>
+<td>Callback. Is called on slider start. Gets all slider data as a 1st attribute</td>
+</tr>
+<tr>
+<td><code>onChange</code></td>
+<td><code>-</code></td>
+<td><code>null</code></td>
+<td>function</td>
+<td>Callback. IS called on each values change. Gets all slider data as a 1st attribute</td>
+</tr>
+<tr>
+<td><code>onFinish</code></td>
+<td><code>-</code></td>
+<td><code>null</code></td>
+<td>function</td>
+<td>Callback. Is called when user releases handle. Gets all slider data as a 1st attribute</td>
+</tr>
+<tr>
+<td><code>onUpdate</code></td>
+<td><code>-</code></td>
+<td><code>null</code></td>
+<td>function</td>
+<td>Callback. Is called when slider is modified by external methods <code>update</code> or <code>reset</code></td>
+</tr>
+</tbody></table>
+<h2 id="Description-of-data-passed-to-callbacks-onChange-and-etc"><a href="#Description-of-data-passed-to-callbacks-onChange-and-etc" class="headerlink" title="Description of data passed to callbacks (onChange and etc.)"></a>Description of data passed to callbacks (onChange and etc.)</h2><p>Result is object type and passed to callback as first argument:</p>
+<pre><code class="javascript">Obj: {
+    <span class="string">"input"</span>: object,            <span class="comment">// jQuery-link to input</span>
+    <span class="string">"slider"</span>: object,           <span class="comment">// jQuery-link to sliders container</span>
+    <span class="string">"min"</span>: <span class="number">1000</span>,                <span class="comment">// MIN value</span>
+    <span class="string">"max"</span>: <span class="number">100000</span>,              <span class="comment">// MAX values</span>
+    <span class="string">"from"</span>: <span class="number">10000</span>,              <span class="comment">// FROM value</span>
+    <span class="string">"from_percent"</span>: <span class="number">10</span>,         <span class="comment">// FROM value in percents</span>
+    <span class="string">"from_value"</span>: <span class="number">0</span>,            <span class="comment">// FROM index in values array (if used)</span>
+    <span class="string">"to"</span>: <span class="number">90000</span>,                <span class="comment">// TO value</span>
+    <span class="string">"to_percent"</span>: <span class="number">90</span>,           <span class="comment">// TO value in percents</span>
+    <span class="string">"to_value"</span>: <span class="number">0</span>,              <span class="comment">// TO index in values array (if used)</span>
+    <span class="string">"min_pretty"</span>: <span class="string">"1 000"</span>,      <span class="comment">// MIN prettified (if used)</span>
+    <span class="string">"max_pretty"</span>: <span class="string">"100 000"</span>,    <span class="comment">// MAX prettified (if used)</span>
+    <span class="string">"from_pretty"</span>: <span class="string">"10 000"</span>,    <span class="comment">// FROM prettified (if used)</span>
+    <span class="string">"to_pretty"</span>: <span class="string">"90 000"</span>       <span class="comment">// TO prettified (if used)</span>
+}</code></pre>
+<h2 id="Creating-slider-all-params"><a href="#Creating-slider-all-params" class="headerlink" title="Creating slider (all params)"></a>Creating slider (all params)</h2><p>An example of a customised slider:</p>
+<pre><code class="javascript">$(<span class="string">"#example"</span>).ionRangeSlider({
+    min: <span class="number">0</span>,
+    max: <span class="number">10000</span>,
+    <span class="keyword">from</span>: <span class="number">1000</span>,
+    to: <span class="number">9000</span>,
+    type: <span class="string">'double'</span>,
+    prefix: <span class="string">"$"</span>,
+    grid: <span class="literal">true</span>,
+    grid_num: <span class="number">10</span>
+});</code></pre>
+<p>You can also initialise slider with <code>data-*</code> attributes of input tag:</p>
+<pre><code class="html">data-min=&quot;0&quot;
+data-max=&quot;10000&quot;
+data-from=&quot;1000&quot;
+data-to=&quot;9000&quot;
+data-type=&quot;double&quot;
+data-prefix=&quot;$&quot;
+data-grid=&quot;true&quot;
+data-grid-num=&quot;10&quot;</code></pre>
+<h2 id="Public-methods"><a href="#Public-methods" class="headerlink" title="Public methods"></a>Public methods</h2><p>To use public methods, at first you must save slider instance to variable:</p>
+<pre><code class="javascript"><span class="comment">// Launch plugin</span>
+$(<span class="string">"#range"</span>).ionRangeSlider({
+    type: <span class="string">"double"</span>,
+    min: <span class="number">0</span>,
+    max: <span class="number">1000</span>,
+    <span class="keyword">from</span>: <span class="number">200</span>,
+    to: <span class="number">500</span>,
+    grid: <span class="literal">true</span>
+});
+
+<span class="comment">// Saving it's instance to var</span>
+<span class="keyword">var</span> slider = $(<span class="string">"#range"</span>).data(<span class="string">"ionRangeSlider"</span>);
+
+<span class="comment">// Fire public method</span>
+slider.reset();</code></pre>
+<p>There are 3 public methods:</p>
+<pre><code class="javascript"><span class="comment">// UPDATE - updates slider to any new values</span>
+slider.update({
+    <span class="keyword">from</span>: <span class="number">300</span>,
+    to: <span class="number">400</span>
+});
+
+<span class="comment">// RESET - reset slider to it's first values</span>
+slider.reset();
+
+<span class="comment">// DESTROY - destroys slider and restores original input field</span>
+slider.destroy();</code></pre>
+<h2 id="One-more-look-on-demos"><a href="#One-more-look-on-demos" class="headerlink" title="One more look on demos"></a>One more look on demos</h2><ul>
+<li><a href="http://ionden.com/a/plugins/ion.rangeSlider/demo.html" target="_blank" rel="noopener external nofollow noreferrer" class="switch__item">Basic demo</a></li>
+<li><a href="http://ionden.com/a/plugins/ion.rangeSlider/demo_advanced.html" target="_blank" rel="noopener external nofollow noreferrer" class="switch__item">Advanced demo</a></li>
+<li><a href="http://ionden.com/a/plugins/ion.rangeSlider/demo_interactions.html" target="_blank" rel="noopener external nofollow noreferrer" class="switch__item">Interactions demo</a></li>
+</ul>
+<p>All plugins options are covered in demos.</p>
+<h3 id="Update-history"><a href="#Update-history" class="headerlink" title="Update history"></a><a href="history.md">Update history</a></h3><hr>
+<h4 id="Support-Ion-series-plugins-development"><a href="#Support-Ion-series-plugins-development" class="headerlink" title="Support Ion-series plugins development:"></a>Support Ion-series plugins development:</h4><ul>
+<li><p>Donate through Pledgie service: <a href="https://pledgie.com/campaigns/25694" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://pledgie.com/campaigns/25694.png?skin_name=chrome" alt=""></a></p>
+</li>
+<li><p>Donate direct to my Paypal account: <a href="https://www.paypal.me/IonDen" target="_blank" rel="noopener external nofollow noreferrer">https://www.paypal.me/IonDen</a></p>
+</li>
+<li><p>Donate direct to my Yandex.Money account: <a href="http://yasobe.ru/na/razrabotku" target="_blank" rel="noopener external nofollow noreferrer">http://yasobe.ru/na/razrabotku</a></p>
+</li>
+</ul>

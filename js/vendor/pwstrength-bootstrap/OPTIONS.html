@@ -1,0 +1,254 @@
+<h1 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h1><p>The plugin expect the options to follow this structure:</p>
+<pre><code class="javascript">options = {
+    common: {},
+    rules: {},
+    ui: {}
+};</code></pre>
+<p>Let’s see the options of each section.</p>
+<h2 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h2><ul>
+<li><p><strong>minChar</strong>:</p>
+<p>Default: <code>6</code> (Integer)</p>
+<p>Sets the minimum required of characters for a password to not be considered<br>too weak.</p>
+</li>
+<li><p><strong>maxChar</strong>:</p>
+<p>Default: <code>20</code> (Integer)</p>
+<p>Sets the maximum allowed characters for a password.</p>
+</li>
+<li><p><strong>usernameField</strong>:</p>
+<p>Default: <code>&quot;#username&quot;</code> (String)</p>
+<p>The username field to match a password to, to ensure the user does not use<br>the same value for their password.</p>
+</li>
+<li><p><strong>invalidCharsRegExp</strong>:</p>
+<p>Default: <code>new RegExp(/[\s,&#39;&quot;]/)</code> (Regular Expression)</p>
+<p>A regular expression object to use to test for banned characters in the<br>password.</p>
+</li>
+<li><p><strong>userInputs</strong>:</p>
+<p>Default: <code>[]</code> (Array)</p>
+<p>Array of CSS selectors for input fields with user input. The content of these<br>fields will be retrieved and passed to the zxcvbn library.</p>
+<p>This option only takes effect when the zxcvbn library is being used. Check<br>the <code>zxcvbn</code> option.</p>
+</li>
+<li><p><strong>onLoad</strong>:</p>
+<p>Default: <code>undefined</code> (Function)</p>
+<p>A callback function, fired on load of the widget. No arguments will be<br>passed.</p>
+</li>
+<li><p><strong>onKeyUp</strong>:</p>
+<p>Default: <code>undefined</code> (Function)</p>
+<p>A callback function, fired on key up when the user is typing. The <code>keyup</code><br>event will be passed as first argument, and an object as second with the<br>score and the verdict text and level.</p>
+<p>This handler will also be called when the <code>change</code> or the <code>onpaste</code> events<br>happen.</p>
+</li>
+<li><p><strong>onScore</strong>:</p>
+<p>Default: <code>undefined</code> (Function)</p>
+<p>A callback function that will be called when the score is calculted by the<br>rules engine, allowing for a final modification before rendering the result.</p>
+<p>The options, the word and the score will be passed as arguments, in that<br>order.</p>
+</li>
+<li><p><strong>zxcvbn</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>Use the zxcvbn to calculate the password entropy and use it as the score. For<br>more information about zxcvbn plase check this<br><a href="https://tech.dropbox.com/2012/04/zxcvbn-realistic-password-strength-estimation/" target="_blank" rel="noopener external nofollow noreferrer">post</a>.</p>
+<p>If you activate this setting, then all the rules won’t be applied, and all<br>the options under the <em>Rules</em> section will be ignored as well. zxcvbn will be<br>used instead of the default rules engine.</p>
+<p>To use this option you must load the zxcvbn library file on your site. You’ll<br>find it at their <a href="https://github.com/lowe/zxcvbn" target="_blank" rel="noopener external nofollow noreferrer">repository</a>.</p>
+</li>
+<li><p><strong>zxcvbnTerms</strong>:</p>
+<p>Default: <code>[]</code> (Array)</p>
+<p>An array of strings. A list of banned words for the zxcvbn library. This<br>option will be ignored if zxcvbn is not being used.</p>
+</li>
+<li><p><strong>events</strong>: <code>[&quot;keyup&quot;, &quot;change&quot;, &quot;paste&quot;]</code> (Array)</p>
+<p>An array of strings. A list of the event names the plugin is going to listen<br>to. Customize this option to deal with iOS 9 keyup bug.</p>
+</li>
+<li><p><strong>debug</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>If true, it prints the password strength in the javascript console, so you<br>can test and tune your rules settings.</p>
+</li>
+</ul>
+<h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><ul>
+<li><p><strong>extra</strong>:</p>
+<p>Default: <code>{}</code> (Object)</p>
+<p>Empty object where custom rules functions will be stored.</p>
+</li>
+<li><p><strong>scores</strong>:</p>
+<p>Default: (Object)</p>
+<pre><code>{
+  wordNotEmail: -100,
+  wordMinLength: -50,
+  wordMaxLength: -50,
+  wordInvalidChar: -100,
+  wordSimilarToUsername: -100,
+  wordSequences: -50,
+  wordTwoCharacterClasses: 2,
+  wordRepetitions: -25,
+  wordLowercase: 1,
+  wordUppercase: 3,
+  wordOneNumber: 3,
+  wordThreeNumbers: 5,
+  wordOneSpecialChar: 3,
+  wordTwoSpecialChar: 5,
+  wordUpperLowerCombo: 2,
+  wordLetterNumberCombo: 2,
+  wordLetterNumberCharCombo: 2
+}</code></pre><p>Scores returned by the rules when they match. Negative values are for<br>penalizations.</p>
+</li>
+<li><p><strong>activated</strong>:</p>
+<p>Default: (Object)</p>
+<pre><code>{
+  wordNotEmail: true,
+  wordMinLength: true,
+  wordMaxLength: false,
+  wordInvalidChar: true,
+  wordSimilarToUsername: true,
+  wordSequences: true,
+  wordTwoCharacterClasses: false,
+  wordRepetitions: false,
+  wordLowercase: true,
+  wordUppercase: true,
+  wordOneNumber: true,
+  wordThreeNumbers: true,
+  wordOneSpecialChar: true,
+  wordTwoSpecialChar: true,
+  wordUpperLowerCombo: true,
+  wordLetterNumberCombo: true,
+  wordLetterNumberCharCombo: true
+}</code></pre><p>An object that sets wich validation rules are activated. By changing this<br>object is possible to deactivate some validations, or to activate them for<br>extra security.</p>
+</li>
+<li><p><strong>raisePower</strong>:</p>
+<p>Default: <code>1.4</code> (Double)</p>
+<p>The value used to modify the final score, based on the password length,<br>allows you to tailor your results.</p>
+</li>
+<li><p><strong>commonPasswords</strong>:</p>
+<p>Default: <code>[&#39;123456&#39;, &#39;password&#39;, ...]</code> (Array of Strings)</p>
+<p>A list of the most common passwords. If the user inputs a password present<br>in the list, then it gets heavily penalized.</p>
+</li>
+</ul>
+<h2 id="User-Interface"><a href="#User-Interface" class="headerlink" title="User Interface"></a>User Interface</h2><ul>
+<li><p><strong>bootstrap2</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>Set it to <code>true</code> to activate support for Bootstrap 2. Incompatible with <code>bootstrap3</code> option.</p>
+<p>Bootstrap 4 is the default supported version of Bootstrap.</p>
+</li>
+<li><p><strong>bootstrap3</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>Set it to <code>true</code> to activate support for Bootstrap 3. Incompatible with <code>bootstrap2</code> option.</p>
+<p>Bootstrap 4 is the default supported version of Bootstrap.</p>
+</li>
+<li><p><strong>colorClasses</strong>:</p>
+<p>Default: <code>[&quot;danger&quot;, &quot;danger&quot;, &quot;danger&quot;, &quot;warning&quot;, &quot;warning&quot;, &quot;success&quot;]</code> (Array)</p>
+<p>The css classes applied to the bar in the progress bar and to the verdicts,<br>depending on the strength of the password.</p>
+<p>Keep in mind that for Boostrap 2 a <code>bar-</code> prefix will be added, that for<br>Boostrap 3 the prefix will be <code>progress-bar-</code>, and that for Bootstrap 4 it<br>will be <code>progress-</code>. This is the case for the progress bar, not the verdicts.<br>For the verdicts there is no prefix whatsoever.</p>
+</li>
+<li><p><strong>showProgressBar</strong>:</p>
+<p>Default: <code>true</code> (Boolean)</p>
+<p>Displays the password strength in a progress bar.</p>
+</li>
+<li><p><strong>progressExtraCssClasses</strong>: (Bootstrap 3 &amp; 4 only)</p>
+<p>Default: <code>&quot;&quot;</code> (String)</p>
+<p>CSS classes to be added to the generated progress wrapper of the progress-bar. It is meant to make<br>use of the extra classes provided by Bootstrap. The classes will be added to<br>the proper DOM element depending of which version of Bootstrap is being<br>used.</p>
+<p>E.g.</p>
+<pre><code class="css"><span class="selector-tag">div</span><span class="selector-class">.progress</span><span class="selector-class">.custom-class</span> {
+    <span class="attribute">height</span>: <span class="number">4px</span>;
+    <span class="attribute">border-radius</span>: <span class="number">0px</span>;
+    <span class="attribute">background-color</span>: transparent;
+}
+<span class="selector-tag">div</span><span class="selector-class">.progress</span><span class="selector-class">.custom-class</span> &gt; <span class="selector-class">.progress-bar</span> {
+    <span class="attribute">line-height</span>: <span class="number">4px</span>;
+    <span class="attribute">font-size</span>: <span class="number">2px</span>;
+}</code></pre>
+</li>
+<li><p><strong>progressBarEmptyPercentage</strong>:</p>
+<p>Default: <code>1</code> (Integer)</p>
+<p>Minimum percentage filled in the progress bar that depicts the strength of<br>the password. An empty password will show the progress bar filled this much.</p>
+</li>
+<li><p><strong>progressBarMinPercentage</strong>:</p>
+<p>Default: <code>1</code> (Integer)</p>
+<p>Minimum percentage filled in the progress bar that depicts the strength of<br>the password. A terrible but not empty password will show the progress bar<br>filled this much.</p>
+</li>
+<li><p><strong>progressBarExtraCssClasses</strong>:</p>
+<p>Default: <code>&quot;&quot;</code> (String)</p>
+<p>CSS classes to be added to the generated progress bar. It is meant to make<br>use of the extra classes provided by Bootstrap. The classes will be added to<br>the proper DOM element depending of which version of Bootstrap is being<br>used.</p>
+</li>
+<li><p><strong>showPopover</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>Displays the error messages and the verdicts in a Bootstrap popover, instead<br>of below the input field.</p>
+<p>If the <code>showVerdictsInsideProgressBar</code> option is active, then the verdicts<br>won’t appear on the popover.</p>
+<p><em>Note: In Bootstrap 4, the popper.js library is required. More details in<br><a href="https://getbootstrap.com/docs/4.1/components/popovers/" target="_blank" rel="noopener external nofollow noreferrer">the Bootstrap documentation</a>.<br>In previous versions tooltip.js and popover.js must be included.</em></p>
+</li>
+<li><p><strong>popoverPlacement</strong>:</p>
+<p>Default: <code>&quot;bottom&quot;</code> (String)</p>
+<p>Choose where the popover should be placed in relation with the input field.<br>The possible options are: <code>&quot;top&quot;</code> <code>&quot;bottom&quot;</code> <code>&quot;left&quot;</code> <code>&quot;right&quot;</code> <code>&quot;auto&quot;</code></p>
+</li>
+<li><p><strong>showStatus</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>Displays the password strength as a validation status in the password field,<br>for this to work, the Bootstrap form structure must be followed.</p>
+</li>
+<li><p><strong>spanError</strong>:</p>
+<p>Default: (Function)</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> (<span class="params">options, key</span>) </span>{
+  <span class="keyword">var</span> text = options.i18n.t(key);
+  <span class="keyword">if</span> (!text) { <span class="keyword">return</span> <span class="string">''</span>; }
+  <span class="keyword">return</span> <span class="string">'&lt;span style="color: #d52929"&gt;'</span> + text + <span class="string">'&lt;/span&gt;'</span>;
+};</code></pre>
+<p>Function to generate a span with the style property set to red font color,<br>used in the errors messages. Overwrite for custom styling.</p>
+</li>
+<li><p><strong>popoverError</strong>:</p>
+<p>Default: (Function)</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> (<span class="params">errors</span>) </span>{
+  <span class="keyword">var</span> errors = options.instances.errors,
+      errorsTitle = options.i18n.t(<span class="string">"errorList"</span>),
+      message = <span class="string">"&lt;div&gt;"</span> + errorsTitle + <span class="string">"&lt;ul class='error-list' style='margin-bottom: 0;'&gt;"</span>;
+
+  jQuery.each(errors, <span class="function"><span class="keyword">function</span> (<span class="params">idx, err</span>) </span>{
+    message += <span class="string">"&lt;li&gt;"</span> + err + <span class="string">"&lt;/li&gt;"</span>;
+  });
+  message += <span class="string">"&lt;/ul&gt;&lt;/div&gt;"</span>;
+  <span class="keyword">return</span> message;
+};</code></pre>
+<p>Function to generate the errors list in the popover if <code>showPopover</code> is true.<br>Overwrite for custom styling.</p>
+</li>
+<li><p><strong>showVerdicts</strong>:</p>
+<p>Default: <code>true</code> (Boolean)</p>
+<p>Determines if the verdicts are displayed or not.</p>
+</li>
+<li><p><strong>showVerdictsInsideProgressBar</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>Determines if the verdicts are displayed inside the progress bar or not. When<br>this setting is active, the verdict viewport is ignored and they won’t appear<br>on the popover if it is being showed. Also this option overrides the value of<br>the <em>showVerdicts</em> one.</p>
+</li>
+<li><p><strong>useVerdictCssClass</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>Determines if it’s necessary to add a css class in the verdict element.</p>
+</li>
+<li><p><strong>showErrors</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>Determines if the error list is displayed with the progress bar or not.</p>
+</li>
+<li><p><strong>showScore</strong>:</p>
+<p>Default: <code>false</code> (Boolean)</p>
+<p>Determines if the password score is displayed with the progress bar or not.</p>
+</li>
+<li><p><strong>container</strong>:</p>
+<p>Default: <code>undefined</code> (CSS selector, or DOM node)</p>
+<p>If defined, it will be used to locate the viewports, if undefined, the parent<br>of the input password will be used instead. The viewports must be children of<br>this node.</p>
+</li>
+<li><p><strong>viewports</strong>:</p>
+<p>Default: (Object)</p>
+<pre><code>{
+  progress: undefined,
+  verdict: undefined,
+  errors: undefined,
+  score: undefined
+}</code></pre><p>An object containing the viewports to use to show the elements of the<br>strength meter. Each one can be a CSS selector (<code>&quot;#progressbar&quot;</code>) or a DOM<br>node reference. They must be contained by the <code>container</code>.</p>
+</li>
+<li><p><strong>scores</strong>:</p>
+<p>Default: <code>[0, 14, 26, 38, 50]</code> (Array)</p>
+<p>The scores used to determine what colorClasses and verdicts to display. It<br>has to have 5 elements, which creates 6 categories of strength (the 6<br>possible verdicts).</p>
+</li>
+</ul>
+<h3 id="Example-of-an-options-object"><a href="#Example-of-an-options-object" class="headerlink" title="Example of an options object"></a>Example of an options object</h3><pre><code class="javascript"><span class="keyword">var</span> options = {};
+options.common = {
+    minChar: <span class="number">8</span>
+};
+options.rules = {
+    activated: {
+        wordTwoCharacterClasses: <span class="literal">true</span>,
+        wordRepetitions: <span class="literal">true</span>
+    }
+};
+options.ui = {
+    showErrors: <span class="literal">true</span>
+};</code></pre>

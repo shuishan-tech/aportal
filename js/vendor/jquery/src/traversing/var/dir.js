@@ -1,0 +1,1 @@
+define(["../../core"],function(f){"use strict";return function(e,n,r){for(var i=[],o=void 0!==r;(e=e[n])&&9!==e.nodeType;)if(1===e.nodeType){if(o&&f(e).is(r))break;i.push(e)}return i}});

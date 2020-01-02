@@ -1,0 +1,82 @@
+<h1 id="Tweetie"><a href="#Tweetie" class="headerlink" title="Tweetie "></a>Tweetie <a href="https://travis-ci.org/sonnyt/tweetie" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://travis-ci.org/sonnyt/tweetie.svg?branch=master" alt="Build Status"></a></h1><p>jQuery Tweetie - Simple Twitter Feed Plugin that works with new Twitter API.</p>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>Download the lastest version of <a href="https://github.com/sonnyt/tweetie/releases/latest" target="_blank" rel="noopener external nofollow noreferrer">jQuery Tweetie</a>.</p>
+<p>In order to successfully use jQuery Tweetie, you have to have server-side/backend API. The plugin comes with very simple PHP backend that you can easily setup and get going.</p>
+<h1 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h1><p>Initialize just like any other plugin.</p>
+<pre><code class="js">$(<span class="string">'.tweets'</span>).tweetie();</code></pre>
+<h1 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h1><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>url</td>
+<td>String</td>
+<td><strong><em>Required.</em></strong> API URL.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td><strong><em>Required.</em></strong> Fetch tweets via hashtags, search terms, username and lists. Available options <a href="https://dev.twitter.com/rest/reference/get/statuses/user_timeline" target="_blank" rel="noopener external nofollow noreferrer">timeline</a>, <a href="https://dev.twitter.com/rest/reference/get/lists/statuses" target="_blank" rel="noopener external nofollow noreferrer">list</a>, <a href="https://dev.twitter.com/rest/reference/get/search/tweets" target="_blank" rel="noopener external nofollow noreferrer">search</a> and <a href="https://dev.twitter.com/rest/reference/get/search/tweets" target="_blank" rel="noopener external nofollow noreferrer">hashtag</a>.</td>
+</tr>
+<tr>
+<td>template</td>
+<td>String</td>
+<td><strong><em>Required.</em></strong> Template for each individual tweet. Learn more <a href="#templating">here</a>.</td>
+</tr>
+<tr>
+<td>params</td>
+<td>Object</td>
+<td><strong><em>Required.</em></strong> Parameters required to fetch collection of relevant tweets matching a specified query.  Only <a href="https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline" target="_blank" rel="noopener external nofollow noreferrer">timeline</a>, <a href="https://developer.twitter.com/en/docs/accounts-and-users/create-manage-lists/api-reference/get-lists-statuses" target="_blank" rel="noopener external nofollow noreferrer">list</a> and <a href="https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-home_timeline.html" target="_blank" rel="noopener external nofollow noreferrer">search/hashtag</a> params are accepted.</td>
+</tr>
+<tr>
+<td>dateFormat</td>
+<td>String</td>
+<td>Formating for <code>created_at</code> attribute. Learn more <a href="#date-format">here</a>.</td>
+</tr>
+</tbody></table>
+<h2 id="Templating"><a href="#Templating" class="headerlink" title="Templating"></a>Templating</h2><p>Tweetie uses curly brace templating syntax. You can access any tweet properties using the <code>{{}}</code> double curly brase. For your convinece every <code>link</code>, <code>@username</code> and <code>#hashtag</code> in the tweet body is automatically hyper-linked.</p>
+<p><strong>Example</strong></p>
+<pre><code class="handlebars"><span class="template-variable">{{tweet.text}}</span><span class="xml"> tweeted by </span><span class="template-variable">{{tweet.user.screen_name}}</span><span class="xml"> at </span><span class="template-variable">{{tweet.created_at}}</span></code></pre>
+<h2 id="Date-Format"><a href="#Date-Format" class="headerlink" title="Date Format"></a>Date Format</h2><table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>%d</code></td>
+<td><code>1..31</code></td>
+<td>Day of month</td>
+</tr>
+<tr>
+<td><code>%m</code></td>
+<td><code>1..12</code></td>
+<td>Month number</td>
+</tr>
+<tr>
+<td><code>%B</code></td>
+<td><code>January..December</code></td>
+<td>Month name</td>
+</tr>
+<tr>
+<td><code>%b</code></td>
+<td><code>Jan..Dec</code></td>
+<td>Month name abbreviated</td>
+</tr>
+<tr>
+<td><code>%Y</code></td>
+<td><code>2018</code></td>
+<td>4 digit year</td>
+</tr>
+<tr>
+<td><code>%y</code></td>
+<td><code>18</code></td>
+<td>2 digit year</td>
+</tr>
+</tbody></table>
+<p>Date format automatically applies to <code>created_at</code> template attribute.</p>

@@ -1,0 +1,1 @@
+define(["../core","../core/nodeName"],function(n,o){"use strict";return function(e,r){var t;return t=void 0!==e.getElementsByTagName?e.getElementsByTagName(r||"*"):void 0!==e.querySelectorAll?e.querySelectorAll(r||"*"):[],void 0===r||r&&o(e,r)?n.merge([e],t):t}});

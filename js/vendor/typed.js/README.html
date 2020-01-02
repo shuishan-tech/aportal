@@ -1,0 +1,212 @@
+<p><a href="https://travis-ci.org/mattboldt/typed.js" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://travis-ci.org/mattboldt/typed.js.svg?branch=typed-2.0" alt="Build Status"></a><br><a href="https://codeclimate.com/github/mattboldt/typed.js" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://codeclimate.com/github/mattboldt/typed.js/badges/gpa.svg" alt="Code Climate"></a><br><a href=""><img src="https://img.shields.io/github/release/mattboldt/typed.js.svg" alt="GitHub release"></a><br><a href="https://img.shields.io/npm/dt/typed.js.svg" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://img.shields.io/npm/dt/typed.js.svg" alt="npm"></a><br><a href="http://standardjs.com" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="js-standard-style"></a><br><a href="https://gratipay.com/Typed.js/" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://img.shields.io/gratipay/user/mattboldt.svg" alt="Gratipay User"></a><br><a href="https://raw.githubusercontent.com/mattboldt/typed.js/master/LICENSE.txt" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
+<img src="https://raw.githubusercontent.com/mattboldt/typed.js/master/logo-cropped.png" width="450px" title="Typed.js" />
+
+<h3 id="View-the-Live-Demo-View-All-Demos-View-Full-Docs-mattboldt-com"><a href="#View-the-Live-Demo-View-All-Demos-View-Full-Docs-mattboldt-com" class="headerlink" title="View the Live Demo | View All Demos | View Full Docs | mattboldt.com"></a><a href="http://www.mattboldt.com/demos/typed-js/" target="_blank" rel="noopener external nofollow noreferrer">View the Live Demo</a> | <a href="http://www.mattboldt.com/typed.js" target="_blank" rel="noopener external nofollow noreferrer">View All Demos</a> | <a href="http://www.mattboldt.com/typed.js/docs" target="_blank" rel="noopener external nofollow noreferrer">View Full Docs</a> | <a href="http://www.mattboldt.com" target="_blank" rel="noopener external nofollow noreferrer">mattboldt.com</a></h3><p>Typed.js is a library that types. Enter in any string, and watch it type at the speed you’ve set, backspace what it’s typed, and begin a new sentence for however many strings you’ve set.</p>
+<hr>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h4 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h4><pre><code>npm install typed.js</code></pre><h4 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h4><pre><code>yarn add typed.js</code></pre><h4 id="Bower"><a href="#Bower" class="headerlink" title="Bower"></a>Bower</h4><pre><code>bower install typed.js</code></pre><h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><pre><code>&lt;script href=&quot; https://cdn.jsdelivr.net/npm/typed.js@2&quot;&gt;&lt;/script&gt;</code></pre><h4 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h4><p>This is really all you need to get going.</p>
+<pre><code class="javascript"><span class="comment">// Can also be included with a regular script tag</span>
+<span class="keyword">import</span> Typed <span class="keyword">from</span> <span class="string">'typed.js'</span>;
+
+<span class="keyword">var</span> options = {
+  strings: [<span class="string">"&lt;i&gt;First&lt;/i&gt; sentence."</span>, <span class="string">"&amp;amp; a second sentence."</span>],
+  typeSpeed: <span class="number">40</span>
+}
+
+<span class="keyword">var</span> typed = <span class="keyword">new</span> Typed(<span class="string">".element"</span>, options);</code></pre>
+<h2 id="Wonderful-sites-using-Typed-js"><a href="#Wonderful-sites-using-Typed-js" class="headerlink" title="Wonderful sites using Typed.js"></a>Wonderful sites using Typed.js</h2><p><a href="https://slack.com/" target="_blank" rel="noopener external nofollow noreferrer">https://slack.com/</a></p>
+<p><a href="https://envato.com/" target="_blank" rel="noopener external nofollow noreferrer">https://envato.com/</a></p>
+<p><a href="https://productmap.co/" target="_blank" rel="noopener external nofollow noreferrer">https://productmap.co/</a></p>
+<p><a href="https://www.typed.com/" target="_blank" rel="noopener external nofollow noreferrer">https://www.typed.com/</a></p>
+<p><a href="https://apeiron.io" target="_blank" rel="noopener external nofollow noreferrer">https://apeiron.io</a></p>
+<p><a href="https://git.market/" target="_blank" rel="noopener external nofollow noreferrer">https://git.market/</a></p>
+<p><a href="http://allison.house/404" target="_blank" rel="noopener external nofollow noreferrer">http://allison.house/404</a></p>
+<p><a href="http://www.maxcdn.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.maxcdn.com/</a></p>
+<p><a href="https://commando.io/" target="_blank" rel="noopener external nofollow noreferrer">https://commando.io/</a></p>
+<p><a href="http://testdouble.com/agency.html" target="_blank" rel="noopener external nofollow noreferrer">http://testdouble.com/agency.html</a></p>
+<p><a href="http://www.stephanemartinw.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.stephanemartinw.com/</a></p>
+<p><a href="http://www.trelab.fi/en/" target="_blank" rel="noopener external nofollow noreferrer">http://www.trelab.fi/en/</a></p>
+<p><a href="http://jessejohnson.github.io/" target="_blank" rel="noopener external nofollow noreferrer">http://jessejohnson.github.io/</a></p>
+<hr>
+<h3 id="Strings-from-static-HTML-SEO-Friendly"><a href="#Strings-from-static-HTML-SEO-Friendly" class="headerlink" title="Strings from static HTML (SEO Friendly)"></a>Strings from static HTML (SEO Friendly)</h3><p>Rather than using the <code>strings</code> array to insert strings, you can place an HTML <code>div</code> on the page and read from it.<br>This allows bots and search engines, as well as users with JavaScript disabled, to see your text on the page.</p>
+<pre><code class="javascript">&lt;script&gt;
+  <span class="keyword">var</span> typed = <span class="keyword">new</span> Typed(<span class="string">'#typed'</span>, {
+    stringsElement: <span class="string">'#typed-strings'</span>
+  });
+&lt;<span class="regexp">/script&gt;</span></code></pre>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"typed-strings"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Typed.js is a <span class="tag">&lt;<span class="name">strong</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> library.<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">p</span>&gt;</span>It <span class="tag">&lt;<span class="name">em</span>&gt;</span>types<span class="tag">&lt;/<span class="name">em</span>&gt;</span> out sentences.<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"typed"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></code></pre>
+<h3 id="Type-Pausing"><a href="#Type-Pausing" class="headerlink" title="Type Pausing"></a>Type Pausing</h3><p>You can pause in the middle of a string for a given amount of time by including an escape character.</p>
+<pre><code class="javascript"><span class="keyword">var</span> typed = <span class="keyword">new</span> Typed(<span class="string">".element"</span>, {
+  <span class="comment">// Waits 1000ms after typing "First"</span>
+  strings: [<span class="string">"First ^1000 sentence."</span>, <span class="string">"Second sentence."</span>]
+});</code></pre>
+<h3 id="Smart-Backspacing"><a href="#Smart-Backspacing" class="headerlink" title="Smart Backspacing"></a>Smart Backspacing</h3><p>In the following example, this would only backspace the words after “This is a”</p>
+<pre><code class="javascript"><span class="keyword">var</span> typed = <span class="keyword">new</span> Typed(<span class="string">".element"</span>, {
+  strings: [<span class="string">"This is a JavaScript library"</span>, <span class="string">"This is an ES6 module"</span>],
+  smartBackspace: <span class="literal">true</span> <span class="comment">// Default value</span>
+});</code></pre>
+<h3 id="Bulk-Typing"><a href="#Bulk-Typing" class="headerlink" title="Bulk Typing"></a>Bulk Typing</h3><p>The following example would emulate how a terminal acts when typing a command and seeing its result. </p>
+<pre><code class="javascript"><span class="keyword">var</span> typed = <span class="keyword">new</span> Typed(<span class="string">".element"</span>, {
+  strings: [
+    <span class="string">"git push --force ^1000\n `pushed to origin with option force`"</span>
+  ]
+});</code></pre>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>CSS animations are built upon initialzation in JavaScript. But, you can customize them at your will! These classes are:</p>
+<pre><code class="css"><span class="comment">/* Cursor */</span>
+<span class="selector-class">.typed-cursor</span> {}
+
+<span class="comment">/* If fade out option is set */</span>
+<span class="selector-class">.typed-fade-out</span> {}</code></pre>
+<h3 id="Use-with-ReactJS"><a href="#Use-with-ReactJS" class="headerlink" title="Use with ReactJS"></a>Use with ReactJS</h3><p>Check out this example React app using Typed.js in a component: <a href="https://jsfiddle.net/mattboldt/ovat9jmp/" target="_blank" rel="noopener external nofollow noreferrer">https://jsfiddle.net/mattboldt/ovat9jmp/</a></p>
+<h3 id="Use-with-Vue-js"><a href="#Use-with-Vue-js" class="headerlink" title="Use with Vue.js"></a>Use with Vue.js</h3><p>Check out the Vue.js component: <a href="https://github.com/Orlandster1998/vue-typed-js" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/Orlandster1998/vue-typed-js</a></p>
+<h2 id="Customization"><a href="#Customization" class="headerlink" title="Customization"></a>Customization</h2><pre><code class="javascript"><span class="keyword">var</span> typed = <span class="keyword">new</span> Typed(<span class="string">".element"</span>, {
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{array}</span> </span>strings strings to be typed</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{string}</span> </span>stringsElement ID of element containing string children</span>
+<span class="comment">   */</span>
+  strings: [<span class="string">'These are the default values...'</span>, <span class="string">'You know what you should do?'</span>, <span class="string">'Use your own!'</span>, <span class="string">'Have a great day!'</span>],
+  stringsElement: <span class="literal">null</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{number}</span> </span>typeSpeed type speed in milliseconds</span>
+<span class="comment">   */</span>
+  typeSpeed: <span class="number">0</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{number}</span> </span>startDelay time before typing starts in milliseconds</span>
+<span class="comment">   */</span>
+  startDelay: <span class="number">0</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{number}</span> </span>backSpeed backspacing speed in milliseconds</span>
+<span class="comment">   */</span>
+  backSpeed: <span class="number">0</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{boolean}</span> </span>smartBackspace only backspace what doesn't match the previous string</span>
+<span class="comment">   */</span>
+  smartBackspace: <span class="literal">true</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{boolean}</span> </span>shuffle shuffle the strings</span>
+<span class="comment">   */</span>
+  shuffle: <span class="literal">false</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{number}</span> </span>backDelay time before backspacing in milliseconds</span>
+<span class="comment">   */</span>
+  backDelay: <span class="number">700</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{boolean}</span> </span>fadeOut Fade out instead of backspace</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{string}</span> </span>fadeOutClass css class for fade animation</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{boolean}</span> </span>fadeOutDelay Fade out delay in milliseconds</span>
+<span class="comment">   */</span>
+  fadeOut: <span class="literal">false</span>,
+  fadeOutClass: <span class="string">'typed-fade-out'</span>,
+  fadeOutDelay: <span class="number">500</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{boolean}</span> </span>loop loop strings</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{number}</span> </span>loopCount amount of loops</span>
+<span class="comment">   */</span>
+  loop: <span class="literal">false</span>,
+  loopCount: <span class="literal">Infinity</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{boolean}</span> </span>showCursor show cursor</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{string}</span> </span>cursorChar character for cursor</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{boolean}</span> </span>autoInsertCss insert CSS for cursor and fadeOut into HTML &lt;head&gt;</span>
+<span class="comment">   */</span>
+  showCursor: <span class="literal">true</span>,
+  cursorChar: <span class="string">'|'</span>,
+  autoInsertCss: <span class="literal">true</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{string}</span> </span>attr attribute for typing</span>
+<span class="comment">   * Ex: input placeholder, value, or just HTML text</span>
+<span class="comment">   */</span>
+  attr: <span class="literal">null</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{boolean}</span> </span>bindInputFocusEvents bind to focus and blur if el is text input</span>
+<span class="comment">   */</span>
+  bindInputFocusEvents: <span class="literal">false</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * <span class="doctag">@property <span class="type">{string}</span> </span>contentType 'html' or 'null' for plaintext</span>
+<span class="comment">   */</span>
+  contentType: <span class="string">'html'</span>,
+
+  <span class="comment">/**</span>
+<span class="comment">   * All typing is complete</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  onComplete: <span class="function">(<span class="params">self</span>) =&gt;</span> {},
+
+  <span class="comment">/**</span>
+<span class="comment">   * Before each string is typed</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{number}</span> <span class="variable">arrayPos</span></span></span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  preStringTyped: <span class="function">(<span class="params">arrayPos, self</span>) =&gt;</span> {},
+
+  <span class="comment">/**</span>
+<span class="comment">   * After each string is typed</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{number}</span> <span class="variable">arrayPos</span></span></span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  onStringTyped: <span class="function">(<span class="params">arrayPos, self</span>) =&gt;</span> {},
+
+  <span class="comment">/**</span>
+<span class="comment">   * During looping, after last string is typed</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  onLastStringBackspaced: <span class="function">(<span class="params">self</span>) =&gt;</span> {},
+
+  <span class="comment">/**</span>
+<span class="comment">   * Typing has been stopped</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{number}</span> <span class="variable">arrayPos</span></span></span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  onTypingPaused: <span class="function">(<span class="params">arrayPos, self</span>) =&gt;</span> {},
+
+  <span class="comment">/**</span>
+<span class="comment">   * Typing has been started after being stopped</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{number}</span> <span class="variable">arrayPos</span></span></span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  onTypingResumed: <span class="function">(<span class="params">arrayPos, self</span>) =&gt;</span> {},
+
+  <span class="comment">/**</span>
+<span class="comment">   * After reset</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  onReset: <span class="function">(<span class="params">self</span>) =&gt;</span> {},
+
+  <span class="comment">/**</span>
+<span class="comment">   * After stop</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{number}</span> <span class="variable">arrayPos</span></span></span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  onStop: <span class="function">(<span class="params">arrayPos, self</span>) =&gt;</span> {},
+
+  <span class="comment">/**</span>
+<span class="comment">   * After start</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{number}</span> <span class="variable">arrayPos</span></span></span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  onStart: <span class="function">(<span class="params">arrayPos, self</span>) =&gt;</span> {},
+
+  <span class="comment">/**</span>
+<span class="comment">   * After destroy</span>
+<span class="comment">   * <span class="doctag">@param <span class="type">{Typed}</span> <span class="variable">self</span></span></span>
+<span class="comment">   */</span>
+  onDestroy: <span class="function">(<span class="params">self</span>) =&gt;</span> {}
+});</code></pre>
+<h2 id="Contributing"><a href="#Contributing" class="headerlink" title="Contributing"></a>Contributing</h2><h3 id="View-Contribution-Guidelines"><a href="#View-Contribution-Guidelines" class="headerlink" title="View Contribution Guidelines"></a><a href="./.github/CONTRIBUTING.md">View Contribution Guidelines</a></h3><h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><p>Thanks for checking this out. If you have any questions, I’ll be on <a href="http://www.twitter.com/atmattb" target="_blank" rel="noopener external nofollow noreferrer">Twitter</a>.</p>
+<p>If you’re using this, let me know! I’d love to see it.</p>
+<p>It would also be great if you mentioned me or my website somewhere. <a href="http://www.mattboldt.com" target="_blank" rel="noopener external nofollow noreferrer">www.mattboldt.com</a></p>

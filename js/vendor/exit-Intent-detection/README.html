@@ -1,0 +1,48 @@
+<h1 id="jQuery-Exit-Intent-Plugin"><a href="#jQuery-Exit-Intent-Plugin" class="headerlink" title="jQuery Exit Intent Plugin"></a>jQuery Exit Intent Plugin</h1><p>The jQuery Exit Intent plugin try to anticipate when the user is about<br>to leave the current page, and fire an event when it thinks they are<br>doing so. You can react to this event to display modal dialogues,<br>change page text, etc., to try to grab user’s attention and<br>(hopefully) made them change their minds.</p>
+<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ol>
+<li>jQuery &gt;= 1.4</li>
+</ol>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><ol>
+<li><p>Download the plugin</p>
+</li>
+<li><p>Include the following line <em>after</em> jQuery:</p>
+<pre><code>&lt;script src=&quot;jquery.exitintent.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>NB: adjust the path as necessary</p>
+</li>
+<li><p>Enable the plugin in your site:</p>
+<pre><code>$.exitIntent(&apos;enable&apos;);</code></pre></li>
+<li><p>Listen to the <code>exitintent</code> event, and act accordingly:</p>
+<pre><code>$(document).bind(&apos;exitintent&apos;,
+    function() {
+        console.log(&apos;Oops... trying to leave the page&apos;);
+    });</code></pre></li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><p>Enable the plugin:</p>
+<pre><code>$.exitIntent(&apos;enable&apos;)</code></pre></li>
+<li><p>Disable the plugin:</p>
+<pre><code>$.exitIntent(&apos;disable&apos;)</code></pre></li>
+<li><p>Use customized settings when enabling:</p>
+<pre><code>$.exitIntent(&apos;disable&apos;, { &apos;sensitivity&apos;: 100 })</code></pre></li>
+</ol>
+<h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><p>The second parameter to the <code>$.exitIntent</code> plugin call can contain a<br>settings object. The following settings are recognized:</p>
+<ul>
+<li><code>sensitivity</code> - adjust the sensitivity to detect when the user is<br>about to exit. In practical terms, this is the time (in<br>milliseconds) the user is allowed to “exit” your page, but come back<br>without triggering the <code>exitintent</code>. Default: 300.</li>
+</ul>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><ol>
+<li><p>How do I display a modal popup when the user is trying to leave my<br>page?</p>
+<p>This plugin only deals with detecting when the user is leaving the<br>page, and triggering the <code>exitintent</code> event. It’s up to you do<br>define <em>what</em> you want to do when the user is leaving. For example,<br>if you want to display a modal dialog, you may use your preferred<br>jQuery modal plugin to display the modal.</p>
+</li>
+<li><p>How do I detect an exit intent on my mobile site?</p>
+<p>There are no interesting events in a mobile site that can be used<br>to try detect if the user is going to exit. This may be extremely<br>difficult to implement reliably, if not impossible.</p>
+</li>
+</ol>
+<h2 id="Future-Improvements"><a href="#Future-Improvements" class="headerlink" title="Future Improvements"></a>Future Improvements</h2><ol>
+<li><p>Detect when users intend to exit by clicking on an external link</p>
+</li>
+<li><p>Detect when users intend to exit by closing the browser<br>window. This can be done by using some heuristics, for example,<br>when exiting from the bottom of the browser in MS Windows, the<br>browser is close to the bottom of the screen, and not returning<br>after some milliseconds.</p>
+</li>
+</ol>
+<p>Contact me at <code>flaviovs at magnux dot com</code> if you’d like to see these<br>improvements added to the plugin.</p>
+<h2 id="Legal"><a href="#Legal" class="headerlink" title="Legal"></a>Legal</h2><p>Copyright (C) 2016 Flávio Veloso</p>
+<p>This plugin is released under the terms of the MIT license. See the<br>LICENSE file for more details.</p>
+<p>If you think you found a bug in this plugin, please visit<br><a href="https://github.com/flaviovs/jquery.exitintent/issues" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/flaviovs/jquery.exitintent/issues</a> and open a new<br>issue.</p>

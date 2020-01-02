@@ -1,0 +1,203 @@
+<h1 id="CHANGELOG"><a href="#CHANGELOG" class="headerlink" title="CHANGELOG"></a>CHANGELOG</h1><h2 id="3-0-1"><a href="#3-0-1" class="headerlink" title="3.0.1"></a>3.0.1</h2><ul>
+<li>Bugfix in progress bar colors in Bootstrap 3.</li>
+</ul>
+<h2 id="3-0-0"><a href="#3-0-0" class="headerlink" title="3.0.0"></a>3.0.0</h2><ul>
+<li>Bootstrap 4 by default.</li>
+<li>Improved support for Bootstrap 4.</li>
+</ul>
+<h2 id="2-2-1"><a href="#2-2-1" class="headerlink" title="2.2.1"></a>2.2.1</h2><ul>
+<li>Bugfix in the common passwords rule.</li>
+</ul>
+<h2 id="2-2-0"><a href="#2-2-0" class="headerlink" title="2.2.0"></a>2.2.0</h2><ul>
+<li>Add new rule to penalize common passwords.</li>
+</ul>
+<h2 id="2-1-4"><a href="#2-1-4" class="headerlink" title="2.1.4"></a>2.1.4</h2><ul>
+<li>Thai localization.</li>
+<li>Fix typo in German localization.</li>
+<li>Activate by default the extra security rules.</li>
+<li>Make the invalid chars optional rule configurable.</li>
+</ul>
+<h2 id="2-1-3"><a href="#2-1-3" class="headerlink" title="2.1.3"></a>2.1.3</h2><ul>
+<li>Bugfix, call <code>onScore</code> when zxcvbn is in use too.</li>
+</ul>
+<h2 id="2-1-2"><a href="#2-1-2" class="headerlink" title="2.1.2"></a>2.1.2</h2><ul>
+<li>Fix errors in Portuguese localization.</li>
+<li>Fix French localization capitalization.</li>
+<li>Fix ruleIsMet issues with wordMin and wordMax rules.</li>
+<li>Don’t allow verdict to break line when inside progress bar.</li>
+</ul>
+<h2 id="2-1-1"><a href="#2-1-1" class="headerlink" title="2.1.1"></a>2.1.1</h2><ul>
+<li>Add missing rule, needed by the <code>ruleIsMet</code> method.</li>
+<li>Add <code>wordMaxLength</code> and <code>wordInvalidChar</code> optional rules to the engine.</li>
+</ul>
+<h2 id="2-1-0"><a href="#2-1-0" class="headerlink" title="2.1.0"></a>2.1.0</h2><ul>
+<li>Slovak translation.</li>
+<li>Add a new <code>ruleIsMet</code> method that returns a boolean value indicating if all<br>password inputs in the page pass a specific rule.</li>
+</ul>
+<h2 id="2-0-8"><a href="#2-0-8" class="headerlink" title="2.0.8"></a>2.0.8</h2><ul>
+<li>Fix showing the strength of the password through the status of the field.</li>
+</ul>
+<h2 id="2-0-7"><a href="#2-0-7" class="headerlink" title="2.0.7"></a>2.0.7</h2><ul>
+<li>Add new option <code>progressExtraCssClasses</code> to be able to customize the<br>container of the progress bar.</li>
+<li>Updated development dependencies.</li>
+</ul>
+<h2 id="2-0-6"><a href="#2-0-6" class="headerlink" title="2.0.6"></a>2.0.6</h2><ul>
+<li>Updated development dependencies.</li>
+<li>Bootstrap 4 alpha 6 support.</li>
+</ul>
+<h2 id="2-0-5"><a href="#2-0-5" class="headerlink" title="2.0.5"></a>2.0.5</h2><ul>
+<li>Italian localization.</li>
+</ul>
+<h2 id="2-0-4"><a href="#2-0-4" class="headerlink" title="2.0.4"></a>2.0.4</h2><ul>
+<li>French localization.</li>
+<li>Don’t use Math.log2 since IE doesn’t support it.</li>
+</ul>
+<h2 id="2-0-3"><a href="#2-0-3" class="headerlink" title="2.0.3"></a>2.0.3</h2><ul>
+<li>German localization.</li>
+<li>Polish localization.</li>
+</ul>
+<h2 id="2-0-2"><a href="#2-0-2" class="headerlink" title="2.0.2"></a>2.0.2</h2><ul>
+<li>Add a <code>onScore</code> callback to allow for a final score modification.</li>
+<li>Turkish localization.</li>
+</ul>
+<h2 id="2-0-1"><a href="#2-0-1" class="headerlink" title="2.0.1"></a>2.0.1</h2><ul>
+<li>Fix bad assignment in the plugin initialization.</li>
+<li>Russian localization.</li>
+<li>New option to control the events the plugin listen to.</li>
+</ul>
+<h2 id="2-0-0"><a href="#2-0-0" class="headerlink" title="2.0.0"></a>2.0.0</h2><ul>
+<li>Use six possible verdicts and six possible css classes, so they match one<br>to one making it possible to configure each class for each verdict level.</li>
+<li>Properly manage the paste event so the meter updates when the user pastes the<br>password.</li>
+<li>Add a new option to display the password score.</li>
+<li>Translations support, ahora hablamos idiomas.</li>
+<li>New option to set the minimum possible percentage filled in the progress bar<br>when the password field is not empty.</li>
+<li>New option to set the minimum possible percentage filled in the progress bar<br>when the password field is empty.</li>
+<li>New option for extra CSS classes to be added to the generated progress bar.</li>
+</ul>
+<h3 id="Breaking-changes"><a href="#Breaking-changes" class="headerlink" title="Breaking changes"></a>Breaking changes</h3><ul>
+<li>There are 6 verdicts and css classes now, instead of 5.</li>
+<li><code>verdicts</code> and <code>errorMessages</code> options have been removed. Now they rely on<br>the translations system.</li>
+</ul>
+<h2 id="1-2-10"><a href="#1-2-10" class="headerlink" title="1.2.10"></a>1.2.10</h2><ul>
+<li>Replace entropy call with log2 of guesses for zxcvbn because entropy property<br>is removed in zxcvbn v4.0.1, and it was just log2 of guesses.</li>
+</ul>
+<h2 id="1-2-9"><a href="#1-2-9" class="headerlink" title="1.2.9"></a>1.2.9</h2><ul>
+<li>No changes, I forgot to add the built files into the 1.2.8, so I’m releasing<br>the same again.</li>
+</ul>
+<h2 id="1-2-8"><a href="#1-2-8" class="headerlink" title="1.2.8"></a>1.2.8</h2><ul>
+<li>Updated to work with Bootstrap 4. Bootstrap 3 is still the default mode.</li>
+<li>Allow to establish the placement of the popover through an option.</li>
+<li>Make the css classes added to the bar and verdicts customizable.</li>
+<li>Bugfix in the progress bar percentage calculation for a score of zero.</li>
+</ul>
+<h2 id="1-2-7"><a href="#1-2-7" class="headerlink" title="1.2.7"></a>1.2.7</h2><ul>
+<li>Bugfix: escape special characters in username for regex.</li>
+</ul>
+<h2 id="1-2-6"><a href="#1-2-6" class="headerlink" title="1.2.6"></a>1.2.6</h2><ul>
+<li>More sensible default score for sequences rule.</li>
+<li>Publish plugin in npm.</li>
+</ul>
+<h2 id="1-2-5"><a href="#1-2-5" class="headerlink" title="1.2.5"></a>1.2.5</h2><ul>
+<li>Bugfix when using zxcvbn and form inputs with empty values.</li>
+<li>New option to specify a list of banned words for zxcvbn.</li>
+</ul>
+<h2 id="1-2-4"><a href="#1-2-4" class="headerlink" title="1.2.4"></a>1.2.4</h2><ul>
+<li>New option to add a class in verdict element.</li>
+<li>If there is text in the password field, don’t show the progress bar empty.</li>
+<li>Empty verdict for an empty password field.</li>
+<li>Support html in the verdicts content.</li>
+</ul>
+<h2 id="1-2-3"><a href="#1-2-3" class="headerlink" title="1.2.3"></a>1.2.3</h2><ul>
+<li>New option to customize the html of the popover with the errors.</li>
+<li>Bugfix in special char regex.</li>
+</ul>
+<h2 id="1-2-2"><a href="#1-2-2" class="headerlink" title="1.2.2"></a>1.2.2</h2><ul>
+<li>Every rule can have associated error messages.</li>
+</ul>
+<h2 id="1-2-1"><a href="#1-2-1" class="headerlink" title="1.2.1"></a>1.2.1</h2><ul>
+<li>Improve documentation.</li>
+<li>Fix typo in alphabetical sequence.</li>
+<li>Use the not minified version of the library in bower as main file.</li>
+</ul>
+<h2 id="1-2-0"><a href="#1-2-0" class="headerlink" title="1.2.0"></a>1.2.0</h2><ul>
+<li>Listen also to the <code>change</code> and <code>onpaste</code> events, not only to the <code>onkeyup</code>.</li>
+<li>Show the lowest verdict when the score is below zero.</li>
+<li>New option to pass more input fields content to the zxcvbn library.</li>
+<li>Don’t show the verdicts inside the popover if they are being showed inside<br>the progressbar.</li>
+</ul>
+<h2 id="1-1-5"><a href="#1-1-5" class="headerlink" title="1.1.5"></a>1.1.5</h2><ul>
+<li>Better Bower configuration.</li>
+<li>Pass also the verdict level to the “on key up” event handler.</li>
+<li>Add a basic usage section to the readme.</li>
+</ul>
+<h2 id="1-1-4"><a href="#1-1-4" class="headerlink" title="1.1.4"></a>1.1.4</h2><ul>
+<li>Bower support.</li>
+</ul>
+<h2 id="1-1-3"><a href="#1-1-3" class="headerlink" title="1.1.3"></a>1.1.3</h2><ul>
+<li>Pass the score and the verdict to the “on key up” event handler.</li>
+</ul>
+<h2 id="1-1-2"><a href="#1-1-2" class="headerlink" title="1.1.2"></a>1.1.2</h2><ul>
+<li>Upgrade dev dependencies: grunt plugins and jquery</li>
+<li>Bugfix in sequences lookup</li>
+<li>New tests for sequences lookup</li>
+</ul>
+<h2 id="1-1-1"><a href="#1-1-1" class="headerlink" title="1.1.1"></a>1.1.1</h2><ul>
+<li>Pass the username field content to the zxcvbn function, so zxcvbn takes it<br>into consideration when scoring the password.</li>
+<li>Add a debug option, so the score gets printed in the JS console.</li>
+<li>Check reversed sequences too in the sequences rule.</li>
+<li>Fix the popover flickering.</li>
+</ul>
+<h2 id="1-1-0"><a href="#1-1-0" class="headerlink" title="1.1.0"></a>1.1.0</h2><ul>
+<li>Support zxcvbn for password scoring.</li>
+<li>Support showing the password strength as a validation status in the password<br>field.</li>
+<li>Support hiding the progress bar, making it optional.</li>
+<li>Support showing the verdicts inside the progress bar.</li>
+</ul>
+<h2 id="1-0-2"><a href="#1-0-2" class="headerlink" title="1.0.2"></a>1.0.2</h2><ul>
+<li>Bugfix in UI initialization.</li>
+<li>Fix typo in readme.</li>
+</ul>
+<h2 id="1-0-1"><a href="#1-0-1" class="headerlink" title="1.0.1"></a>1.0.1</h2><ul>
+<li>Separate source file in several smaller files.</li>
+<li>Add Grunt support for creating a bundle and a minified version.</li>
+<li>Add tests for the rules engine, and continuos integration with Travis.</li>
+</ul>
+<h2 id="1-0-0"><a href="#1-0-0" class="headerlink" title="1.0.0"></a>1.0.0</h2><ul>
+<li>Complete refactor of the code. This is a cleaner version, easier to extend<br>and mantain.</li>
+<li>Broke backwards compatibility. Bootstrap 3 is the default option now, other<br>options default values have changed. Options structure has changed too.</li>
+<li>Old tests have been renamed to examples, which is what they really are. Leave<br>room for real tests.</li>
+</ul>
+<h2 id="0-7-0"><a href="#0-7-0" class="headerlink" title="0.7.0"></a>0.7.0</h2><ul>
+<li>New rule to check for sequences in the password. It penalizes finding<br>sequences of consecutive numbers, consecutive characters in the alphabet or<br>in the qwerty layout. Active by default.</li>
+</ul>
+<h2 id="0-6-0"><a href="#0-6-0" class="headerlink" title="0.6.0"></a>0.6.0</h2><ul>
+<li>New feature: support showing the verdicts and errors in a Bootstrap popover.</li>
+<li>Hide the verdicts and errors when the input is empty.</li>
+<li>Remove <em>showVerdictsInitially</em> option, is not needed anymore.</li>
+</ul>
+<h2 id="0-5-0"><a href="#0-5-0" class="headerlink" title="0.5.0"></a>0.5.0</h2><ul>
+<li>Support to activate/deactivate rules using the <em>rules</em> object inside the<br><em>options</em> object.</li>
+<li>Two new rules added, deactivated by default. Check for too many character<br>repetitions, and check for number of character classes used.</li>
+</ul>
+<h2 id="0-4-5"><a href="#0-4-5" class="headerlink" title="0.4.5"></a>0.4.5</h2><ul>
+<li>Fix error message when the password contains the username.</li>
+<li>Check if the password is an email, and mark as weak.</li>
+<li>Add a <em>container</em> option, it will be used to look for the viewports.</li>
+</ul>
+<h2 id="0-4-4"><a href="#0-4-4" class="headerlink" title="0.4.4"></a>0.4.4</h2><ul>
+<li>Bad version in plugin manifest.</li>
+</ul>
+<h2 id="0-4-3"><a href="#0-4-3" class="headerlink" title="0.4.3"></a>0.4.3</h2><ul>
+<li>Change jQuery plugin name to avoid conflict with an existing one.</li>
+</ul>
+<h2 id="0-4-2"><a href="#0-4-2" class="headerlink" title="0.4.2"></a>0.4.2</h2><ul>
+<li>New option to choose if the verdicts should be displayed before the user<br>introduces a letter. New default behaviour: don’t show them.</li>
+<li>Bugfix with progress bar color and Bootstrap 2.</li>
+<li>Improve code quality.</li>
+</ul>
+<h2 id="0-4-1"><a href="#0-4-1" class="headerlink" title="0.4.1"></a>0.4.1</h2><ul>
+<li>jQuery plugins registry support.</li>
+</ul>
+<h2 id="0-4-0"><a href="#0-4-0" class="headerlink" title="0.4.0"></a>0.4.0</h2><ul>
+<li>Bootstrap 3.0.0 support.</li>
+</ul>

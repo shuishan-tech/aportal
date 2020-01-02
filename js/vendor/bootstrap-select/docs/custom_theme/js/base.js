@@ -1,0 +1,1 @@
+$(document).ready(function(){hljs.initHighlightingOnLoad(),$("table").addClass("table table-striped table-hover"),$("pre").addClass("highlight")}),$("li.disabled a").click(function(){event.preventDefault()});

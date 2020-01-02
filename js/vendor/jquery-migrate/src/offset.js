@@ -1,0 +1,1 @@
+var oldOffset=jQuery.fn.offset;jQuery.fn.offset=function(){var e,n=this[0],t={top:0,left:0};return n&&n.nodeType?(e=(n.ownerDocument||window.document).documentElement,jQuery.contains(e,n)?oldOffset.apply(this,arguments):(migrateWarn("jQuery.fn.offset() requires an element connected to a document"),t)):(migrateWarn("jQuery.fn.offset() requires a valid DOM element"),t)};

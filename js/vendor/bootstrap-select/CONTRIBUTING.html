@@ -1,0 +1,61 @@
+<h1 id="Contributing-to-this-project"><a href="#Contributing-to-this-project" class="headerlink" title="Contributing to this project"></a>Contributing to this project</h1><p>Please take a moment to review this document in order to make the contribution<br>process easy and effective for everyone involved.</p>
+<p>Following these guidelines helps to communicate that you respect the time of<br>the developers managing and developing this open source project. In return,<br>they should reciprocate that respect in addressing your issue or assessing<br>patches and features.</p>
+<h2 id="Using-the-issue-tracker"><a href="#Using-the-issue-tracker" class="headerlink" title="Using the issue tracker"></a>Using the issue tracker</h2><p>The issue tracker is the preferred channel for <a href="#bug-reports">bug reports</a>,<br><a href="#feature-requests">features requests</a> and submitting pull requests, but please<br>respect the following restrictions:</p>
+<ul>
+<li><p>Please <strong>do not</strong> use the issue tracker for personal support requests (use<br><a href="https://stackoverflow.com" target="_blank" rel="noopener external nofollow noreferrer">Stack Overflow</a> or IRC).</p>
+</li>
+<li><p>Please <strong>do not</strong> derail or troll issues. Keep the discussion on topic and<br>respect the opinions of others.</p>
+</li>
+</ul>
+<h2 id="Bug-reports"><a href="#Bug-reports" class="headerlink" title="Bug reports"></a>Bug reports</h2><p>A bug is a <em>demonstrable problem</em> that is caused by the code in the repository.<br>Good bug reports are extremely helpful - thank you!</p>
+<p>Guidelines for bug reports:</p>
+<ol>
+<li><p><strong>Use the GitHub issue search.</strong> Check if the issue has already been<br>reported.</p>
+</li>
+<li><p><strong>Check if the issue has been fixed.</strong> Try to reproduce it using the<br>latest <code>master</code> or development branch in the repository.</p>
+</li>
+<li><p><strong>Provide environment details.</strong> Provide your operating system, browser(s),<br>jQuery version, Bootstrap version, and bootstrap-select version.</p>
+</li>
+<li><p><strong>Create an isolated and reproducible test case.</strong> Create a <a href="https://css-tricks.com/reduced-test-cases/" target="_blank" rel="noopener external nofollow noreferrer">reduced test<br>case</a>.</p>
+</li>
+<li><p><strong>Include a live example.</strong> Use <a href="https://developer.snapappointments.com/bootstrap-select/playground/" target="_blank" rel="noopener external nofollow noreferrer">this Plunker debugging template</a> to share your isolated test cases. You can also make use of <a href="https://jsfiddle.net/" target="_blank" rel="noopener external nofollow noreferrer">jsFiddle</a> or <a href="https://jsbin.com/" target="_blank" rel="noopener external nofollow noreferrer">JS Bin</a>.</p>
+</li>
+</ol>
+<p>A good bug report shouldn’t leave others needing to chase you up for more<br>information. Please try to be as detailed as possible in your report. What is<br>your environment? What steps will reproduce the issue? What browser(s) and OS<br>experience the problem? What would you expect to be the outcome? All these<br>details will help people to fix any potential bugs.</p>
+<p>Example:</p>
+<blockquote>
+<p>Short and descriptive example bug report title</p>
+<p>A summary of the issue and the browser/OS environment in which it occurs. If<br>suitable, include the steps required to reproduce the bug.</p>
+<ol>
+<li>This is the first step</li>
+<li>This is the second step</li>
+<li>Further steps, etc.</li>
+</ol>
+<p><code>&lt;url&gt;</code> - a link to the reduced test case</p>
+<p>Any other information you want to share that is relevant to the issue being<br>reported. This might include the lines of code that you have identified as<br>causing the bug, and potential solutions (and your opinions on their<br>merits).</p>
+</blockquote>
+<h2 id="Feature-requests"><a href="#Feature-requests" class="headerlink" title="Feature requests"></a>Feature requests</h2><p>Feature requests are welcome. But take a moment to find out whether your idea<br>fits with the scope and aims of the project. It’s up to <em>you</em> to make a strong<br>case to convince the project’s developers of the merits of this feature. Please<br>provide as much detail and context as possible.</p>
+<h2 id="Pull-Request-Guidelines"><a href="#Pull-Request-Guidelines" class="headerlink" title="Pull Request Guidelines"></a>Pull Request Guidelines</h2><p>You must understand that by contributing code to this project, you are granting<br>the authors (and/or leaders) of the project a non-exclusive license to<br>re-distribute your code under the current license and possibly re-license the<br>code as deemed necessary.</p>
+<ul>
+<li>To instantiate a context or use it, use the variable <strong>that</strong> instead of<br><strong>_this</strong>.</li>
+<li>Please check to make sure that there aren’t existing pull requests attempting<br>to address the issue mentioned. We also recommend checking for issues related<br>to the issue on the tracker, as a team member may be working on the issue in<br>a branch or fork.</li>
+<li>Non-trivial changes should be discussed in an issue first</li>
+<li>When modifying files, please do not edit the generated or minified files in the dist/ directory. Please edit the original files.</li>
+<li>If possible, add relevant tests to cover the change</li>
+<li>Write a convincing description of your PR and why we should land it</li>
+</ul>
+<h2 id="Using-Grunt"><a href="#Using-Grunt" class="headerlink" title="Using Grunt"></a>Using Grunt</h2><p>We are using node and grunt to build and (in the future) test this project.<br>This means that you must setup a local development environment:</p>
+<ol>
+<li>Install <code>node</code> and <code>npm</code> using your preferred method</li>
+<li>Install the grunt CLI: <code>npm install -g grunt-cli</code></li>
+<li>Install the project’s development dependencies: <code>npm install</code></li>
+<li>Run the various grunt tasks as needed:<ul>
+<li><code>grunt</code>: clean the distribution files and re-build them</li>
+<li><code>grunt dist</code>: build the distribution files</li>
+<li><code>grunt clean</code>: clean the distribution files</li>
+<li><code>grunt dist-css</code>: build the css distribution files</li>
+<li><code>grunt dist-js</code>: build the javascript distribution files</li>
+<li><code>grunt watch</code>: watch for changes in the source files and build the<br>distribution files as needed</li>
+</ul>
+</li>
+</ol>

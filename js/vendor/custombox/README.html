@@ -1,0 +1,16 @@
+<h1 id="Custombox"><a href="#Custombox" class="headerlink" title="Custombox    "></a>Custombox <a href="https://badge.fury.io/js/custombox" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://badge.fury.io/js/custombox.svg" alt="npm version"></a> <a href="https://travis-ci.org/dixso/custombox" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://travis-ci.org/dixso/custombox.svg?branch=master" alt="Travis"></a> <a href="https://coveralls.io/github/dixso/custombox?branch=master" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://coveralls.io/repos/github/dixso/custombox/badge.svg?branch=master" alt="Coverage Status"></a> <img src="http://img.shields.io/npm/l/custombox.svg" alt="npm License" title="npm License"></h1><p>Modal dialog effects with transitions CSS3.</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>You can install custombox through bower:</p>
+<pre><code class="bash">bower install custombox</code></pre>
+<p>Or through npm:</p>
+<pre><code class="bash">npm install custombox</code></pre>
+<p>Alternatively, download the package and reference the JavaScript and CSS files manually:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"custombox.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"custombox.min.css"</span>&gt;</span></code></pre>
+<p>Optional legacy file for along for the older browsers.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"custombox.legacy.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<h2 id="Basic-usage"><a href="#Basic-usage" class="headerlink" title="Basic usage"></a>Basic usage</h2><pre><code class="js"><span class="keyword">new</span> Custombox.modal({
+  content: {
+    effect: <span class="string">'fadein'</span>,
+    target: <span class="string">'#modal'</span>
+  }
+}).open();</code></pre>

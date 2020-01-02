@@ -1,0 +1,93 @@
+<h1 id="SVGInjector"><a href="#SVGInjector" class="headerlink" title="SVGInjector"></a>SVGInjector</h1><p>A fast, caching, dynamic inline SVG DOM injection library. Developed by <a href="http://waybury.com/" target="_blank" rel="noopener external nofollow noreferrer">Waybury</a> for use in <a href="https://useiconic.com/tools/iconic-js/" target="_blank" rel="noopener external nofollow noreferrer">iconic.js</a>, part of the <a href="https://useiconic.com/" target="_blank" rel="noopener external nofollow noreferrer">Iconic</a> icon system.</p>
+<h2 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h2><p>There are a number of ways to use SVG on a page (<code>object</code>, <code>embed</code>, <code>iframe</code>, <code>img</code>, CSS <code>background-image</code>) but to unlock the full potential of SVG, including full element-level CSS styling and evaluation of embedded JavaScript, the full SVG markup must be included directly in the DOM. </p>
+<p>Wrangling and maintaining a bunch of inline SVG on your pages isn’t anyone’s idea of good time, so <strong>SVGInjector</strong> lets you work with simple <code>img</code> tag elements (or other tag of your choosing) and does the heavy lifting of swapping in the SVG markup inline for you.</p>
+<h2 id="How"><a href="#How" class="headerlink" title="How?"></a>How?</h2><ul>
+<li><p>Any DOM element, or array of elements, passed to <strong>SVGInjector</strong> with an SVG file <code>src</code> or <code>data-src</code> attribute will be replaced with the full SVG markup inline. The async loaded SVG is also cached so multiple uses of an SVG only requires a single server request.</p>
+</li>
+<li><p>Any embedded JavaScript in the SVG will optionally be extracted, cached and evaluated.</p>
+</li>
+</ul>
+<blockquote>
+<p>Development tip: The dynamic injection process uses AJAX calls to load SVG. If you are developing locally without running a local webserver, be aware that default browser security settings may <a href="http://wiki.fluidproject.org/display/fluid/Browser+settings+to+support+local+Ajax+calls" target="_blank" rel="noopener external nofollow noreferrer">block these calls</a>.</p>
+</blockquote>
+<h1 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h1><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><blockquote>
+<p><strong>SVGInjector</strong> is compatible with:</p>
+</blockquote>
+<ul>
+<li><a href="http://commonjs.org/" target="_blank" rel="noopener external nofollow noreferrer">CommonJS</a> via <code>module.exports</code> for use with <a href="http://browserify.org/" target="_blank" rel="noopener external nofollow noreferrer">Browserify</a> or <a href="http://nodejs.org/" target="_blank" rel="noopener external nofollow noreferrer">Node</a>/<a href="http://phantomjs.org/" target="_blank" rel="noopener external nofollow noreferrer">PhantomJS</a></li>
+<li><a href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md" target="_blank" rel="noopener external nofollow noreferrer">AMD API</a> usage with <a href="http://requirejs.org/" target="_blank" rel="noopener external nofollow noreferrer">RequireJS</a></li>
+<li>Plain ol’ JavaScript via creation of a global function</li>
+</ul>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><pre><code>npm install svg-injector</code></pre><h3 id="Bower"><a href="#Bower" class="headerlink" title="Bower"></a>Bower</h3><pre><code>bower install svg-injector</code></pre><h3 id="Manually"><a href="#Manually" class="headerlink" title="Manually"></a>Manually</h3><p>Download the <a href="https://github.com/iconic/SVGInjector/blob/master/dist/svg-injector.min.js" target="_blank" rel="noopener external nofollow noreferrer">dist/svg-injector.min.js</a> file from this repository and add it to your project.</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>Include the <strong>SVGInjector</strong> script on your page.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"svg-injector.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p>Add some SVG <code>img</code> tags.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"inject-me"</span> <span class="attr">src</span>=<span class="string">"image-one.svg"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"inject-me"</span> <span class="attr">src</span>=<span class="string">"image-two.svg"</span>&gt;</span></code></pre>
+<p>Inject ‘em.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">script</span>&gt;</span>
+<span class="actionscript">  <span class="comment">// Elements to inject</span></span>
+<span class="javascript">  <span class="keyword">var</span> mySVGsToInject = <span class="built_in">document</span>.querySelectorAll(<span class="string">'img.inject-me'</span>);</span>
+
+<span class="actionscript">  <span class="comment">// Do the injection</span></span>
+  SVGInjector(mySVGsToInject);
+<span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p>The <code>img</code> tags have now been replaced with the full SVG markup.</p>
+<h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><p>In addition to passing elements to inject, an options object and callback function can optionally be defined.</p>
+<pre><code class="js">SVGInjector(elements, options, callback);</code></pre>
+<h4 id="elements"><a href="#elements" class="headerlink" title="elements"></a><code>elements</code></h4><p>A single DOM element or array of elements, with <code>src</code> or <code>data-src</code> attributes defined, to inject.</p>
+<h4 id="options"><a href="#options" class="headerlink" title="options"></a><code>options</code></h4><pre><code class="js">{
+  evalScripts: [always|once|never],
+  pngFallback: [PNG directory],
+  each: [<span class="function"><span class="keyword">function</span>]</span>
+<span class="function">}</span></code></pre>
+<ul>
+<li><p><code>evalScript</code> - String</p>
+<p>Should we run any script blocks found in the SVG?</p>
+<ul>
+<li><code>always</code> - Run them every time.</li>
+<li><code>once</code> - [default] Only run scripts once for each SVG file, even if it is used on a page more than once.</li>
+<li><code>[false|&#39;never&#39;]</code> - Ignore scripts</li>
+</ul>
+</li>
+<li><p><code>pngFallback</code> - String</p>
+<p>The directory where fallback PNGs are located for use if the browser doesn’t <a href="http://caniuse.com/svg" target="_blank" rel="noopener external nofollow noreferrer">support SVG</a>. This will look for a file with a <code>.png</code> extension matching the SVG filename defined in the <code>src</code> (or <code>data-src</code>).</p>
+<p>For additional flexibility, per-element fallbacks are also <a href="#per-element-png-fallback">available</a>.</p>
+</li>
+<li><p><code>each(svg)</code> - function</p>
+<p>A function to call after each SVG is injected. Receives the newly injected SVG DOM element as a parameter.</p>
+</li>
+</ul>
+<h4 id="callback-count-function"><a href="#callback-count-function" class="headerlink" title="callback(count) - function"></a><code>callback(count)</code> - function</h4><p>A function to call once all the requested SVG elements have been injected. Receives a count of the total SVGs injected as a parameter.</p>
+<h3 id="Full-Example"><a href="#Full-Example" class="headerlink" title="Full Example"></a>Full Example</h3><pre><code class="html"><span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"image-one"</span> <span class="attr">class</span>=<span class="string">"inject-me"</span> <span class="attr">data-src</span>=<span class="string">"image-one.svg"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"image-two"</span> <span class="attr">class</span>=<span class="string">"inject-me"</span> <span class="attr">data-src</span>=<span class="string">"image-two.svg"</span>&gt;</span></code></pre>
+<pre><code class="js"><span class="comment">// Elements to inject</span>
+<span class="keyword">var</span> mySVGsToInject = <span class="built_in">document</span>.querySelectorAll(<span class="string">'img.inject-me'</span>);
+
+<span class="comment">// Options</span>
+<span class="keyword">var</span> injectorOptions = {
+  evalScripts: <span class="string">'once'</span>,
+  pngFallback: <span class="string">'assets/png'</span>,
+  each: <span class="function"><span class="keyword">function</span> (<span class="params">svg</span>) </span>{
+    <span class="comment">// Callback after each SVG is injected</span>
+    <span class="built_in">console</span>.log(<span class="string">'SVG injected: '</span> + svg.getAttribute(<span class="string">'id'</span>));
+  }
+};
+
+<span class="comment">// Trigger the injection</span>
+SVGInjector(mySVGsToInject, injectorOptions, <span class="function"><span class="keyword">function</span> (<span class="params">totalSVGsInjected</span>) </span>{
+  <span class="comment">// Callback after all SVGs are injected</span>
+  <span class="built_in">console</span>.log(<span class="string">'We injected '</span> + totalSVGsInjected + <span class="string">' SVG(s)!'</span>);
+});</code></pre>
+<h3 id="Per-element-PNG-fallback"><a href="#Per-element-PNG-fallback" class="headerlink" title="Per-element PNG fallback"></a>Per-element PNG fallback</h3><p>Since you might be using a single SVG styled in multiple ways, you can also define per-element fallbacks by adding a <code>data-fallback</code> or <code>data-png</code> attribute to your <code>img</code> tags to define a unique PNG for each context.</p>
+<p>See <a href="https://github.com/iconic/SVGInjector/tree/master/examples/fallbacks" target="_blank" rel="noopener external nofollow noreferrer">examples/fallbacks</a> for more details.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">style</span>&gt;</span>
+<span class="css">  <span class="selector-class">.thumb-green</span> {<span class="attribute">fill</span>: <span class="number">#A6A93C</span>;}</span>
+<span class="tag">&lt;/<span class="name">style</span>&gt;</span>
+<span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"thumb-green inject-me"</span> <span class="attr">data-src</span>=<span class="string">"svg/thumb-up.svg"</span> <span class="attr">data-fallback</span>=<span class="string">"png/thumb-up-green.png"</span>&gt;</span>
+</code></pre>
+<h1 id="Licence"><a href="#Licence" class="headerlink" title="Licence"></a>Licence</h1><p>The MIT License (MIT)</p>
+<p>Copyright (c) 2014-2015 Waybury</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>

@@ -1,0 +1,1 @@
+var oldParam=jQuery.param;jQuery.param=function(a,r){var t=jQuery.ajaxSettings&&jQuery.ajaxSettings.traditional;return void 0===r&&t&&(migrateWarn("jQuery.param() no longer uses jQuery.ajaxSettings.traditional"),r=t),oldParam.call(this,a,r)};

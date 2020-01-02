@@ -1,0 +1,71 @@
+<h1 id="Migrating-from-Froogaloop"><a href="#Migrating-from-Froogaloop" class="headerlink" title="Migrating from Froogaloop"></a>Migrating from Froogaloop</h1><p>Follow these steps to update your code from Froogaloop.</p>
+<h2 id="Step-1-Modify-the-embed-code"><a href="#Step-1-Modify-the-embed-code" class="headerlink" title="Step 1: Modify the embed code"></a>Step 1: Modify the embed code</h2><p>The first step in the migration is to remove the <code>api</code> and <code>player_id</code> query<br>parameters from the embed code. Query parameters are no longer required to<br>enable the Player JS API. You can leave the <code>player_id</code> if you wish, but we<br>encourage you to use the player object itself to keep track of multiple players.</p>
+<h2 id="Step-2-Update-the-constructors"><a href="#Step-2-Update-the-constructors" class="headerlink" title="Step 2: Update the constructors"></a>Step 2: Update the constructors</h2><p>The parameters passed to the constructor haven’t changed, so the only thing<br>you’ll need to do is update the name:</p>
+<pre><code class="js"><span class="keyword">var</span> froogaloop = $f(iframe);</code></pre>
+<p>becomes:</p>
+<pre><code class="js"><span class="keyword">var</span> player = <span class="keyword">new</span> Vimeo.Player(iframe);</code></pre>
+<h2 id="Step-3-Remove-the-ready-handler"><a href="#Step-3-Remove-the-ready-handler" class="headerlink" title="Step 3: Remove the ready handler"></a>Step 3: Remove the ready handler</h2><p>The JS API library no longer requires you to wait for the <code>ready</code> event to begin<br>using the player, so the <code>ready</code> handler can be completely removed.</p>
+<pre><code class="js">froogaloop.addEvent(<span class="string">'ready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    froogaloop.addEvent(<span class="string">'pause'</span>, onPause);
+});</code></pre>
+<p>becomes:</p>
+<pre><code class="js">player.on(<span class="string">'pause'</span>, onPause);</code></pre>
+<p>If you’d prefer to keep your setup code in a ready handler, you can use the<br><code>ready()</code> promise, but we’d recommend against using it.</p>
+<pre><code class="js">player.ready().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    player.on(<span class="string">'pause'</span>, onPause);
+});</code></pre>
+<h2 id="Step-4-Update-event-listeners"><a href="#Step-4-Update-event-listeners" class="headerlink" title="Step 4: Update event listeners"></a>Step 4: Update event listeners</h2><p>The JS API library uses <code>.on()</code> to register events, so you’ll need to update any<br>calls to <code>.addEvent()</code>:</p>
+<pre><code class="js">froogaloop.addEvent(<span class="string">'finish'</span>, callback);</code></pre>
+<p>becomes:</p>
+<pre><code class="js">player.on(<span class="string">'ended'</span>, callback);</code></pre>
+<p>The <code>data</code> object passed to your event callback remains the same, so no changes<br>are necessary for your callback function.</p>
+<p>Note that some event names have been updated to match their equivalent name in<br>the HTML spec:</p>
+<table>
+<thead>
+<tr>
+<th>old</th>
+<th>new</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>playProgress</td>
+<td>timeupdate</td>
+</tr>
+<tr>
+<td>loadProgress</td>
+<td>progress</td>
+</tr>
+<tr>
+<td>finish</td>
+<td>ended</td>
+</tr>
+<tr>
+<td>seek</td>
+<td>seeked</td>
+</tr>
+</tbody></table>
+<h2 id="Step-5-Update-method-calls-getters-and-setters"><a href="#Step-5-Update-method-calls-getters-and-setters" class="headerlink" title="Step 5: Update method calls, getters, and setters"></a>Step 5: Update method calls, getters, and setters</h2><p>All methods, getters, and setters are now functions directly on the <code>Player</code><br>object, rather than being passed as a string to the <code>.api()</code> function:</p>
+<pre><code class="js">froogaloop.api(<span class="string">'getVideoUrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">url</span>) </span>{
+    <span class="built_in">console</span>.log(<span class="string">'url:'</span>, url);
+});
+
+froogaloop.api(<span class="string">'setColor'</span>, <span class="string">'00adef'</span>);
+
+froogaloop.api(<span class="string">'play'</span>);</code></pre>
+<p>becomes:</p>
+<pre><code class="js">player.getVideoUrl().then(<span class="function"><span class="keyword">function</span>(<span class="params">url</span>) </span>{
+    <span class="built_in">console</span>.log(<span class="string">'url:'</span>, url);
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="built_in">console</span>.error(<span class="string">'error:'</span>, error.name);
+});
+
+player.setColor(<span class="string">'00adef'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">color</span>) </span>{
+    <span class="built_in">console</span>.log(<span class="string">'color set to:'</span>, color);
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="built_in">console</span>.error(<span class="string">'error setting color:'</span>, error.name);
+});
+
+player.play().catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="built_in">console</span>.error(<span class="string">'error playing the video:'</span>, error.name);
+});</code></pre>
+<p>Notice that all methods return a promise, so it’s a good idea to make sure that<br>there is a <code>catch()</code> after every method call so you can react to any errors<br>that may happen.</p>

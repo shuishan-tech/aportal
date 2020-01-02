@@ -1,0 +1,1 @@
+basePath="",files=[JASMINE,JASMINE_ADAPTER,"../circles.js","*Spec.js"],exclude=[],reporters=["progress"],port=9876,runnerPort=9100,colors=!0,logLevel=LOG_INFO,autoWatch=!0,browsers=["Chrome"],singleRun=!(captureTimeout=6e4);

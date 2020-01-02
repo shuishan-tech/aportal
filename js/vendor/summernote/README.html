@@ -1,0 +1,42 @@
+<h1 id="Summernote"><a href="#Summernote" class="headerlink" title="Summernote"></a>Summernote</h1><p>Super simple WYSIWYG Editor.</p>
+<p><a href="http://travis-ci.org/summernote/summernote" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://travis-ci.org/summernote/summernote.svg?branch=develop" alt="Build Status"></a><br><a href="http://badge.fury.io/js/summernote" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://badge.fury.io/js/summernote.svg" alt="npm version"></a><br><a href="https://gemnasium.com/summernote/summernote" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://gemnasium.com/summernote/summernote.svg" alt="Dependency Status"></a><br><a href="https://coveralls.io/github/summernote/summernote?branch=develop" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://coveralls.io/repos/summernote/summernote/badge.svg?branch=develop&service=github" alt="Coverage Status"></a></p>
+<p><a href="https://saucelabs.com/u/summernoteis" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://saucelabs.com/browser-matrix/summernoteis.svg" alt="Sauce Test Status"></a></p>
+<h3 id="Summernote-1"><a href="#Summernote-1" class="headerlink" title="Summernote"></a>Summernote</h3><p>Summernote is a JavaScript library that helps you create WYSIWYG editors online.</p>
+<p>Home page: <a href="https://summernote.org" target="_blank" rel="noopener external nofollow noreferrer">https://summernote.org</a></p>
+<h3 id="Why-Summernote"><a href="#Why-Summernote" class="headerlink" title="Why Summernote?"></a>Why Summernote?</h3><p>Summernote has a few special features:</p>
+<ul>
+<li>Paste images from clipboard</li>
+<li>Saves images directly in the content of the field using base64 encoding, so you don’t need to implement image handling at all</li>
+<li>Simple UI</li>
+<li>Interactive WYSIWYG editing</li>
+<li>Handy integration with server</li>
+<li>Supports Bootstrap 3 and 4 integrities</li>
+<li>Lots of <a href="https://github.com/summernote/awesome-summernote" target="_blank" rel="noopener external nofollow noreferrer">plugins and connectors</a> provided together</li>
+</ul>
+<h3 id="Installation-and-dependencies"><a href="#Installation-and-dependencies" class="headerlink" title="Installation and dependencies"></a>Installation and dependencies</h3><p>Summernote is built on <a href="http://jquery.com/" target="_blank" rel="noopener external nofollow noreferrer">jQuery</a>.</p>
+<h4 id="1-Include-JS-CSS"><a href="#1-Include-JS-CSS" class="headerlink" title="1. Include JS/CSS"></a>1. Include JS/CSS</h4><p>Include the following code in the <code>&lt;head&gt;</code> tag of your HTML:</p>
+<pre><code class="html"><span class="comment">&lt;!-- include libraries(jQuery, bootstrap) --&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> 
+<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css"</span> /&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+
+<span class="comment">&lt;!-- include summernote css/js--&gt;</span>
+<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"summernote.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"summernote.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<h4 id="2-Target-a-element"><a href="#2-Target-a-element" class="headerlink" title="2. Target a element"></a>2. Target a element</h4><p>Then place a <code>div</code> tag somewhere in the <code>body</code> tag. This element will be replaced with the summernote editor.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"summernote"</span>&gt;</span>Hello Summernote<span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
+<h4 id="3-Summernote-it"><a href="#3-Summernote-it" class="headerlink" title="3. Summernote it!"></a>3. Summernote it!</h4><p>Finally, run this script after the DOM is ready:</p>
+<pre><code class="javascript">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  $(<span class="string">'#summernote'</span>).summernote();
+});</code></pre>
+<p>For more examples, please visit to <a href="http://summernote.org/examples" target="_blank" rel="noopener external nofollow noreferrer">homepage</a>.</p>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p><code>code</code> - get the HTML source code underlying the text in the editor:</p>
+<pre><code class="javascript"><span class="keyword">var</span> html = $(<span class="string">'#summernote'</span>).summernote(<span class="string">'code'</span>);</code></pre>
+<p>For more detail about API, please refer to <a href="http://summernote.org/getting-started/#basic-api" target="_blank" rel="noopener external nofollow noreferrer">document</a>.</p>
+<h4 id="Warning-code-injection"><a href="#Warning-code-injection" class="headerlink" title="Warning - code injection"></a>Warning - code injection</h4><p>The code view allows the user to enter script contents. Make sure to filter/<a href="https://github.com/search?l=JavaScript&q=sanitize+html" target="_blank" rel="noopener external nofollow noreferrer">sanitize the HTML on the server</a>. Otherwise, an attacker can inject arbitrary JavaScript code into clients.</p>
+<h3 id="For-contributing"><a href="#For-contributing" class="headerlink" title="For contributing"></a>For contributing</h3><p><a href="https://github.com/summernote/summernote/blob/develop/CONTRIBUTING.md" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/summernote/summernote/blob/develop/CONTRIBUTING.md</a></p>
+<h3 id="Contacts"><a href="#Contacts" class="headerlink" title="Contacts"></a>Contacts</h3><ul>
+<li>Facebook user group: <a href="https://www.facebook.com/groups/summernote" target="_blank" rel="noopener external nofollow noreferrer">https://www.facebook.com/groups/summernote</a></li>
+<li>Summernote Slack: <a href="https://communityinviter.com/apps/summernote/summernote" target="_blank" rel="noopener external nofollow noreferrer">Join the Summernote Slack community</a></li>
+</ul>
+<h3 id="License"><a href="#License" class="headerlink" title="License"></a>License</h3><p>Summernote may be freely distributed under the MIT license.</p>

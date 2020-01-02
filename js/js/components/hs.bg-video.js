@@ -1,0 +1,1 @@
+!function(n){"use strict";n.HSCore.components.HSBgVideo={init:function(i){n(i).hsBgVideo()}}}(jQuery);

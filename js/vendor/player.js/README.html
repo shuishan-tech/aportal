@@ -1,0 +1,799 @@
+<h1 id="Vimeo-Player-API"><a href="#Vimeo-Player-API" class="headerlink" title="Vimeo Player API    "></a>Vimeo Player API <a href="https://travis-ci.org/vimeo/player.js" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://travis-ci.org/vimeo/player.js.svg?branch=master" alt="Build Status"></a> <a href="https://codecov.io/gh/vimeo/player.js" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://img.shields.io/codecov/c/github/vimeo/player.js.svg?maxAge=2592000" alt="Coverage"></a> <a href="https://www.npmjs.com/package/@vimeo/player" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://img.shields.io/npm/v/@vimeo/player.svg?maxAge=2592000" alt="npm"></a> <a href="https://gitter.im/vimeo/player.js" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://badges.gitter.im/vimeo/player.js.svg" alt="Gitter"></a></h1><p>The Vimeo Player API allows you to interact with and control an embedded Vimeo<br>Player.</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>You can install the Vimeo Player API through either npm:</p>
+<pre><code class="bash">npm install @vimeo/player</code></pre>
+<p>Alternatively, you can reference an up‐to‐date version on our CDN:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/api/player.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p><strong>Warning:</strong> when used with RequireJS it’s required to load the script dynamically via the RequireJS load system.<br><a href="http://www.requirejs.org/docs/api.html#jsfiles" target="_blank" rel="noopener external nofollow noreferrer">http://www.requirejs.org/docs/api.html#jsfiles</a></p>
+<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>In order to control the Vimeo player, you need a player to control. There are a<br>few ways to get a player:</p>
+<h3 id="Pre-existing-player"><a href="#Pre-existing-player" class="headerlink" title="Pre-existing player"></a>Pre-existing player</h3><p>Already have a player on the page? Pass the element to the <code>Vimeo.Player</code><br>constructor and you’re ready to go.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/video/76979871"</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"360"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">webkitallowfullscreen</span> <span class="attr">mozallowfullscreen</span> <span class="attr">allowfullscreen</span> <span class="attr">allow</span>=<span class="string">"autoplay; encrypted-media"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/api/player.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span>
+<span class="javascript">    <span class="keyword">var</span> iframe = <span class="built_in">document</span>.querySelector(<span class="string">'iframe'</span>);</span>
+<span class="actionscript">    <span class="keyword">var</span> player = <span class="keyword">new</span> Vimeo.Player(iframe);</span>
+
+<span class="actionscript">    player.on(<span class="string">'play'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</span>
+<span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'played the video!'</span>);</span>
+    });
+
+<span class="actionscript">    player.getVideoTitle().then(<span class="function"><span class="keyword">function</span><span class="params">(title)</span> </span>{</span>
+<span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'title:'</span>, title);</span>
+    });
+<span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<h3 id="Create-with-a-video-id-or-url"><a href="#Create-with-a-video-id-or-url" class="headerlink" title="Create with a video id or url"></a>Create with a video id or url</h3><p>You can use the library to make the embed for you. All you need is an empty<br>element and the video id or vimeo.com url (and optional<br><a href="#embed-options">embed options</a>).</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"made-in-ny"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/api/player.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span>
+<span class="actionscript">    <span class="keyword">var</span> options = {</span>
+        id: 59777392,
+        width: 640,
+<span class="actionscript">        loop: <span class="literal">true</span></span>
+    };
+
+<span class="actionscript">    <span class="keyword">var</span> player = <span class="keyword">new</span> Vimeo.Player(<span class="string">'made-in-ny'</span>, options);</span>
+
+    player.setVolume(0);
+
+<span class="actionscript">    player.on(<span class="string">'play'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</span>
+<span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'played the video!'</span>);</span>
+    });
+<span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<h3 id="Automatically-with-HTML-attributes"><a href="#Automatically-with-HTML-attributes" class="headerlink" title="Automatically with HTML attributes"></a>Automatically with HTML attributes</h3><p>When the library loads, it will scan your page for elements with Vimeo<br>attributes. Each element must have at least a <code>data-vimeo-id</code> or<br><code>data-vimeo-url</code> attribute in order for the embed to be created automatically.<br>You can also add attributes for any of the <a href="#embed-options">embed options</a>,<br>prefixed with <code>data-vimeo</code> (<code>data-vimeo-portrait=&quot;false&quot;</code>, for example).</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-vimeo-id</span>=<span class="string">"19231868"</span> <span class="attr">data-vimeo-width</span>=<span class="string">"640"</span> <span class="attr">id</span>=<span class="string">"handstick"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">data-vimeo-url</span>=<span class="string">"https://vimeo.com/76979871"</span> <span class="attr">id</span>=<span class="string">"playertwo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/api/player.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span>
+<span class="actionscript">    <span class="comment">// If you want to control the embeds, you’ll need to create a Player object.</span></span>
+<span class="actionscript">    <span class="comment">// You can pass either the `&lt;div&gt;` or the `&lt;iframe&gt;` created inside the div.</span></span>
+<span class="actionscript">    <span class="keyword">var</span> handstickPlayer = <span class="keyword">new</span> Vimeo.Player(<span class="string">'handstick'</span>);</span>
+<span class="actionscript">    handstickPlayer.on(<span class="string">'play'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</span>
+<span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'played the handstick video!'</span>);</span>
+    });
+
+<span class="actionscript">    <span class="keyword">var</span> playerTwoPlayer = <span class="keyword">new</span> Vimeo.Player(<span class="string">'playertwo'</span>);</span>
+<span class="actionscript">    playerTwoPlayer.on(<span class="string">'play'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</span>
+<span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'played the player 2.0 video!'</span>);</span>
+    });
+<span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<h2 id="Browser-Support"><a href="#Browser-Support" class="headerlink" title="Browser Support"></a>Browser Support</h2><p>The Player API library is supported in IE 11+, Chrome, Firefox, Safari, and<br>Opera.</p>
+<h2 id="Migrate-from-Froogaloop"><a href="#Migrate-from-Froogaloop" class="headerlink" title="Migrate from Froogaloop"></a>Migrate from Froogaloop</h2><p>Using our old Froogaloop library? See the <a href="docs/migrate-from-froogaloop.md">migration doc</a><br>for details on how to update your code to use this library.</p>
+<h2 id="Using-with-a-module-bundler"><a href="#Using-with-a-module-bundler" class="headerlink" title="Using with a module bundler"></a>Using with a module bundler</h2><p>If you’re using a module bundler like <a href="https://webpack.js.org" target="_blank" rel="noopener external nofollow noreferrer">webpack</a> or<br><a href="http://rollupjs.org/" target="_blank" rel="noopener external nofollow noreferrer">rollup</a>, the exported object will be the Player<br>constructor (unlike the browser where it is attached to <code>window.Vimeo</code>):</p>
+<pre><code class="js"><span class="keyword">import</span> Player <span class="keyword">from</span> <span class="string">'@vimeo/player'</span>;
+
+<span class="keyword">const</span> player = <span class="keyword">new</span> Player(<span class="string">'handstick'</span>, {
+    id: <span class="number">19231868</span>,
+    width: <span class="number">640</span>
+});
+
+player.on(<span class="string">'play'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="built_in">console</span>.log(<span class="string">'played the video!'</span>);
+});</code></pre>
+<p>Similarly, if you’re using <a href="http://www.requirejs.org" target="_blank" rel="noopener external nofollow noreferrer">RequireJS</a> in the browser,<br>it will also import the Player constructor directly:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/video/76979871"</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"360"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">webkitallowfullscreen</span> <span class="attr">mozallowfullscreen</span> <span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span>&gt;</span>
+<span class="javascript">    <span class="built_in">require</span>([<span class="string">'https://player.vimeo.com/api/player.js'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">Player</span>) </span>{</span>
+<span class="javascript">        <span class="keyword">var</span> iframe = <span class="built_in">document</span>.querySelector(<span class="string">'iframe'</span>);</span>
+<span class="actionscript">        <span class="keyword">var</span> player = <span class="keyword">new</span> Player(iframe);</span>
+
+<span class="actionscript">        player.on(<span class="string">'play'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</span>
+<span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'played the video!'</span>);</span>
+        });
+    });
+<span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><ul>
+<li><a href="#create-a-player">Create a Player</a></li>
+<li><a href="#methods">Methods</a><ul>
+<li><a href="#onevent-string-callback-function-void">on</a></li>
+<li><a href="#offevent-string-callback-function-void">off</a></li>
+<li><a href="#loadvideoid-number-promisenumber-typeerrorpassworderrorerror">loadVideo</a></li>
+<li><a href="#ready-promisevoid-error">ready</a></li>
+<li><a href="#enabletexttracklanguage-string-kind-string-promiseobject-invalidtracklanguageerrorinvalidtrackerrorerror">enableTextTrack</a></li>
+<li><a href="#disabletexttrack-promisevoid-error">disableTextTrack</a></li>
+<li><a href="#pause-promisevoid-passworderrorprivacyerrorerror">pause</a></li>
+<li><a href="#play-promisevoid-passworderrorprivacyerrorerror">play</a></li>
+<li><a href="#unload-promisevoid-error">unload</a></li>
+<li><a href="#destroy-promisevoid-error">destroy</a></li>
+<li><a href="#getautopause-promiseboolean-unsupportederrorerror">getAutopause</a></li>
+<li><a href="#setautopauseautopause-boolean-promiseboolean-unsupportederrorerror">setAutopause</a></li>
+<li><a href="#getcolor-promisestring-error">getColor</a></li>
+<li><a href="#setcolorcolor-string-promisestring-contrasterrortypeerrorerror">setColor</a></li>
+<li><a href="#addcuepointtime-number-data-object-promisestring-unsupportederrorrangeerrorerror">addCuePoint</a></li>
+<li><a href="#removecuepointid-string-promisestring-unsupportederrorinvalidcuepointerror">removeCuePoint</a></li>
+<li><a href="#getcuepoints-promisearray-unsupportederrorerror">getCuePoints</a></li>
+<li><a href="#getcurrenttime-promisenumber-error">getCurrentTime</a></li>
+<li><a href="#setcurrenttimeseconds-number-promisenumber-rangeerrorerror">setCurrentTime</a></li>
+<li><a href="#getduration-promisenumber-error">getDuration</a></li>
+<li><a href="#getended-promiseboolean-error">getEnded</a></li>
+<li><a href="#getloop-promiseboolean-error">getLoop</a></li>
+<li><a href="#setlooploop-boolean-promiseboolean-error">setLoop</a></li>
+<li><a href="#getpaused-promiseboolean-error">getPaused</a></li>
+<li><a href="#getplaybackrate-promisenumber-error">getPlaybackRate</a></li>
+<li><a href="#setplaybackrateplaybackrate-number-promisenumber-rangeerrorerror">setPlaybackRate</a></li>
+<li><a href="#gettexttracks-promiseobject-error">getTextTracks</a></li>
+<li><a href="#getvideoembedcode-promisestring-error">getVideoEmbedCode</a></li>
+<li><a href="#getvideoid-promisenumber-error">getVideoId</a></li>
+<li><a href="#getvideotitle-promisestring-error">getVideoTitle</a></li>
+<li><a href="#getvideowidth-promisenumber-error">getVideoWidth</a></li>
+<li><a href="#getvideoheight-promisenumber-error">getVideoHeight</a></li>
+<li><a href="#getvideourl-promisestring-privacyerrorerror">getVideoUrl</a></li>
+<li><a href="#getvolume-promisenumber-error">getVolume</a></li>
+<li><a href="#setvolumevolume-number-promisenumber-rangeerrorerror">setVolume</a></li>
+</ul>
+</li>
+<li><a href="#events">Events</a><ul>
+<li><a href="#play">play</a></li>
+<li><a href="#pause">pause</a></li>
+<li><a href="#ended">ended</a></li>
+<li><a href="#timeupdate">timeupdate</a></li>
+<li><a href="#progress">progress</a></li>
+<li><a href="#seeked">seeked</a></li>
+<li><a href="#texttrackchange">texttrackchange</a></li>
+<li><a href="#cuechange">cuechange</a></li>
+<li><a href="#cuepoint">cuepoint</a></li>
+<li><a href="#volumechange">volumechange</a></li>
+<li><a href="#playbackratechange">playbackratechange</a></li>
+<li><a href="#bufferstart">bufferstart</a></li>
+<li><a href="#bufferend">bufferend</a></li>
+<li><a href="#error">error</a></li>
+<li><a href="#loaded">loaded</a></li>
+</ul>
+</li>
+<li><a href="#embed-options">Embed Options</a></li>
+</ul>
+<h2 id="Create-a-Player"><a href="#Create-a-Player" class="headerlink" title="Create a Player"></a>Create a Player</h2><p>The <code>Vimeo.Player</code> object wraps an iframe so you can interact with and control a<br>Vimeo Player embed.</p>
+<h3 id="Existing-embed"><a href="#Existing-embed" class="headerlink" title="Existing embed"></a>Existing embed</h3><p>If you already have a Vimeo <code>&lt;iframe&gt;</code> on your page, pass that element into the<br>constructor to get a <code>Player</code> object. You can also use jQuery to select the<br>element, or pass a string that matches the <code>id</code> of the <code>&lt;iframe&gt;</code>.</p>
+<pre><code class="js"><span class="comment">// Select with the DOM API</span>
+<span class="keyword">var</span> iframe = <span class="built_in">document</span>.querySelector(<span class="string">'iframe'</span>);
+<span class="keyword">var</span> iframePlayer = <span class="keyword">new</span> Vimeo.Player(iframe);
+
+<span class="comment">// Select with jQuery</span>
+<span class="comment">// If multiple elements are selected, it will use the first element.</span>
+<span class="keyword">var</span> jqueryPlayer = <span class="keyword">new</span> Vimeo.Player($(<span class="string">'iframe'</span>));
+
+<span class="comment">// Select with the `&lt;iframe&gt;`’s id</span>
+<span class="comment">// Assumes that there is an &lt;iframe id="player1"&gt; on the page.</span>
+<span class="keyword">var</span> idPlayer = <span class="keyword">new</span> Vimeo.Player(<span class="string">'player1'</span>);</code></pre>
+<h3 id="Create-an-embed"><a href="#Create-an-embed" class="headerlink" title="Create an embed"></a>Create an embed</h3><p>Pass any element and an options object to the <code>Vimeo.Player</code> constructor to make<br>an embed inside that element. The options object should consist of either an<br><code>id</code> or <code>url</code> and any other <a href="#embed-options">embed options</a> for the embed.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"made-in-ny"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/api/player.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span>
+<span class="actionscript">    <span class="keyword">var</span> options = {</span>
+        id: 59777392,
+        width: 640,
+<span class="actionscript">        loop: <span class="literal">true</span></span>
+    };
+
+<span class="actionscript">    <span class="comment">// Will create inside the made-in-ny div:</span></span>
+<span class="handlebars"><span class="xml">    // <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/video/59777392?loop=1"</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"360"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">webkitallowfullscreen</span> <span class="attr">mozallowfullscreen</span> <span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></span>
+<span class="actionscript">    <span class="keyword">var</span> madeInNy = <span class="keyword">new</span> Vimeo.Player(<span class="string">'made-in-ny'</span>, options);</span>
+<span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p>Embed options will also be read from the <code>data-vimeo-*</code> attributes. Attributes<br>on the element will override any defined in the options object passed to the<br>constructor (similar to how the <code>style</code> attribute overrides styles defined in<br>CSS).</p>
+<p>Elements with a <code>data-vimeo-id</code> or <code>data-vimeo-url</code> attribute will have embeds<br>created automatically when the player API library is loaded. You can use the<br><code>data-vimeo-defer</code> attribute to prevent that from happening and create the embed<br>at a later time. This is useful for situations where the player embed wouldn’t<br>be visible right away, but only after some action was taken by the user (a<br>lightbox opened from clicking on a thumbnail, for example).</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-vimeo-id</span>=<span class="string">"59777392"</span> <span class="attr">data-vimeo-defer</span> <span class="attr">id</span>=<span class="string">"made-in-ny"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">data-vimeo-id</span>=<span class="string">"19231868"</span> <span class="attr">data-vimeo-defer</span> <span class="attr">data-vimeo-width</span>=<span class="string">"500"</span> <span class="attr">id</span>=<span class="string">"handstick"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/api/player.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span>
+<span class="actionscript">    <span class="keyword">var</span> options = {</span>
+        width: 640,
+<span class="actionscript">        loop: <span class="literal">true</span></span>
+    };
+
+<span class="actionscript">    <span class="comment">// Will create inside the made-in-ny-div:</span></span>
+<span class="handlebars"><span class="xml">    // <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/video/59777392?loop=1"</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"360"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">webkitallowfullscreen</span> <span class="attr">mozallowfullscreen</span> <span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></span>
+<span class="actionscript">    <span class="keyword">var</span> madeInNy = <span class="keyword">new</span> Vimeo.Player(<span class="string">'made-in-ny'</span>, options);</span>
+
+<span class="actionscript">    <span class="comment">// Will create inside the handstick div:</span></span>
+<span class="handlebars"><span class="xml">    // <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://player.vimeo.com/video/19231868?loop=1"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"281"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">webkitallowfullscreen</span> <span class="attr">mozallowfullscreen</span> <span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></span>
+<span class="javascript">    <span class="keyword">var</span> handstick = <span class="keyword">new</span> Vimeo.Player(<span class="built_in">document</span>.getElementById(<span class="string">'handstick'</span>), options);</span>
+<span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><p>You can call methods on the player by calling the function on the Player object:</p>
+<pre><code class="js">player.play();</code></pre>
+<p>All methods, except for <code>on()</code> and <code>off()</code> return a<br><a href="http://www.html5rocks.com/en/tutorials/es6/promises/" target="_blank" rel="noopener external nofollow noreferrer">Promise</a>. The Promise may<br>or may not resolve with a value, depending on the specific method.</p>
+<pre><code class="js">player.disableTextTrack().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="comment">// the track was disabled</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<p>Promises for getters are resolved with the value of the property:</p>
+<pre><code class="js">player.getLoop().then(<span class="function"><span class="keyword">function</span>(<span class="params">loop</span>) </span>{
+    <span class="comment">// whether or not the player is set to loop</span>
+});</code></pre>
+<p>Promises for setters are resolved with the value set, or rejected with an error<br>if the set fails. For example:</p>
+<pre><code class="js">player.setColor(<span class="string">'#00adef'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">color</span>) </span>{
+    <span class="comment">// the color that was set</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred setting the color</span>
+});</code></pre>
+<h3 id="on-event-string-callback-function-void"><a href="#on-event-string-callback-function-void" class="headerlink" title="on(event: string, callback: function): void"></a>on(event: string, callback: function): void</h3><p>Add an event listener for the specified event. Will call the callback with a<br>single parameter, <code>data</code>, that contains the data for that event. See<br><a href="#events">events</a> below for details.</p>
+<pre><code class="js"><span class="keyword">var</span> onPlay = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>{
+    <span class="comment">// data is an object containing properties specific to that event</span>
+};
+
+player.on(<span class="string">'play'</span>, onPlay);</code></pre>
+<h3 id="off-event-string-callback-function-void"><a href="#off-event-string-callback-function-void" class="headerlink" title="off(event: string, callback?: function): void"></a>off(event: string, callback?: function): void</h3><p>Remove an event listener for the specified event. Will remove all listeners for<br>that event if a <code>callback</code> isn’t passed, or only that specific callback if it is<br>passed.</p>
+<pre><code class="js"><span class="keyword">var</span> onPlay = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>{
+    <span class="comment">// data is an object containing properties specific to that event</span>
+};
+
+player.on(<span class="string">'play'</span>, onPlay);
+
+<span class="comment">// If later on you decide that you don’t need to listen for play anymore.</span>
+player.off(<span class="string">'play'</span>, onPlay);
+
+<span class="comment">// Alternatively, `off` can be called with just the event name to remove all</span>
+<span class="comment">// listeners.</span>
+player.off(<span class="string">'play'</span>);</code></pre>
+<h3 id="loadVideo-id-number-Promise-lt-number-TypeError-PasswordError-Error-gt"><a href="#loadVideo-id-number-Promise-lt-number-TypeError-PasswordError-Error-gt" class="headerlink" title="loadVideo(id: number): Promise&lt;number, (TypeError|PasswordError|Error)&gt;"></a>loadVideo(id: number): Promise&lt;number, (TypeError|PasswordError|Error)&gt;</h3><p>Load a new video into this embed. The promise will be resolved if the video is<br>successfully loaded, or it will be rejected if it could not be loaded.</p>
+<pre><code class="js">player.loadVideo(<span class="number">76979871</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>{
+    <span class="comment">// the video successfully loaded</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'TypeError'</span>:
+            <span class="comment">// the id was not a number</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'PasswordError'</span>:
+            <span class="comment">// the video is password-protected and the viewer needs to enter the</span>
+            <span class="comment">// password first</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'PrivacyError'</span>:
+            <span class="comment">// the video is password-protected or private</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="ready-Promise-lt-void-Error-gt"><a href="#ready-Promise-lt-void-Error-gt" class="headerlink" title="ready(): Promise&lt;void, Error&gt;"></a>ready(): Promise&lt;void, Error&gt;</h3><p>Trigger a function when the player iframe has initialized. You do not need to<br>wait for <code>ready</code> to trigger to begin adding event listeners or calling other<br>methods.</p>
+<pre><code class="js">player.ready().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="comment">// the player is ready</span>
+});</code></pre>
+<h3 id="enableTextTrack-language-string-kind-string-Promise-lt-object-InvalidTrackLanguageError-InvalidTrackError-Error-gt"><a href="#enableTextTrack-language-string-kind-string-Promise-lt-object-InvalidTrackLanguageError-InvalidTrackError-Error-gt" class="headerlink" title="enableTextTrack(language: string, kind?: string): Promise&lt;object, (InvalidTrackLanguageError|InvalidTrackError|Error)&gt;"></a>enableTextTrack(language: string, kind?: string): Promise&lt;object, (InvalidTrackLanguageError|InvalidTrackError|Error)&gt;</h3><p>Enable the text track with the specified language, and optionally the specified<br>kind (captions or subtitles).</p>
+<p>When set via the API, the track language will not change the viewer’s stored<br>preference.</p>
+<pre><code class="js">player.enableTextTrack(<span class="string">'en'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">track</span>) </span>{
+    <span class="comment">// track.language = the iso code for the language</span>
+    <span class="comment">// track.kind = 'captions' or 'subtitles'</span>
+    <span class="comment">// track.label = the human-readable label</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'InvalidTrackLanguageError'</span>:
+            <span class="comment">// no track was available with the specified language</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'InvalidTrackError'</span>:
+            <span class="comment">// no track was available with the specified language and kind</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="disableTextTrack-Promise-lt-void-Error-gt"><a href="#disableTextTrack-Promise-lt-void-Error-gt" class="headerlink" title="disableTextTrack(): Promise&lt;void, Error&gt;"></a>disableTextTrack(): Promise&lt;void, Error&gt;</h3><p>Disable the currently-active text track.</p>
+<pre><code class="js">player.disableTextTrack().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="comment">// the track was disabled</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="pause-Promise-lt-void-PasswordError-PrivacyError-Error-gt"><a href="#pause-Promise-lt-void-PasswordError-PrivacyError-Error-gt" class="headerlink" title="pause(): Promise&lt;void, (PasswordError|PrivacyError|Error)&gt;"></a>pause(): Promise&lt;void, (PasswordError|PrivacyError|Error)&gt;</h3><p>Pause the video if it’s playing.</p>
+<pre><code class="js">player.pause().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="comment">// the video was paused</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'PasswordError'</span>:
+            <span class="comment">// the video is password-protected and the viewer needs to enter the</span>
+            <span class="comment">// password first</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'PrivacyError'</span>:
+            <span class="comment">// the video is private</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="play-Promise-lt-void-PasswordError-PrivacyError-Error-gt"><a href="#play-Promise-lt-void-PasswordError-PrivacyError-Error-gt" class="headerlink" title="play(): Promise&lt;void, (PasswordError|PrivacyError|Error)&gt;"></a>play(): Promise&lt;void, (PasswordError|PrivacyError|Error)&gt;</h3><p>Play the video if it’s paused. <strong>Note:</strong> on iOS and some other mobile devices,<br>you cannot programmatically trigger play. Once the viewer has tapped on the play<br>button in the player, however, you will be able to use this function.</p>
+<pre><code class="js">player.play().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="comment">// the video was played</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'PasswordError'</span>:
+            <span class="comment">// the video is password-protected and the viewer needs to enter the</span>
+            <span class="comment">// password first</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'PrivacyError'</span>:
+            <span class="comment">// the video is private</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="unload-Promise-lt-void-Error-gt"><a href="#unload-Promise-lt-void-Error-gt" class="headerlink" title="unload(): Promise&lt;void, Error&gt;"></a>unload(): Promise&lt;void, Error&gt;</h3><p>Return the internal player (iframe) to its initial state.</p>
+<pre><code class="js">player.unload().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="comment">// the video was unloaded</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="destroy-Promise-lt-void-Error-gt"><a href="#destroy-Promise-lt-void-Error-gt" class="headerlink" title="destroy(): Promise&lt;void, Error&gt;"></a>destroy(): Promise&lt;void, Error&gt;</h3><p>Cleanup the player and remove it from the DOM.</p>
+<p>It won’t be usable and a new one should be constructed<br> in order to do any operations.</p>
+<pre><code class="js">player.destroy().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="comment">// the player was destroyed</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="getAutopause-Promise-lt-boolean-UnsupportedError-Error-gt"><a href="#getAutopause-Promise-lt-boolean-UnsupportedError-Error-gt" class="headerlink" title="getAutopause(): Promise&lt;boolean, (UnsupportedError|Error)&gt;"></a>getAutopause(): Promise&lt;boolean, (UnsupportedError|Error)&gt;</h3><p>Get the autopause behavior for this player.</p>
+<pre><code class="js">player.getAutopause().then(<span class="function"><span class="keyword">function</span>(<span class="params">autopause</span>) </span>{
+    <span class="comment">// autopause = whether autopause is turned on or off</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'UnsupportedError'</span>:
+            <span class="comment">// Autopause is not supported with the current player or browser</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="setAutopause-autopause-boolean-Promise-lt-boolean-UnsupportedError-Error-gt"><a href="#setAutopause-autopause-boolean-Promise-lt-boolean-UnsupportedError-Error-gt" class="headerlink" title="setAutopause(autopause: boolean): Promise&lt;boolean, (UnsupportedError|Error)&gt;"></a>setAutopause(autopause: boolean): Promise&lt;boolean, (UnsupportedError|Error)&gt;</h3><p>Enable or disable the autopause behavior of this player. By default, when<br>another video is played in the same browser, this player will automatically<br>pause. Unless you have a specific reason for doing so, we recommend that you<br>leave autopause set to the default (<code>true</code>).</p>
+<pre><code class="js">player.setAutopause(<span class="literal">false</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">autopause</span>) </span>{
+    <span class="comment">// autopause was turned off</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'UnsupportedError'</span>:
+            <span class="comment">// Autopause is not supported with the current player or browser</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="getColor-Promise-lt-string-Error-gt"><a href="#getColor-Promise-lt-string-Error-gt" class="headerlink" title="getColor(): Promise&lt;string, Error&gt;"></a>getColor(): Promise&lt;string, Error&gt;</h3><p>Get the color for this player.</p>
+<pre><code class="js">player.getColor().then(<span class="function"><span class="keyword">function</span>(<span class="params">color</span>) </span>{
+    <span class="comment">// color = the hex color of the player</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="setColor-color-string-Promise-lt-string-ContrastError-TypeError-Error-gt"><a href="#setColor-color-string-Promise-lt-string-ContrastError-TypeError-Error-gt" class="headerlink" title="setColor(color: string): Promise&lt;string, (ContrastError|TypeError|Error)&gt;"></a>setColor(color: string): Promise&lt;string, (ContrastError|TypeError|Error)&gt;</h3><p>Set the color of this player to a hex or rgb string. Setting the color may fail<br>if the owner of the video has set their embed preferences to force a specific<br>color.</p>
+<pre><code class="js">player.setColor(<span class="string">'#00adef'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">color</span>) </span>{
+    <span class="comment">// color was successfully set</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'ContrastError'</span>:
+            <span class="comment">// the color was set, but the contrast is outside of the acceptable</span>
+            <span class="comment">// range</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'TypeError'</span>:
+            <span class="comment">// the string was not a valid hex or rgb color</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'EmbedSettingsError'</span>:
+            <span class="comment">// the owner of the video has chosen to use a specific color</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="addCuePoint-time-number-data-object-Promise-lt-string-UnsupportedError-RangeError-Error-gt"><a href="#addCuePoint-time-number-data-object-Promise-lt-string-UnsupportedError-RangeError-Error-gt" class="headerlink" title="addCuePoint(time: number, data: object): Promise&lt;string, (UnsupportedError|RangeError|Error)&gt;"></a>addCuePoint(time: number, data: object): Promise&lt;string, (UnsupportedError|RangeError|Error)&gt;</h3><p>Add a cue point to the player. Cue points fire a <code>cuepoint</code> event when the<br><code>currentTime</code> of the video passes the specified time. <em>Note:</em> cue points should<br>be accurate to within a tenth of a second, but the precision may vary based on<br>browser or environment.</p>
+<pre><code class="js">player.addCuePoint(<span class="number">15</span>, {
+    customKey: <span class="string">'customValue'</span>
+}).then(<span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>{
+    <span class="comment">// cue point was added successfully</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'UnsupportedError'</span>:
+            <span class="comment">// cue points are not supported with the current player or browser</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'RangeError'</span>:
+            <span class="comment">// the time was less than 0 or greater than the video’s duration</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="removeCuePoint-id-string-Promise-lt-string-UnsupportedError-InvalidCuePoint-Error-gt"><a href="#removeCuePoint-id-string-Promise-lt-string-UnsupportedError-InvalidCuePoint-Error-gt" class="headerlink" title="removeCuePoint(id: string): Promise&lt;string, (UnsupportedError|InvalidCuePoint|Error)&gt;"></a>removeCuePoint(id: string): Promise&lt;string, (UnsupportedError|InvalidCuePoint|Error)&gt;</h3><p>Remove the specified cue point using the id returned from <code>addCuePoint()</code> or<br>from <code>getCuePoints()</code>.</p>
+<pre><code class="js">player.removeCuePoint(<span class="string">'09ecf4e4-b587-42cf-ad9f-e666b679c9ab'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>{
+    <span class="comment">// cue point was removed successfully</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'UnsupportedError'</span>:
+            <span class="comment">// cue points are not supported with the current player or browser</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'InvalidCuePoint'</span>:
+            <span class="comment">// a cue point with the id passed wasn’t found</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="getCuePoints-Promise-lt-array-UnsupportedError-Error-gt"><a href="#getCuePoints-Promise-lt-array-UnsupportedError-Error-gt" class="headerlink" title="getCuePoints(): Promise&lt;array, (UnsupportedError|Error)&gt;"></a>getCuePoints(): Promise&lt;array, (UnsupportedError|Error)&gt;</h3><p>Get an array of the cue points that have been added to the video.</p>
+<pre><code class="js">player.getCuePoints().then(<span class="function"><span class="keyword">function</span>(<span class="params">cuePoints</span>) </span>{
+    <span class="comment">// cuePoints = an array of cue point objects</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'UnsupportedError'</span>:
+            <span class="comment">// cue points are not supported with the current player or browser</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<p>Each cue point object looks like this:</p>
+<pre><code class="js">{
+    <span class="string">"time"</span>: <span class="number">15</span>,
+    <span class="string">"data"</span>: {
+        <span class="string">"customKey"</span>: <span class="string">"customValue"</span>
+    },
+    <span class="string">"id"</span>: <span class="string">"09ecf4e4-b587-42cf-ad9f-e666b679c9ab"</span>
+}</code></pre>
+<h3 id="getCurrentTime-Promise-lt-number-Error-gt"><a href="#getCurrentTime-Promise-lt-number-Error-gt" class="headerlink" title="getCurrentTime(): Promise&lt;number, Error&gt;"></a>getCurrentTime(): Promise&lt;number, Error&gt;</h3><p>Get the current playback position in seconds.</p>
+<pre><code class="js">player.getCurrentTime().then(<span class="function"><span class="keyword">function</span>(<span class="params">seconds</span>) </span>{
+    <span class="comment">// seconds = the current playback position</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="setCurrentTime-seconds-number-Promise-lt-number-RangeError-Error-gt"><a href="#setCurrentTime-seconds-number-Promise-lt-number-RangeError-Error-gt" class="headerlink" title="setCurrentTime(seconds: number): Promise&lt;number, (RangeError|Error)&gt;"></a>setCurrentTime(seconds: number): Promise&lt;number, (RangeError|Error)&gt;</h3><p>Set the current playback position in seconds. Once playback has started, if the<br>player was paused, it will remain paused. Likewise, if the player was playing,<br>it will resume playing once the video has buffered. Setting the current time<br>before playback has started will cause playback to start.</p>
+<p>You can provide an accurate time and the player will attempt to seek to as close<br>to that time as possible. The exact time will be the fulfilled value of the<br>promise.</p>
+<pre><code class="js">player.setCurrentTime(<span class="number">30.456</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">seconds</span>) </span>{
+    <span class="comment">// seconds = the actual time that the player seeked to</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'RangeError'</span>:
+            <span class="comment">// the time was less than 0 or greater than the video’s duration</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="getDuration-Promise-lt-number-Error-gt"><a href="#getDuration-Promise-lt-number-Error-gt" class="headerlink" title="getDuration(): Promise&lt;number, Error&gt;"></a>getDuration(): Promise&lt;number, Error&gt;</h3><p>Get the duration of the video in seconds. It will be rounded to the nearest<br>second before playback begins, and to the nearest thousandth of a second after<br>playback begins.</p>
+<pre><code class="js">player.getDuration().then(<span class="function"><span class="keyword">function</span>(<span class="params">duration</span>) </span>{
+    <span class="comment">// duration = the duration of the video in seconds</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="getEnded-Promise-lt-boolean-Error-gt"><a href="#getEnded-Promise-lt-boolean-Error-gt" class="headerlink" title="getEnded(): Promise&lt;boolean, Error&gt;"></a>getEnded(): Promise&lt;boolean, Error&gt;</h3><p>Get the ended state of the video. The video has ended if<br><code>currentTime === duration</code>.</p>
+<pre><code class="js">player.getEnded().then(<span class="function"><span class="keyword">function</span>(<span class="params">ended</span>) </span>{
+    <span class="comment">// ended = whether or not the video has ended</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="getLoop-Promise-lt-boolean-Error-gt"><a href="#getLoop-Promise-lt-boolean-Error-gt" class="headerlink" title="getLoop(): Promise&lt;boolean, Error&gt;"></a>getLoop(): Promise&lt;boolean, Error&gt;</h3><p>Get the loop state of the player.</p>
+<pre><code class="js">player.getLoop().then(<span class="function"><span class="keyword">function</span>(<span class="params">loop</span>) </span>{
+    <span class="comment">// loop = whether loop is turned on or not</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="setLoop-loop-boolean-Promise-lt-boolean-Error-gt"><a href="#setLoop-loop-boolean-Promise-lt-boolean-Error-gt" class="headerlink" title="setLoop(loop: boolean): Promise&lt;boolean, Error&gt;"></a>setLoop(loop: boolean): Promise&lt;boolean, Error&gt;</h3><p>Set the loop state of the player. When set to <code>true</code>, the player will start over<br>immediately once playback ends. <em>Note:</em> when loop is turned on, the <code>ended</code><br>event will not fire.</p>
+<pre><code class="js">player.setLoop(<span class="literal">true</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">loop</span>) </span>{
+    <span class="comment">// loop was turned on</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="getPaused-Promise-lt-boolean-Error-gt"><a href="#getPaused-Promise-lt-boolean-Error-gt" class="headerlink" title="getPaused(): Promise&lt;boolean, Error&gt;"></a>getPaused(): Promise&lt;boolean, Error&gt;</h3><p>Get the paused state of the player.</p>
+<pre><code class="js">player.getPaused().then(<span class="function"><span class="keyword">function</span>(<span class="params">paused</span>) </span>{
+    <span class="comment">// paused = whether or not the player is paused</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="getPlaybackRate-Promise-lt-number-Error-gt"><a href="#getPlaybackRate-Promise-lt-number-Error-gt" class="headerlink" title="getPlaybackRate(): Promise&lt;number, Error&gt;"></a>getPlaybackRate(): Promise&lt;number, Error&gt;</h3><p>Get the playback rate of the player on a scale from <code>0.5</code> to <code>2</code>.</p>
+<pre><code class="js">player.getPlaybackRate().then(<span class="function"><span class="keyword">function</span>(<span class="params">playbackRate</span>) </span>{
+    <span class="comment">// playbackRate = a numeric value of the current playback rate</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="setPlaybackRate-playbackRate-number-Promise-lt-number-RangeError-Error-gt"><a href="#setPlaybackRate-playbackRate-number-Promise-lt-number-RangeError-Error-gt" class="headerlink" title="setPlaybackRate(playbackRate: number): Promise&lt;number, (RangeError|Error)&gt;"></a>setPlaybackRate(playbackRate: number): Promise&lt;number, (RangeError|Error)&gt;</h3><p>Set the playback rate of the player on a scale from <code>0.5</code> to <code>2</code>. When set<br>via the API, the playback rate will not be synchronized to other<br>players or stored as the viewer’s preference.</p>
+<pre><code class="js">player.setPlaybackRate(<span class="number">0.5</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">playbackRate</span>) </span>{
+    <span class="comment">// playback rate was set</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'RangeError'</span>:
+            <span class="comment">// the playback rate was less than 0.5 or greater than 2</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="getTextTracks-Promise-lt-object-Error-gt"><a href="#getTextTracks-Promise-lt-object-Error-gt" class="headerlink" title="getTextTracks(): Promise&lt;object[], Error&gt;"></a>getTextTracks(): Promise&lt;object[], Error&gt;</h3><p>Get an array of the text tracks that exist for the video. For example:</p>
+<pre><code class="js">player.getTextTracks().then(<span class="function"><span class="keyword">function</span>(<span class="params">tracks</span>) </span>{
+    <span class="comment">// tracks = an array of track objects</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<p>Each track object looks like this:</p>
+<pre><code class="js">{
+    <span class="string">"label"</span>: <span class="string">"English CC"</span>,
+    <span class="string">"language"</span>: <span class="string">"en"</span>,
+    <span class="string">"kind"</span>: <span class="string">"captions"</span>,
+    <span class="string">"mode"</span>: <span class="string">"showing"</span>
+}</code></pre>
+<p>Kind can be either <code>captions</code> or <code>subtitles</code>. The mode can be either <code>showing</code><br>or <code>disabled</code>. Only one track can be <code>showing</code> at any given time; the rest will<br>be <code>disabled</code>.</p>
+<h3 id="getVideoEmbedCode-Promise-lt-string-Error-gt"><a href="#getVideoEmbedCode-Promise-lt-string-Error-gt" class="headerlink" title="getVideoEmbedCode(): Promise&lt;string, Error&gt;"></a>getVideoEmbedCode(): Promise&lt;string, Error&gt;</h3><p>Get the <code>&lt;iframe&gt;</code> embed code for the video.</p>
+<pre><code class="js">player.getVideoEmbedCode().then(<span class="function"><span class="keyword">function</span>(<span class="params">embedCode</span>) </span>{
+    <span class="comment">// embedCode = &lt;iframe&gt; embed code</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="getVideoId-Promise-lt-number-Error-gt"><a href="#getVideoId-Promise-lt-number-Error-gt" class="headerlink" title="getVideoId(): Promise&lt;number, Error&gt;"></a>getVideoId(): Promise&lt;number, Error&gt;</h3><p>Get the id of the video.</p>
+<pre><code class="js">player.getVideoId().then(<span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>{
+    <span class="comment">// id = the video id</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="getVideoTitle-Promise-lt-string-Error-gt"><a href="#getVideoTitle-Promise-lt-string-Error-gt" class="headerlink" title="getVideoTitle(): Promise&lt;string, Error&gt;"></a>getVideoTitle(): Promise&lt;string, Error&gt;</h3><p>Get the title of the video.</p>
+<pre><code class="js">player.getVideoTitle().then(<span class="function"><span class="keyword">function</span>(<span class="params">title</span>) </span>{
+    <span class="comment">// title = the title of the video</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="getVideoWidth-Promise-lt-number-Error-gt"><a href="#getVideoWidth-Promise-lt-number-Error-gt" class="headerlink" title="getVideoWidth(): Promise&lt;number, Error&gt;"></a>getVideoWidth(): Promise&lt;number, Error&gt;</h3><p>Get the native width of the currently‐playing video. The width of the highest<br>resolution available will be used before playback begins.</p>
+<pre><code class="js">player.getVideoWidth().then(<span class="function"><span class="keyword">function</span>(<span class="params">width</span>) </span>{
+    <span class="comment">// width = the width of the video that is currently playing</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="getVideoHeight-Promise-lt-number-Error-gt"><a href="#getVideoHeight-Promise-lt-number-Error-gt" class="headerlink" title="getVideoHeight(): Promise&lt;number, Error&gt;"></a>getVideoHeight(): Promise&lt;number, Error&gt;</h3><p>Get the native height of the currently‐playing video. The height of the highest<br>resolution available will be used before playback begins.</p>
+<pre><code class="js">player.getVideoHeight().then(<span class="function"><span class="keyword">function</span>(<span class="params">height</span>) </span>{
+    <span class="comment">// height = the height of the video that is currently playing</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<p>To get both the width and height, you can do this:</p>
+<pre><code class="js"><span class="built_in">Promise</span>.all([player.getVideoWidth(), player.getVideoHeight()]).then(<span class="function"><span class="keyword">function</span>(<span class="params">dimensions</span>) </span>{
+    <span class="keyword">var</span> width = dimensions[<span class="number">0</span>];
+    <span class="keyword">var</span> height = dimensions[<span class="number">1</span>];
+});</code></pre>
+<h3 id="getVideoUrl-Promise-lt-string-PrivacyError-Error-gt"><a href="#getVideoUrl-Promise-lt-string-PrivacyError-Error-gt" class="headerlink" title="getVideoUrl(): Promise&lt;string, (PrivacyError|Error)&gt;"></a>getVideoUrl(): Promise&lt;string, (PrivacyError|Error)&gt;</h3><p>Get the <a href="https://vimeo.com" target="_blank" rel="noopener external nofollow noreferrer">vimeo.com</a> url for the video.</p>
+<pre><code class="js">player.getVideoUrl().then(<span class="function"><span class="keyword">function</span>(<span class="params">url</span>) </span>{
+    <span class="comment">// url = the vimeo.com url for the video</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'PrivacyError'</span>:
+            <span class="comment">// the url isn’t available because of the video’s privacy setting</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h3 id="getVolume-Promise-lt-number-Error-gt"><a href="#getVolume-Promise-lt-number-Error-gt" class="headerlink" title="getVolume(): Promise&lt;number, Error&gt;"></a>getVolume(): Promise&lt;number, Error&gt;</h3><p>Get the current volume level of the player on a scale from <code>0</code> to <code>1</code>.</p>
+<p>Most mobile devices do not support an independent volume from the system volume.<br>In those cases, this method will always return <code>1</code>.</p>
+<pre><code class="js">player.getVolume().then(<span class="function"><span class="keyword">function</span>(<span class="params">volume</span>) </span>{
+    <span class="comment">// volume = the volume level of the player</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="comment">// an error occurred</span>
+});</code></pre>
+<h3 id="setVolume-volume-number-Promise-lt-number-RangeError-Error-gt"><a href="#setVolume-volume-number-Promise-lt-number-RangeError-Error-gt" class="headerlink" title="setVolume(volume: number): Promise&lt;number, (RangeError|Error)&gt;"></a>setVolume(volume: number): Promise&lt;number, (RangeError|Error)&gt;</h3><p>Set the volume of the player on a scale from <code>0</code> to <code>1</code>. When set via the API,<br>the volume level will not be synchronized to other players or stored as the<br>viewer’s preference.</p>
+<p>Most mobile devices (including iOS and Android) do not support setting the<br>volume because the volume is controlled at the system level. An error will <em>not</em><br>be triggered in that situation.</p>
+<pre><code class="js">player.setVolume(<span class="number">0.5</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">volume</span>) </span>{
+    <span class="comment">// volume was set</span>
+}).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>{
+    <span class="keyword">switch</span> (error.name) {
+        <span class="keyword">case</span> <span class="string">'RangeError'</span>:
+            <span class="comment">// the volume was less than 0 or greater than 1</span>
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="comment">// some other error occurred</span>
+            <span class="keyword">break</span>;
+    }
+});</code></pre>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><p>You can listen for events in the player by attaching a callback using <code>.on()</code>:</p>
+<pre><code class="js">player.on(<span class="string">'eventName'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>{
+    <span class="comment">// data is an object containing properties specific to that event</span>
+});</code></pre>
+<p>The events are equivalent to the HTML5 video events (except for <code>cuechange</code>,<br>which is slightly different).</p>
+<p>To remove a listener, call <code>.off()</code> with the callback function:</p>
+<pre><code class="js"><span class="keyword">var</span> callback = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{};
+
+player.off(<span class="string">'eventName'</span>, callback);</code></pre>
+<p>If you pass only an event name, all listeners for that event will be removed.</p>
+<h3 id="play"><a href="#play" class="headerlink" title="play"></a>play</h3><p>Triggered when the video plays.</p>
+<pre><code class="js">{
+    duration: <span class="number">61.857</span>
+    percent: <span class="number">0</span>
+    seconds: <span class="number">0</span>
+}</code></pre>
+<h3 id="pause"><a href="#pause" class="headerlink" title="pause"></a>pause</h3><p>Triggered when the video pauses.</p>
+<pre><code class="js">{
+    duration: <span class="number">61.857</span>
+    percent: <span class="number">0</span>
+    seconds: <span class="number">0</span>
+}</code></pre>
+<h3 id="ended"><a href="#ended" class="headerlink" title="ended"></a>ended</h3><p>Triggered any time the video playback reaches the end. <em>Note:</em> when loop is<br>turned on, the <code>ended</code> event will not fire.</p>
+<pre><code class="js">{
+    duration: <span class="number">61.857</span>
+    percent: <span class="number">1</span>
+    seconds: <span class="number">61.857</span>
+}</code></pre>
+<h3 id="timeupdate"><a href="#timeupdate" class="headerlink" title="timeupdate"></a>timeupdate</h3><p>Triggered as the <code>currentTime</code> of the video updates. It generally fires every<br>250ms, but it may vary depending on the browser.</p>
+<pre><code class="js">{
+    duration: <span class="number">61.857</span>
+    percent: <span class="number">0.049</span>
+    seconds: <span class="number">3.034</span>
+}</code></pre>
+<h3 id="progress"><a href="#progress" class="headerlink" title="progress"></a>progress</h3><p>Triggered as the video is loaded. Reports back the amount of the video that has<br>been buffered.</p>
+<pre><code class="js">{
+    duration: <span class="number">61.857</span>
+    percent: <span class="number">0.502</span>
+    seconds: <span class="number">31.052</span>
+}</code></pre>
+<h3 id="seeked"><a href="#seeked" class="headerlink" title="seeked"></a>seeked</h3><p>Triggered when the player seeks to a specific time. A <code>timeupdate</code> event will<br>also be fired at the same time.</p>
+<pre><code class="js">{
+    duration: <span class="number">61.857</span>
+    percent: <span class="number">0.485</span>
+    seconds: <span class="number">30</span>
+}</code></pre>
+<h3 id="texttrackchange"><a href="#texttrackchange" class="headerlink" title="texttrackchange"></a>texttrackchange</h3><p>Triggered when the active text track (captions/subtitles) changes. The values<br>will be null if text tracks are turned off.</p>
+<pre><code class="js">{
+    kind: <span class="string">"captions"</span>,
+    label: <span class="string">"English CC"</span>,
+    language: <span class="string">"en"</span>
+}</code></pre>
+<h3 id="cuechange"><a href="#cuechange" class="headerlink" title="cuechange"></a>cuechange</h3><p>Triggered when the active cue for the current text track changes. It also fires<br>when the active text track changes. There may be multiple cues active.</p>
+<pre><code class="js">{
+    cues: [
+        {
+            html: <span class="string">"&lt;i&gt;Here at Vimeo, there's always &lt;br&gt;one thing on our minds:&lt;/i&gt;"</span>,
+            text: <span class="string">"&lt;i&gt;Here at Vimeo, there's always ↵one thing on our minds:&lt;/i&gt;"</span>
+        }
+    ],
+    kind: <span class="string">"captions"</span>,
+    label: <span class="string">"English CC"</span>,
+    language: <span class="string">"en"</span>
+}</code></pre>
+<p>The <code>text</code> property of each cue is the raw value parsed from the caption or<br>subtitle file. The <code>html</code> property contains the HTML that the Player renders for<br>that cue.</p>
+<h3 id="cuepoint"><a href="#cuepoint" class="headerlink" title="cuepoint"></a>cuepoint</h3><p>Triggered when the current time hits a registered cue point.</p>
+<pre><code class="js">{
+    time: <span class="number">15</span>,
+    data: {
+        customKey: <span class="string">'customValue'</span>
+    },
+    id: <span class="string">"40f5722b-09aa-4060-a887-3c81aaa37cce"</span>
+}</code></pre>
+<p>The <code>data</code> property will be the custom data provided in the <code>addCuePoint()</code><br>call, or an empty object if none was provided.</p>
+<h3 id="volumechange"><a href="#volumechange" class="headerlink" title="volumechange"></a>volumechange</h3><p>Triggered when the volume in the player changes. Some devices do not support<br>setting the volume of the video independently from the system volume, so this<br>event will never fire on those devices.</p>
+<pre><code class="js">{
+    volume: <span class="number">0.5</span>
+}</code></pre>
+<h3 id="playbackratechange"><a href="#playbackratechange" class="headerlink" title="playbackratechange"></a>playbackratechange</h3><p>Triggered when the playback rate of the video in the player changes. The ability to change rate can be disabled by the creator<br>and the event will not fire for those videos. The new playback rate is returned with the event.</p>
+<pre><code class="js">{
+    playbackRate: <span class="number">1.5</span>
+}</code></pre>
+<h3 id="bufferstart"><a href="#bufferstart" class="headerlink" title="bufferstart"></a>bufferstart</h3><p>Triggered when buffering starts in the player. This is also triggered during preload and while seeking. There is no associated data with this event.</p>
+<h3 id="bufferend"><a href="#bufferend" class="headerlink" title="bufferend"></a>bufferend</h3><p>Triggered when buffering ends in the player. This is also triggered at the end of preload and seeking. There is no associated data with this event.</p>
+<h3 id="error"><a href="#error" class="headerlink" title="error"></a>error</h3><p>Triggered when some kind of error is generated in the player. In general if you<br>are using this API library, you should use <code>.catch()</code> on each method call<br>instead of globally listening for error events.</p>
+<p>If the error was generated from a method call, the name of that method will be<br>included.</p>
+<pre><code class="js">{
+    message: <span class="string">"#984220 does not meet minimum contrast ratio. We recommend using brighter colors. (You could try #d35e30 instead.) See WCAG 2.0 guidelines: http://www.w3.org/TR/WCAG/#visual-audio-contrast"</span>
+    method: <span class="string">"setColor"</span>
+    name: <span class="string">"ContrastError"</span>
+}</code></pre>
+<h3 id="loaded"><a href="#loaded" class="headerlink" title="loaded"></a>loaded</h3><p>Triggered when a new video is loaded in the player.</p>
+<pre><code class="js">{
+    id: <span class="number">76979871</span>
+}</code></pre>
+<h2 id="Embed-Options"><a href="#Embed-Options" class="headerlink" title="Embed Options"></a>Embed Options</h2><p>These options are available to use as <code>data-vimeo-</code> attributes on elements or as<br>an object passed to the <code>Vimeo.Player</code> constructor.</p>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id <em>or</em> url</td>
+<td></td>
+<td><strong>Required.</strong> Either the id or the url of the video.</td>
+</tr>
+<tr>
+<td>autopause</td>
+<td><code>true</code></td>
+<td>Pause this video automatically when another one plays.</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td><code>false</code></td>
+<td>Automatically start playback of the video. Note that this won’t work on some devices.</td>
+</tr>
+<tr>
+<td>background</td>
+<td><code>false</code></td>
+<td>Enable the player’s background mode which hides the controls, autoplays and loops the video.</td>
+</tr>
+<tr>
+<td>byline</td>
+<td><code>true</code></td>
+<td>Show the byline on the video.</td>
+</tr>
+<tr>
+<td>color</td>
+<td><code>00adef</code></td>
+<td>Specify the color of the video controls. Colors may be overridden by the embed settings of the video.</td>
+</tr>
+<tr>
+<td>height</td>
+<td></td>
+<td>The exact height of the video. Defaults to the height of the largest available version of the video.</td>
+</tr>
+<tr>
+<td>loop</td>
+<td><code>false</code></td>
+<td>Play the video again when it reaches the end.</td>
+</tr>
+<tr>
+<td>maxheight</td>
+<td></td>
+<td>Same as height, but video will not exceed the native size of the video.</td>
+</tr>
+<tr>
+<td>maxwidth</td>
+<td></td>
+<td>Same as width, but video will not exceed the native size of the video.</td>
+</tr>
+<tr>
+<td>muted</td>
+<td><code>false</code></td>
+<td>Mute this video on load. Required to autoplay in certain browsers.</td>
+</tr>
+<tr>
+<td>playsinline</td>
+<td><code>true</code></td>
+<td>Play video inline on mobile devices, to automatically go fullscreen on playback set this parameter to <code>false</code>.</td>
+</tr>
+<tr>
+<td>portrait</td>
+<td><code>true</code></td>
+<td>Show the portrait on the video.</td>
+</tr>
+<tr>
+<td>speed</td>
+<td><code>false</code></td>
+<td>Show the speed controls in the preferences menu and enable playback rate API.</td>
+</tr>
+<tr>
+<td>title</td>
+<td><code>true</code></td>
+<td>Show the title on the video.</td>
+</tr>
+<tr>
+<td>transparent</td>
+<td><code>true</code></td>
+<td>The responsive player and transparent background are enabled by default, to disable set this parameter to <code>false</code>.</td>
+</tr>
+<tr>
+<td>width</td>
+<td></td>
+<td>The exact width of the video. Defaults to the width of the largest available version of the video.</td>
+</tr>
+</tbody></table>
