@@ -31,12 +31,19 @@
   
 <link rel="stylesheet" href="/aportal/css/style.css">
 
+  
+<link rel="stylesheet" href="/aportal/css/docs.css">
+
+  
+<link rel="stylesheet" href="/aportal/css/prism.css">
+
   <!-- Google Fonts -->
   <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 <meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/aportal/atom.xml" title="APortal" type="application/atom+xml">
 </head>
 <body>
-   <!-- ========== HEADER ========== -->
+  <!-- Search header-->
+ <!-- ========== HEADER ========== -->
  <header id="header" class="u-header u-header--abs-top-md u-header--bg-transparent u-header--show-hide-md"
  data-header-fix-moment="500"
  data-header-fix-effect="slide">
@@ -58,8 +65,8 @@
        data-unfold-hide-on-scroll="true"
        data-unfold-animation-in="slideInUp"
        data-unfold-animation-out="fadeOut">
-       <img class="dropdown-item-icon" src="images/cn.svg" alt="SVG">
-      <span class="d-inline-block d-sm-none">zh-CN</span>
+       <img class="dropdown-item-icon" src="/aportal/images/cn.svg" alt="SVG">
+      <span class="d-inline-block d-sm-none">中文</span>
       <span class="d-none d-sm-inline-block">中文</span>
     </a>
 
@@ -71,7 +78,7 @@
   <!-- End Language -->
  <div class="ml-auto">
    <!-- Jump To -->
-   <div class="d-inline-block d-sm-none position-relative mr-2">
+   <!-- <div class="d-inline-block d-sm-none position-relative mr-2">
      <a id="jumpToDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center" href="javascript:;" role="button"
         aria-controls="jumpToDropdown"
         aria-haspopup="true"
@@ -90,11 +97,11 @@
      <div id="jumpToDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="jumpToDropdownInvoker">
        <a class="dropdown-item" href="../../html/pages/contacts-agency.html">联系我们</a>
      </div>
-   </div>
+   </div> -->
    <!-- End Jump To -->
 
    <!-- Links -->
-   <div class="d-none d-sm-inline-block ml-sm-auto">
+   <div class="d-sm-inline-block ml-sm-auto">
      <ul class="list-inline mb-0">
        <li class="list-inline-item mr-0">
          <a class="u-header__navbar-link" href="../pages/contacts-agency.html">联系我们</a>
@@ -157,7 +164,7 @@
 <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
  <!-- Logo -->
  <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="index.html" aria-label="Front">
-  <img src="images/Aportal.svg" alt="" width="150px" height="80px">
+  <img src="/aportal/images/Aportal.svg" alt="" width="150px" height="80px">
   <!-- <span class="u-header__navbar-brand-text">portal</span> -->
  </a>
  <!-- End Logo -->
@@ -196,11 +203,11 @@
          data-event="hover"
          data-animation-in="slideInUp"
          data-animation-out="fadeOut">
-       <a id="pagesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" rel="external nofollow noreferrer" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">文档</a>
+       <a id="pagesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="/aportal/docs" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">文档</a>
 
        <!-- Pages - Submenu -->
        <ul id="blogSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" aria-labelledby="blogMegaMenu" style="min-width: 230px;">
-        <li><a class="nav-link u-header__sub-menu-nav-link" href="../blog/card-style.html">开始使用</a></li>
+        <li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs">开始使用</a></li>
         <li><a class="nav-link u-header__sub-menu-nav-link" href="../blog/listing.html">基本功能</a></li>
         <li><a class="nav-link u-header__sub-menu-nav-link" href="../blog/blog-profile.html">组织结构管理</a></li>
         <li><a class="nav-link u-header__sub-menu-nav-link" href="../blog/single-article.html">流程管理</a></li>
@@ -261,7 +268,8 @@
 </header>
 <!-- ========== END HEADER ========== -->
 
-  <!-- Search Content -->
+<!-- End header-->
+<!-- Search Content -->
 <div id="searchSlideDown" class="dropdown-unfold u-search-slide-down" aria-labelledby="searchSlideDownInvoker">
   <form>
     <!-- Input Group -->
@@ -347,7 +355,7 @@
       <div class="col-lg-6">
         <!-- SVG Illustration -->
         <figure id="SVGHero" class="svg-preloader ie-hiker-man w-md-75 w-lg-100">
-          <img class="js-svg-injector"  width="500px" height="350px" src="images/hiker-man1.svg" alt="Image Description"
+          <img class="js-svg-injector"  width="100%" height="350px" src="images/hiker-man1.svg" alt="Image Description"
                >
         </figure>
         <!-- End SVG Illustration -->
@@ -439,85 +447,85 @@
     </div>
     <!-- Clients Section -->
   <div class="row justify-content-center text-center">
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-sm-6 col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/微软.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-sm-6 col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/艾默生.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class=" col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/爱斯达克.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class=" col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/勃林格.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class=" col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/东方有线.png" alt="Image Description">
     </div>
 
     <div class="w-100"></div>
 
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/固铂.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/国泰君安.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/环球港.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/科锐.png" alt="Image Description">
     </div>
 
     <div class="w-100"></div>
 
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/联通.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/罗盖特.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/罗氏.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8 mb-md-0">
+    <div class="col-md-2 mb-8 mb-md-0">
       <img class="u-clients" src="images/collaborator/强生.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8 mb-md-0">
+    <div class="col-md-2 mb-8 mb-md-0">
       <img class="u-clients" src="images/collaborator/日立.png" alt="Image Description">
     </div>
 
     <div class="w-100"></div>
 
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/上海电气.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/斯凯.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/新世界百货.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8">
+    <div class="col-md-2 mb-8">
       <img class="u-clients" src="images/collaborator/浙大网新.png" alt="Image Description">
     </div>
 
     <div class="w-100"></div>
 
-    <div class="col-4 col-md-2 mb-8 mb-md-0">
+    <div class="col-md-2 mb-8 mb-md-0">
       <img class="u-clients" src="images/collaborator/中软.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8 mb-md-0">
+    <div class="col-md-2 mb-8 mb-md-0">
       <img class="u-clients" src="images/collaborator/brother.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8 mb-md-0">
+    <div class="col-md-2 mb-8 mb-md-0">
       <img class="u-clients" src="images/collaborator/LVMH.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8 mb-md-0">
+    <div class="col-md-2 mb-8 mb-md-0">
       <img class="u-clients" src="images/collaborator/k11.png" alt="Image Description">
     </div>
-    <div class="col-4 col-md-2 mb-8 mb-md-0">
+    <div class="col-md-2 mb-8 mb-md-0">
       <img class="u-clients" src="images/collaborator/ecm.png" alt="Image Description">
     </div>
   </div>
@@ -831,7 +839,7 @@
   <!-- ========== FOOTER ========== -->
 <footer class="container text-center space-2">
   <!-- Logo -->
-  <img src="images/Aportal.svg" alt="" width="150px" height="80px">
+  <img src="/aportal/images/Aportal.svg" alt="" width="150px" height="80px">
   <!-- End Logo -->
 
   <p class="small text-muted mb-0">2012-2019 shuishan-tech.com. All rights reserved.</p>
