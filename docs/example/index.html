@@ -122,7 +122,7 @@
           <div id="sidebarNav" class="js-scrollbar hs-sidebar-sticky">
             <!-- <h5 class="hs-sidebar__heading">Getting started</h5> -->
             <ul class="hs-sidebar__nav">
-              <h5 class="hs-sidebar__heading"><a href="index.html">开始使用</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="getReady.html" class="hs-sidebar__link " >准备</a></li><li class="hs-sidebar__item"><a href="install.html" class="hs-sidebar__link " >安装</a></li><li class="hs-sidebar__item"><a href="initialSetup.html" class="hs-sidebar__link " >初始设置</a></li></ul><h5 class="hs-sidebar__heading"><a href="exampleProjectIndex.thml">示例项目</a></h5><ul class="hs-sidebar__nav"></ul><h5 class="hs-sidebar__heading"><a href="detailedExplanation.html">使用详解</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="structureManagement.html" class="hs-sidebar__link " >组织机构管理</a></li><li class="hs-sidebar__item"><a href="processManagement.html" class="hs-sidebar__link " >流程管理</a></li><li class="hs-sidebar__item"><a href="formDesign.html" class="hs-sidebar__link " >表单设计</a></li><li class="hs-sidebar__item"><a href="customDevelopment.html" class="hs-sidebar__link " >自定义开发</a></li></ul><h5 class="hs-sidebar__heading"><a href="commonProblemIndex.html">常见问题</a></h5><ul class="hs-sidebar__nav"></ul>
+              <h5 class="hs-sidebar__heading"><a href="index.html">开始使用</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="preinstallation.html" class="hs-sidebar__link " >准备</a></li><li class="hs-sidebar__item"><a href="installation.html" class="hs-sidebar__link " >安装</a></li><li class="hs-sidebar__item"><a href="initialization.html" class="hs-sidebar__link " >初始设置</a></li></ul><h5 class="hs-sidebar__heading"><a href="index.thml">示例项目</a></h5><ul class="hs-sidebar__nav"></ul><h5 class="hs-sidebar__heading"><a href="index.html">使用详解</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="orgchart.html" class="hs-sidebar__link " >组织结构管理</a></li><li class="hs-sidebar__item"><a href="workflow.html" class="hs-sidebar__link " >流程管理</a></li><li class="hs-sidebar__item"><a href="form.html" class="hs-sidebar__link " >表单设计</a></li><li class="hs-sidebar__item"><a href="development.html" class="hs-sidebar__link " >自定义开发</a></li></ul><h5 class="hs-sidebar__heading"><a href="index.html">常见问题</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="writting.html" class="hs-sidebar__link " >文档书写规范</a></li></ul>
             </ul>
           </div>
         </div>
@@ -138,54 +138,16 @@
               <!-- <li class="hd-doc-section-nav-item active"><a href="#quick-start">Quick start</a></li>
               <li class="hd-doc-section-nav-item"><a href="#starter-template">Starter template</a></li>
               <li class="hd-doc-section-nav-item"><a href="#responsive-meta-tag">Responsive meta tag</a></li> -->
-              <li class="hd-doc-section-nav-item"><a href="#img-tag的写法">img tag的写法</a></li><li class="hd-doc-section-nav-item"><a href="#label-tag的写法">label tag的写法</a></li><li class="hd-doc-section-nav-item"><a href="#note-tag的写法">note tag的写法</a></li>
+              
             </ul>
           </div>
           <!-- End Section Nav -->
 
           <div class="col-xl-10 order-xl-1">
             <div class="hs-docs-content-divider">
-              <h1>常见问题</h1>
+              <h1>示例项目</h1>
             </div>
-            <h2 id="img-tag的写法" class="article-heading"><a href="#img-tag的写法" class="headerlink" title="img tag的写法"></a>img tag的写法<a class="article-anchor" href="#img-tag的写法" aria-hidden="true"></a></h2><p>imgtag的tag名为：fullimg或fi<br>imgtag的顺序为：图片路径 ， 类名 ， 宽度，高度 </p>
-<blockquote class="callout border-primary bg-soft-primary">
-              <p>注意：除了图片路径为必填外，其余的都属于非必填（宽度和高度如只填一个的话宽高默认相等），且imgtag为单标签不需要end结束标签</p>
-
-            </blockquote>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% fullimg images&#x2F;media&#x2F;15765646706398&#x2F;15765712301730.jpg,  aaa, 80%,80%%&#125;</span><br></pre></td></tr></table></figure>
-<div width="100%" class="text-center"><img class="text-center aaa" height="80%" width="80%" src="images/media/15765646706398/15765712301730.jpg"></div>
-
-
-<h2 id="label-tag的写法" class="article-heading"><a href="#label-tag的写法" class="headerlink" title="label tag的写法"></a>label tag的写法<a class="article-anchor" href="#label-tag的写法" aria-hidden="true"></a></h2><p>labeltag的tag名为：label<br>labeltag的顺序为：字体颜色@文字<br>labeltag字体颜色有：primary，secondary，success，danger，warning，info，dark，body，muted</p>
-<blockquote class="callout border-primary bg-soft-primary">
-              <p>注意：label为单标签不需要end结束标签</p>
-
-            </blockquote>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label primary@primary%&#125;</span><br></pre></td></tr></table></figure>
-<p>各种颜色展示</p>
-<span class="p-1 rounded mb-2 bg-primary text-white">primary</span>
-<span class="p-1 rounded mb-2 bg-secondary text-white">secondary</span>
-<span class="p-1 rounded mb-2 bg-success text-white">success</span>
-<span class="p-1 rounded mb-2 bg-danger text-white">danger</span>
-<span class="p-1 rounded mb-2 bg-warning text-white">warning</span>
-<span class="p-1 rounded mb-2 bg-info text-white">info</span>
-<span class="p-1 rounded mb-2 bg-dark text-white">dark</span>
-<span class="p-1 rounded mb-2 bg-body text-white">body</span>
-<span class="p-1 rounded mb-2 bg-muted text-white">muted</span>
-
-<h2 id="note-tag的写法" class="article-heading"><a href="#note-tag的写法" class="headerlink" title="note tag的写法"></a>note tag的写法<a class="article-anchor" href="#note-tag的写法" aria-hidden="true"></a></h2><p>notetag的tag名为：note<br>notetag颜色有：primary，secondary，success，danger，warning，info，dark，body，muted</p>
-<blockquote class="callout border-primary bg-soft-primary">
-              <p>注意：note不是单标签，需要end结束标签</p>
-
-            </blockquote>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note primary%&#125;</span><br><span class="line">    primary</span><br><span class="line">&#123;%endnote%&#125;</span><br></pre></td></tr></table></figure>
-<blockquote class="callout border-primary bg-soft-primary">
-              <p>primary</p>
-
-            </blockquote>
+            
             <!-- Pager Nav -->
             <div class="row">
               <div class="col-sm-12">
