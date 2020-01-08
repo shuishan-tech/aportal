@@ -203,11 +203,11 @@
          data-event="hover"
          data-animation-in="slideInUp"
          data-animation-out="fadeOut">
-       <a id="pagesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="/aportal/docs" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">文档</a>
+       <a id="pagesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="/aportal/docs/gettingstarted" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">文档</a>
 
        <!-- Pages - Submenu -->
        <ul id="blogSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" aria-labelledby="blogMegaMenu" style="min-width: 230px;">
-        <li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/index.html">开始使用</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/index.thml">示例项目</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/index.html">使用详解</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/index.html">常见问题</a></li>
+        <li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/gettingstarted/index.html">开始使用</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/example/index.html">示例项目</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/introduction/index.html">使用详解</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/common/index.html">常见问题</a></li>
       </ul>
        <!-- End Pages - Submenu -->
      </li>
@@ -900,23 +900,23 @@
  <!-- JS Plugins Init. -->
  <script>
    $(window).on('load', function () {
-    //   var typed = new Typed(".u-text-animation.u-text-animation--typing", {
-    //     strings: ["简洁!", "高效!", "先进!"],
-    //     typeSpeed: 60,
-    //     loop: true,
-    //     backSpeed: 25,
-    //     backDelay: 1500
-    //   });
-    //  // initialization of HSMegaMenu component
-    //  $('.js-mega-menu').HSMegaMenu({
-    //    event: 'hover',
-    //    pageContainer: $('.container'),
-    //    breakpoint: 767.98,
-    //    hideTimeOut: 0
-    //  });
+      var typed = new Typed(".u-text-animation.u-text-animation--typing", {
+        strings: ["简洁!", "高效!", "先进!"],
+        typeSpeed: 60,
+        loop: true,
+        backSpeed: 25,
+        backDelay: 1500
+      });
+     // initialization of HSMegaMenu component
+     $('.js-mega-menu').HSMegaMenu({
+       event: 'hover',
+       pageContainer: $('.container'),
+       breakpoint: 767.98,
+       hideTimeOut: 0
+     });
 
      // initialization of svg injector module
-     $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    //  $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
    });
 
    $(document).on('ready', function () {
