@@ -135,9 +135,10 @@
           <!-- Section Nav -->
           <div class="col-xl-2 order-xl-2 d-none d-xl-inline-block">
             <ul class="js-scroll-nav hd-doc-section-nav">
-              <li class="hd-doc-section-nav-item active"><a href="#quick-start">Quick start</a></li>
+              <!-- <li class="hd-doc-section-nav-item active"><a href="#quick-start">Quick start</a></li>
               <li class="hd-doc-section-nav-item"><a href="#starter-template">Starter template</a></li>
-              <li class="hd-doc-section-nav-item"><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+              <li class="hd-doc-section-nav-item"><a href="#responsive-meta-tag">Responsive meta tag</a></li> -->
+              <li class="hd-doc-section-nav-item"><a href="#Quick-Start">Quick Start</a></li><li class="hd-doc-section-nav-item"><a href="#Create-a-new-post">Create a new post</a></li><li class="hd-doc-section-nav-item"><a href="#Run-server">Run server</a></li><li class="hd-doc-section-nav-item"><a href="#Generate-static-files">Generate static files</a></li><li class="hd-doc-section-nav-item"><a href="#Deploy-to-remote-sites">Deploy to remote sites</a></li>
             </ul>
           </div>
           <!-- End Section Nav -->
@@ -254,26 +255,29 @@
 <script src="/aportal/js/js/components/hs.go-to.js"></script>
 
  
+<script src="/aportal/js/js/components/hs.scroll-nav.js"></script>
+
+ 
 <script src="/aportal/js/script.js"></script>
 
 
  <!-- JS Plugins Init. -->
  <script>
    $(window).on('load', function () {
-      var typed = new Typed(".u-text-animation.u-text-animation--typing", {
-        strings: ["简洁!", "高效!", "先进!"],
-        typeSpeed: 60,
-        loop: true,
-        backSpeed: 25,
-        backDelay: 1500
-      });
-     // initialization of HSMegaMenu component
-     $('.js-mega-menu').HSMegaMenu({
-       event: 'hover',
-       pageContainer: $('.container'),
-       breakpoint: 767.98,
-       hideTimeOut: 0
-     });
+    //   var typed = new Typed(".u-text-animation.u-text-animation--typing", {
+    //     strings: ["简洁!", "高效!", "先进!"],
+    //     typeSpeed: 60,
+    //     loop: true,
+    //     backSpeed: 25,
+    //     backDelay: 1500
+    //   });
+    //  // initialization of HSMegaMenu component
+    //  $('.js-mega-menu').HSMegaMenu({
+    //    event: 'hover',
+    //    pageContainer: $('.container'),
+    //    breakpoint: 767.98,
+    //    hideTimeOut: 0
+    //  });
 
      // initialization of svg injector module
      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
