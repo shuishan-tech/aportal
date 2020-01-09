@@ -37,6 +37,9 @@
   
 <link rel="stylesheet" href="/aportal/css/prism.css">
 
+  
+<link rel="stylesheet" href="/aportal/css/hexostyle.css">
+
   <!-- Google Fonts -->
   <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 <meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/aportal/atom.xml" title="APortal" type="application/atom+xml">
@@ -50,7 +53,7 @@
           <img class="js-svg-injector"  width="100%" height="48px" src="/aportal/images/Aportal(white).svg" alt="Image Description" />
         </a>
         <!-- <a class="small ml-3" href="getting-started/changelog.html"> -->
-          <span class="lead border-left ml-1 pl-2 border-secondary"> 文档</span>
+          <span class="lead ml-1 pl-2 docstitle"> 文档</span>
         <!-- </a> -->
       </div>
 
@@ -148,10 +151,10 @@
               <p>准备好安装环境后，安装过程就十分简单，只需要运行安装命令即可。</p>
 
             </blockquote>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装最新版本</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> APortal.PowerShell</span><br><span class="line"><span class="comment"># 安装特定版本</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> APortal.PowerShell <span class="literal">-RequiredVersion</span> <span class="number">0.0</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装最新版本</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> APortal.PowerShell</span><br><span class="line"><span class="comment"># 安装特定版本</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> APortal.PowerShell <span class="literal">-RequiredVersion</span> <span class="number">0.0</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure>
 
 <p>安装完成后，可以使用命令确认模块是否安装正确。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Module</span> <span class="literal">-Name</span> APortal.PowerShell <span class="literal">-ListAvailable</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-Module</span> <span class="literal">-Name</span> APortal.PowerShell <span class="literal">-ListAvailable</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="使用-APortal-PowerShell" class="article-heading"><a href="#使用-APortal-PowerShell" class="headerlink" title="使用 APortal.PowerShell"></a>使用 APortal.PowerShell<a class="article-anchor" href="#使用-APortal-PowerShell" aria-hidden="true"></a></h2><blockquote class="callout border-info bg-soft-info">
               <p>安装好 <code>APortal.PowerShell</code> 模块后，就可以使用模块包中提供的命令对网站进行设置 APortal。下面介绍 APortal.PowerShell 模块中包含的可用命令。</p>
@@ -165,7 +168,7 @@
 
 <ol>
 <li><p>输入命令</p>
- <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 国际网站</span></span><br><span class="line"><span class="built_in">Set-APortalWeb</span> https://yourtenantname.sharepoint.com/sites/web/subweb</span><br><span class="line"><span class="comment"># 世纪互联网站</span></span><br><span class="line"><span class="built_in">Set-APortalWeb</span> https://yourtenantname.sharepoint.cn/sites/web/subweb</span><br></pre></td></tr></table></figure>
+ <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 国际网站</span></span><br><span class="line"><span class="built_in">Set-APortalWeb</span> https://yourtenantname.sharepoint.com/sites/web/subweb</span><br><span class="line"><span class="comment"># 世纪互联网站</span></span><br><span class="line"><span class="built_in">Set-APortalWeb</span> https://yourtenantname.sharepoint.cn/sites/web/subweb</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在弹出的身份认证窗口中输入网站管理员身份信息</p>
 <div width="100%" class="text-center"><img class="pb-4 text-center class" height="80%" width="80%" src="images/media/15779286287197/15779316086252.jpg"></div>
