@@ -42,8 +42,7 @@
 
   <!-- Google Fonts -->
   <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-<meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/aportal/atom.xml" title="APortal" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 4.1.1"></head>
 <body>
   <!-- Search header-->
  <!-- ========== HEADER ========== -->
@@ -897,11 +896,21 @@
 <script src="/aportal/js/js/components/hs.scroll-nav.js"></script>
 
  
+<script src="/aportal/js/search.js"></script>
+
+ 
 <script src="/aportal/js/script.js"></script>
 
 
  <!-- JS Plugins Init. -->
  <script>
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+    search_path = "search.xml";
+    }
+    var path = "/aportal/" + search_path;
+    console.log(path);
+    searchFunc(path, 'local-search-input', 'local-search-result');
    $(window).on('load', function () {
       var typed = new Typed(".u-text-animation.u-text-animation--typing", {
         strings: ["简洁!", "高效!", "先进!"],

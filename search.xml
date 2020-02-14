@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+  
+  
+    
+    
+    <entry>
+      <title></title>
+      <link href="/aportal/index.html"/>
+      <url>/aportal/index.html</url>
+      
+        <content type="html"><![CDATA[h1 中文]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常见问题</title>
+      <link href="/aportal/docs/common/index.html"/>
+      <url>/aportal/docs/common/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>文档书写规范</title>
+      <link href="/aportal/docs/common/writting.html"/>
+      <url>/aportal/docs/common/writting.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Tags"><a href="#Tags" class="headerlink" title="Tags"></a>Tags</h2><p>Tag 是基于 Hexo实现的自定义书写标签模板，根据 APortal 文档的需求，我们实现了下面几种 Tag。</p><h3 id="img-Tag"><a href="#img-Tag" class="headerlink" title="img Tag"></a>img Tag</h3><p>居中插入图片。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% fullimg images&#x2F;media&#x2F;15765646706398&#x2F;15765712301730.jpg,  class, 80%,80% %&#125;</span><br></pre></td></tr></table></figure><blockquote class="callout border-info bg-soft-info">              <p>img Tag 的参数说明：图片路径，类名，宽度，高度。<br>注意：除了图片路径为必填外，其余的都属于非必填（宽度和高度如只填一个的话宽高默认相等），且imgtag为单标签不需要end结束标签</p>            </blockquote><p>效果：</p><div width='100%' class='text-center'><img class='pb-4 text-center class' height='80%' width='80%' src='images/media/15765646706398/15765712301730.jpg' ></img></div><h2 id="label-Tag"><a href="#label-Tag" class="headerlink" title="label Tag"></a>label Tag</h2><p>为文字添加标签背景。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% label primary@APortal%&#125;</span><br></pre></td></tr></table></figure><span class="p-1 rounded mb-2 bg-primary text-white">APortal</span><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% label secondary@APortal%&#125;</span><br></pre></td></tr></table></figure><span class="p-1 rounded mb-2 bg-secondary text-white">APortal</span><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% label success@APortal%&#125;</span><br></pre></td></tr></table></figure><span class="p-1 rounded mb-2 bg-success text-white">APortal</span><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% label danger@APortal%&#125;</span><br></pre></td></tr></table></figure><span class="p-1 rounded mb-2 bg-danger text-white">APortal</span><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% label warning@APortal%&#125;</span><br></pre></td></tr></table></figure><span class="p-1 rounded mb-2 bg-warning text-white">APortal</span><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% label info@APortal%&#125;</span><br></pre></td></tr></table></figure><span class="p-1 rounded mb-2 bg-info text-white">APortal</span><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% label dark@APortal%&#125;</span><br></pre></td></tr></table></figure><span class="p-1 rounded mb-2 bg-dark text-white">APortal</span><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% label body@APortal%&#125;</span><br></pre></td></tr></table></figure><span class="p-1 rounded mb-2 bg-body text-white">APortal</span><h2 id="note-Tag"><a href="#note-Tag" class="headerlink" title="note Tag"></a>note Tag</h2><p>内容注释块。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note primary%&#125;</span><br><span class="line">    APortal for Office 365.</span><br><span class="line">&#123;%endnote%&#125;</span><br></pre></td></tr></table></figure><blockquote class="callout border-primary bg-soft-primary">              <p>APortal for Office 365.</p>            </blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note secondary%&#125;</span><br><span class="line">    APortal for Office 365.</span><br><span class="line">&#123;%endnote%&#125;</span><br></pre></td></tr></table></figure><blockquote class="callout border-secondary bg-soft-secondary">              <p>APortal for Office 365.</p>            </blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note success%&#125;</span><br><span class="line">    APortal for Office 365.</span><br><span class="line">&#123;%endnote%&#125;</span><br></pre></td></tr></table></figure><blockquote class="callout border-success bg-soft-success">              <p>APortal for Office 365.</p>            </blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note danger%&#125;</span><br><span class="line">    APortal for Office 365.</span><br><span class="line">&#123;%endnote%&#125;</span><br></pre></td></tr></table></figure><blockquote class="callout border-danger bg-soft-danger">              <p>APortal for Office 365.</p>            </blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note warning%&#125;</span><br><span class="line">    APortal for Office 365.</span><br><span class="line">&#123;%endnote%&#125;</span><br></pre></td></tr></table></figure><blockquote class="callout border-warning bg-soft-warning">              <p>APortal for Office 365.</p>            </blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note info%&#125;</span><br><span class="line">    APortal for Office 365.</span><br><span class="line">&#123;%endnote%&#125;</span><br></pre></td></tr></table></figure><blockquote class="callout border-info bg-soft-info">              <p>APortal for Office 365.</p>            </blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note dark%&#125;</span><br><span class="line">    APortal for Office 365.</span><br><span class="line">&#123;%endnote%&#125;</span><br></pre></td></tr></table></figure><blockquote class="callout border-dark bg-soft-dark">              <p>APortal for Office 365.</p>            </blockquote>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>示例项目</title>
+      <link href="/aportal/docs/example/index.html"/>
+      <url>/aportal/docs/example/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>开始使用</title>
+      <link href="/aportal/docs/gettingstarted/index.html"/>
+      <url>/aportal/docs/gettingstarted/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>初始设置</title>
+      <link href="/aportal/docs/gettingstarted/initialization.html"/>
+      <url>/aportal/docs/gettingstarted/initialization.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安装</title>
+      <link href="/aportal/docs/gettingstarted/installation.html"/>
+      <url>/aportal/docs/gettingstarted/installation.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h2><p>在安装 APortal 之前，请仔细阅读本系列文章第一篇 ，根据实际需求谨慎选择安装环境，因为安装 APortal 会在相应的网站生成列表和推送网站资源，如果是已经存在的生产网站，可能会造成不可逆转的数据混淆。</p><h2 id="安装-APortal-PowerShell"><a href="#安装-APortal-PowerShell" class="headerlink" title="安装 APortal.PowerShell"></a>安装 APortal.PowerShell</h2><blockquote class="callout border-info bg-soft-info">              <p>安装 APortal 使用 PowerShell 标准的包管理工具，我们针对 APortal 产品提供了一个叫做 <code>APortal.PowerShell</code>的 PowerShell 模块，且维护在 <a href="https://www.powershellgallery.com/packages/APortal.PowerShell" target="_blank" rel="noopener external nofollow noreferrer">PowerShellGallery</a> 上。</p>            </blockquote><h3 id="安装模块前环境准备"><a href="#安装模块前环境准备" class="headerlink" title="安装模块前环境准备"></a>安装模块前环境准备</h3><blockquote class="callout border-warning bg-soft-warning">              <p><code>APortal.PowerShell</code> 模块依赖 <code>SharePointPnPPowerShellOnline</code>模块，因此目前只能在 Windows 环境下执行。</p>            </blockquote><h4 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h4><ul><li>Windows 10</li><li>Windows 2012 及以上</li></ul><h4 id="PowerShell-版本"><a href="#PowerShell-版本" class="headerlink" title="PowerShell 版本"></a>PowerShell 版本</h4><ul><li>5.0 </li><li>5.1</li></ul><h4 id="Net-Framework-版本"><a href="#Net-Framework-版本" class="headerlink" title=".Net Framework 版本"></a>.Net Framework 版本</h4><ul><li>4.5 及以上</li><li>不支持 .NET Core</li></ul><h4 id="SharePointPnPPowerShellOnline-版本"><a href="#SharePointPnPPowerShellOnline-版本" class="headerlink" title="SharePointPnPPowerShellOnline 版本"></a>SharePointPnPPowerShellOnline 版本</h4><ul><li>3.13.1909</li><li>不需要手工安装，在安装 <code>APortal.Powershell</code> 包的时候会自动安装</li></ul><h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h3><blockquote class="callout border-info bg-soft-info">              <p>准备好安装环境后，安装过程就十分简单，只需要运行安装命令即可。</p>            </blockquote><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装最新版本</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> APortal.PowerShell</span><br><span class="line"><span class="comment"># 安装特定版本</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> APortal.PowerShell <span class="literal">-RequiredVersion</span> <span class="number">0.0</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure><p>安装完成后，可以使用命令确认模块是否安装正确。</p><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-Module</span> <span class="literal">-Name</span> APortal.PowerShell <span class="literal">-ListAvailable</span></span><br></pre></td></tr></table></figure><h2 id="使用-APortal-PowerShell"><a href="#使用-APortal-PowerShell" class="headerlink" title="使用 APortal.PowerShell"></a>使用 APortal.PowerShell</h2><blockquote class="callout border-info bg-soft-info">              <p>安装好 <code>APortal.PowerShell</code> 模块后，就可以使用模块包中提供的命令对网站进行设置 APortal。下面介绍 APortal.PowerShell 模块中包含的可用命令。</p>            </blockquote><h3 id="Set-APortalWeb"><a href="#Set-APortalWeb" class="headerlink" title="Set-APortalWeb"></a>Set-APortalWeb</h3><blockquote class="callout border-info bg-soft-info">              <p>这是 <code>APortal.PowerShell</code> 模块中提供的最主要命令，用于设置SharePoint Online网站的 APortal 功能，会在用户输入的网站地址对应的网站上推送列表，网站资源，列表数据等一系列的网站数据。</p>            </blockquote><ol><li><p>输入命令</p> <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 国际网站</span></span><br><span class="line"><span class="built_in">Set-APortalWeb</span> https://yourtenantname.sharepoint.com/sites/web/subweb</span><br><span class="line"><span class="comment"># 世纪互联网站</span></span><br><span class="line"><span class="built_in">Set-APortalWeb</span> https://yourtenantname.sharepoint.cn/sites/web/subweb</span><br></pre></td></tr></table></figure></li><li><p>在弹出的身份认证窗口中输入网站管理员身份信息</p><div width='100%' class='text-center'><img class='pb-4 text-center class' height='80%' width='80%' src='images/media/15779286287197/15779316086252.jpg' ></img></div><!-- ![-w967](images/media/15779286287197/15779316086252.jpg) --></li><li><p>确认管理员身份后命令开始执行，直到推送结束</p><div width='100%' class='text-center'><img class='pb-4 text-center class' height='80%' width='80%' src='images/media/15779286287197/15779323142997.jpg' ></img></div><!-- ![-w881](images/media/15779286287197/15779323142997.jpg) --></li></ol>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>准备</title>
+      <link href="/aportal/docs/gettingstarted/preinstallation.html"/>
+      <url>/aportal/docs/gettingstarted/preinstallation.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h2><p>APortal for Office 365 系列文章是针对 APortal 的产品使用介绍。APortal 基于微软Office 365 ，为 Office 365 和企业用户带来技术增值和业务增值。</p><h2 id="什么是-Office-365？"><a href="#什么是-Office-365？" class="headerlink" title="什么是 Office 365？"></a>什么是 Office 365？</h2><blockquote class="callout border-warning bg-soft-warning">              <p>由于各个国家的政策和法规有所不同，所以 Office 365 在全球一共有 4 个版本：</p><ul><li>全球版</li><li>美国政府版</li><li>德国版</li><li>处于中国的世纪互联运营版</li></ul><p>以下内容以全球版 E5 开发者版本 为基础进行介绍。</p>            </blockquote><p>Office 365 是微软为企业打造的完整的办公云服务，它不仅包含最新版的 Office 软件，同时满足企业对于企业级邮件处理（Exchange Online）、  文件分享（SharePoint Online）、即时消息和可视网络会议（Skype for Business）的需求。Office 365 将帮助您的企业实现办公的运维、管理  和使用体验的革新，为您的企业带来更灵活、高效、更安全可靠的云办公方式。 </p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15765712301730.jpg' ></img></div><!-- <img width=500 src="images/media/15765646706398/15765712301730.jpg" > --><!-- ![-w1440](images/media/15765646706398/15765712301730.jpg =500x500) --><p>Office 365 中包含了很多企业应用产品，其中常见的有 Word，Excel，PowerPoint，Exchange，Skype，SharePoint 等。熟悉微软企业应用体系的用户可以看出来，这其实就是之前企业内部应用微软产品的云端系列，如果熟悉企业信息协同的用户一眼就能看到 SharePoint 这个产品，这是过去二十年微软在企业内部信息协同的拳头产品，如今也可以依托云端运行，APortal 当前版本就是针对 SharePoint Online 进行技术和业务的增强。</p><p>要使用 APortal 提供的功能，首先需要有一个 SharePoint Online 网站，下面就介绍如何创建一个 SharePoint Online 网站。</p><h2 id="创建网站"><a href="#创建网站" class="headerlink" title="创建网站"></a>创建网站</h2><blockquote class="callout border-info bg-soft-info">              <p>APortal 支持在现有网站上进行部署，但是为了业务的独立性和连续性，我们强烈建议重新创建新的 <code>Tenant</code> 和子网站。特别是对 Aporta 进行评估和试用的用户，我们推荐在新的 <code>TenantSite</code>下的子网站上进行。</p>            </blockquote><h3 id="创建前的准备"><a href="#创建前的准备" class="headerlink" title="创建前的准备"></a>创建前的准备</h3><blockquote class="callout border-warning bg-soft-warning">              <p>您需要有租户管理员账号和密码。</p>            </blockquote><h3 id="使用浏览器创建"><a href="#使用浏览器创建" class="headerlink" title="使用浏览器创建"></a>使用浏览器创建</h3><p>打开浏览器，输入SharePoint Online 管理中心地址：<br><a href="https://yourtenantname-admin.sharepoint.cn/" target="_blank" rel="noopener external nofollow noreferrer">https://yourtenantname-admin.sharepoint.cn/</a></p><blockquote class="callout border-info bg-soft-info">              <p>以我们地址为例<br><a href="https://aportaldev-admin.sharepoint.com/。" target="_blank" rel="noopener external nofollow noreferrer">https://aportaldev-admin.sharepoint.com/。</a></p>            </blockquote><p>管理中心主页：</p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15765696856194.jpg' ></img></div><!-- ![-w1434](images/media/15765646706398/15765696856194.jpg) --><p>点击左侧菜单中的 <code>活动站点</code>，然后点击右侧内容中的 <code>创建</code> 按钮；</p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15766329020992.jpg' ></img></div><!-- ![-w1440](images/media/15765646706398/15766329020992.jpg) --><p>选择 <code>团队网站</code></p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15766329750362.jpg' ></img></div><!-- ![-w1440](images/media/15765646706398/15766329750362.jpg) --><p>输入 <code>站点名称</code>，<code>组所有者</code>和<code>选择网站语言</code>，点击<code>下一步</code></p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15766330369238.jpg' ></img></div><!-- ![-w1440](images/media/15765646706398/15766330369238.jpg) --><p>等待网站集创建完成：</p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15766330656810.jpg' ></img></div><!-- ![-w1440](images/media/15765646706398/15766330656810.jpg) --><p>创建完成后，通过地址 <a href="https://aportaldev.sharepoint.com/sites/uat" target="_blank" rel="noopener external nofollow noreferrer">https://aportaldev.sharepoint.com/sites/uat</a> 访问创建好的网站集和网站：</p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15766332481009.jpg' ></img></div><!-- ![-w1440](images/media/15765646706398/15766332481009.jpg) --><p>为了方便对 APortal 进行评估，建议在网站集下创建子网站进行，这样就不用频繁需要租户管理员进行操作。</p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15766333633951.jpg' ></img></div><!-- ![-w1440](images/media/15765646706398/15766333633951.jpg) --><p>点击创建子网站，填写创建子网站的相关内容，使用默认选项，点击页面下方的<code>创建</code>按钮：</p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15766334768686.jpg' ></img></div><!-- ![-w1440](images/media/15765646706398/15766334768686.jpg) --><p>创建完成后，会跳转到新创建的子网站首页，表示准备工作已经就绪。</p><div width='100%' class='text-center'><img class='pb-4 text-center aaa' height='80%' width='80%' src='images/media/15765646706398/15766336022347.jpg' ></img></div><!-- ![-w1440](images/media/15765646706398/15766336022347.jpg) --><h3 id="使用脚本创建"><a href="#使用脚本创建" class="headerlink" title="使用脚本创建"></a>使用脚本创建</h3><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>自定义开发</title>
+      <link href="/aportal/docs/introduction/development.html"/>
+      <url>/aportal/docs/introduction/development.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>表单设计</title>
+      <link href="/aportal/docs/introduction/form.html"/>
+      <url>/aportal/docs/introduction/form.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用详解</title>
+      <link href="/aportal/docs/introduction/index.html"/>
+      <url>/aportal/docs/introduction/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>组织结构管理</title>
+      <link href="/aportal/docs/introduction/orgchart.html"/>
+      <url>/aportal/docs/introduction/orgchart.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>工作流管理</title>
+      <link href="/aportal/docs/introduction/workflow.html"/>
+      <url>/aportal/docs/introduction/workflow.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+  
+</search>

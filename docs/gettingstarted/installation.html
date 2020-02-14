@@ -42,8 +42,7 @@
 
   <!-- Google Fonts -->
   <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-<meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/aportal/atom.xml" title="APortal" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 4.1.1"></head>
 <body>
      <!-- ========== HEADER ========== -->
    <header id="header" class="u-header u-header--starter">
@@ -64,7 +63,8 @@
             <span class="fas fa-search"></span>
           </span>
         </div>
-        <input class="js-hs-docs-search form-control pl-0" type="text" placeholder="查询..." aria-label="查询..." aria-describedby="docsSearch" data-url="assets/ajax/autocomplete-data-for-documentation-search.json">
+        <input class="js-hs-docs-search form-control pl-0" id="local-search-input" type="text" placeholder="查询..." aria-label="查询..." aria-describedby="docsSearch" data-url="assets/ajax/autocomplete-data-for-documentation-search.json">
+        <div id="local-search-result"></div>
       </form>
       <!-- End Header Search -->
 
@@ -279,11 +279,21 @@
 <script src="/aportal/js/js/components/hs.scroll-nav.js"></script>
 
  
+<script src="/aportal/js/search.js"></script>
+
+ 
 <script src="/aportal/js/script.js"></script>
 
 
  <!-- JS Plugins Init. -->
  <script>
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+    search_path = "search.xml";
+    }
+    var path = "/aportal/" + search_path;
+    console.log(path);
+    searchFunc(path, 'local-search-input', 'local-search-result');
    $(window).on('load', function () {
       var typed = new Typed(".u-text-animation.u-text-animation--typing", {
         strings: ["简洁!", "高效!", "先进!"],
