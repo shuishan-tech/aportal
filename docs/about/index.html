@@ -151,7 +151,7 @@
   <img src="/aportal/images/Aportal.svg" alt="" width="150px" height="80px">
   <!-- End Logo -->
 
-  <p class="small text-muted mb-0">2012-2019 shuishan-tech.com. All rights reserved.</p>
+  <p class="small text-muted mb-0">2012-2020 shuishan-tech.com. All rights reserved.</p>
 </footer>
 <!-- ========== END FOOTER ========== -->
    <!-- JS Global Compulsory -->
@@ -223,15 +223,15 @@
     var path = "/aportal/" + search_path;
     console.log(path);
     searchFunc(path, 'local-search-input', 'search-result');
-   $(window).on('load', function () {
-      var typed = new Typed(".u-text-animation.u-text-animation--typing", {
-        strings: ["简洁!", "高效!", "先进!"],
-        typeSpeed: 60,
-        loop: true,
-        backSpeed: 25,
-        backDelay: 1500
-      });
-     // initialization of HSMegaMenu component
+    $(window).on('load', function () {
+  //     var typed = new Typed(".u-text-animation.u-text-animation--typing", {
+  //       strings: ["简洁!", "高效!", "先进!"],
+  //       typeSpeed: 60,
+  //       loop: true,
+  //       backSpeed: 25,
+  //       backDelay: 1500
+  //     });
+  //    // initialization of HSMegaMenu component
      $('.js-mega-menu').HSMegaMenu({
        event: 'hover',
        pageContainer: $('.container'),
@@ -240,7 +240,7 @@
      });
 
      // initialization of svg injector module
-    //  $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+     $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
    });
 
    $(document).on('ready', function () {
