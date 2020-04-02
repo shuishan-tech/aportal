@@ -112,7 +112,13 @@
               <!-- <li class="hd-doc-section-nav-item active"><a href="#quick-start">Quick start</a></li>
               <li class="hd-doc-section-nav-item"><a href="#starter-template">Starter template</a></li>
               <li class="hd-doc-section-nav-item"><a href="#responsive-meta-tag">Responsive meta tag</a></li> -->
-              
+              <li class="hd-doc-section-nav-item">
+      <a href="#系统管理中心">系统管理中心</a></li><li class="hd-doc-section-nav-item">
+      <a href="#系统参数设置">系统参数设置</a></li><li class="hd-doc-section-nav-item">
+      <a href="#系统邮件模板设置">系统邮件模板设置</a><ul><li class="hd-doc-section-nav-item"><a href="#电子邮件模板样例">电子邮件模板样例</a><ul><li class="hd-doc-section-nav-item"><a href="#发送给审批用户">发送给审批用户</a></li><li class="hd-doc-section-nav-item"><a href="#申请被拒绝退回给申请人">申请被拒绝退回给申请人</a></li><li class="hd-doc-section-nav-item"><a href="#审批完成发给申请人">审批完成发给申请人</a></li></ul></li></ul></li><li class="hd-doc-section-nav-item">
+      <a href="#电子邮件审批设置">电子邮件审批设置</a></li><li class="hd-doc-section-nav-item">
+      <a href="#逻辑公式设置">逻辑公式设置</a><ul><li class="hd-doc-section-nav-item"><a href="#变量和常量">变量和常量</a><ul><li class="hd-doc-section-nav-item"><a href="#引用工作流变量">引用工作流变量</a></li><li class="hd-doc-section-nav-item"><a href="#引用业务单据主表字段">引用业务单据主表字段</a></li><li class="hd-doc-section-nav-item"><a href="#引用流程字段">引用流程字段</a></li><li class="hd-doc-section-nav-item"><a href="#级联引用查阅项字段引用列表包含的其他字段">级联引用查阅项字段引用列表包含的其他字段</a></li><li class="hd-doc-section-nav-item"><a href="#引用上下文变量">引用上下文变量</a></li><li class="hd-doc-section-nav-item"><a href="#日期时间变量">日期时间变量</a></li><li class="hd-doc-section-nav-item"><a href="#常量">常量</a></li></ul></li><li class="hd-doc-section-nav-item"><a href="#逻辑计算符">逻辑计算符</a></li><li class="hd-doc-section-nav-item"><a href="#特殊符号">特殊符号</a></li><li class="hd-doc-section-nav-item"><a href="#常见示例">常见示例</a></li></ul></li><li class="hd-doc-section-nav-item">
+      <a href="#多语言设置">多语言设置</a></li>
             </ul>
           </div>
           <!-- End Section Nav -->
@@ -121,7 +127,475 @@
             <div class="hs-docs-content-divider">
               <h1>系统管理</h1>
             </div>
-            
+            <h2 id="系统管理中心" class="article-heading"><a href="#系统管理中心" class="headerlink" title="系统管理中心"></a>系统管理中心<a class="article-anchor" href="#系统管理中心" aria-hidden="true"></a></h2><p>&emsp;&emsp;APortal提供系统管理中心页面供管理用户对系统中的数据进行管理，管理中心页面访问地址为：网站URL/SitePages/admincenter.rest.aspx 。</p>
+<div width="100%" class="text-center"><img class="pb-4 text-center class" height="80%" width="80%" src="images/aportal-2020-04-02-13-16-54.png"></div>
+<p>&emsp;&emsp;管理员用户可以通过管理中心页面对当前网站下的列表数据执行检索、新增、编辑、删除、导入、导出等操作。要对列表数据执行操作，首先需要在SSF_Admin列表中进行登记。通过点击左侧导航栏中的“Admin Menu”选项可打开SSF_Admin列表。在SSF_Admin列表中创建或编辑已有记录。</p>
+<ul>
+<li><strong>Title</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>在左侧导航栏中显示的标题信息。</p>
+
+            </blockquote></li>
+<li><strong>Parent</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>上级导航栏，支持两级导航栏。</p>
+
+            </blockquote></li>
+<li><strong>Menu URL</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p> 以”#/listdetail/”开头，后面拼接“{1}/{2}/{3}/{4}/{5}/{6}/{7}”的字符串，用于设置需要管理的列表的显示和管理功能。</p>
+<ul>
+<li>{1} – 列表名称。</li>
+<li>{2} – 设置1或0代表是否支持在管理中心页面对该列表进行导出导入的操作。</li>
+<li>{3} – 如果需要执行数据导入，用来判断数据唯一性的关键字段名，如果多个字段名以“,”分隔。</li>
+<li>{4} – 系统保留，空白。</li>
+<li>{5} – 列表显示视图，默认为ssadmin。</li>
+<li>{6} – 在列表中新建、编辑记录使用的表单视图，默认为ssadmindata。</li>
+<li>{7} – 导出导入使用的列表视图，默认为SSExportView。</li>
+</ul>
+
+            </blockquote></li>
+<li><strong>Display Order</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>设置当前管理的记录在左侧导航栏中的同级别下的显示顺序。</p>
+
+            </blockquote>
+
+</li>
+</ul>
+<p>&emsp;&emsp;创建或编辑完成后，保存记录并刷新管理中心页面，新建的记录将显示在管理中心页面左侧导航栏中。</p>
+<h2 id="系统参数设置" class="article-heading"><a href="#系统参数设置" class="headerlink" title="系统参数设置"></a>系统参数设置<a class="article-anchor" href="#系统参数设置" aria-hidden="true"></a></h2><p>&emsp;&emsp;APortal系统参数存储在/Lists/SSF_Parameters列表中，在系统初始化时包含下列参数。</p>
+<ul>
+<li><strong>SSF_CurrentVersion</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>控制所有客户端的浏览器缓存；工作流中心的左侧导航栏，标题部分的菜单，以及数据列表使用的用户试图，都是缓存在客户端浏览器中的。<br>如果上述信息发生了修改，则需要将这个参数值修改为新的值。客户端浏览器打开系统页面时将加载新的缓存数据。</p>
+<ul>
+<li>参数类别： 系统参数（值=1）。</li>
+<li>参数值类型： 单行文本（值=2）。</li>
+</ul>
+
+            </blockquote></li>
+<li><strong>SSF_DateOnlyFormat</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>单据列表中显示的日期格式，默认值为：YYYY/MM/DD。</p>
+<ul>
+<li>参数类别： 系统参数（值=1）。</li>
+<li>参数值类型： 单行文本（值=2）。</li>
+</ul>
+
+            </blockquote></li>
+<li><strong>SSF_DateTimeFormat</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>单据列表中显示的日期+时间格式，默认值为：YYYY/MM/DD HH:mm。</p>
+<ul>
+<li>参数类别： 系统参数（值=1）。</li>
+<li>参数值类型： 单行文本（值=2）。</li>
+</ul>
+
+            </blockquote>
+
+</li>
+</ul>
+<h2 id="系统邮件模板设置" class="article-heading"><a href="#系统邮件模板设置" class="headerlink" title="系统邮件模板设置"></a>系统邮件模板设置<a class="article-anchor" href="#系统邮件模板设置" aria-hidden="true"></a></h2><p>&emsp;&emsp;邮件模板分为邮件标题和邮件内容两部分的模板，其中邮件标题仅支持纯文本格式的模板，邮件内容则采用HTML格式进行模板的设置。<br>&emsp;&emsp;邮件标题模板在系统中使用单行文本格式保存，最多不应超过255个字符。邮件内容则采用多行文本格式保存，内容长度没有限制。<br>&emsp;&emsp;在邮件模板的定义中，除了可以使用固定文字以外，还可以使用下列格式的动态参数，在流程实际流转时从流程或业务单据获取相应的信息替换为实际的邮件或短信内容。<br>&emsp;&emsp;流程将在启动节点（仅限第二次进入启动节点），审批处理和审阅处理节点上发送电子邮件和短信通知。在节点上发送通知时，首先获取节点上设置的相关模板内容，如果节点上没有配置，则获取系统参数列表（『SSF_Parameters』）中设置的相应模板内容。系统参数列表中设置的相应模板的参数名称和类型如下：</p>
+<ul>
+<li>SSW_ApprovalEmailSubject  <blockquote class="callout border-success bg-soft-success">
+              <p>邮件标题模板。</p>
+<ul>
+<li>参数类别： 系统参数（值=1）。</li>
+<li>参数值类型： 单行文本（值=2）。</li>
+</ul>
+
+            </blockquote></li>
+<li>SSW_ApprovalEmailBody  <blockquote class="callout border-success bg-soft-success">
+              <p>邮件内容模板。</p>
+<ul>
+<li>参数类别： 系统参数（值=1）。</li>
+<li>参数值类型： 多行文本（值=3）。</li>
+</ul>
+
+            </blockquote>
+
+</li>
+</ul>
+<p>&emsp;&emsp;在流程设计器中可以在工作流版本或工作流节点处设置系统发送的提醒邮件模板。工作流节点属性里设置的邮件模板优先级高于工作流版本属性里设置的。也就是说如果需要发送提醒邮件，系统将首先判断需要发送提醒邮件的节点上是否设置了邮件模板，如果没有再去看工作流版本是否设置了提醒邮件模板。如果都没有设置，则去系统参数里获取SSW_ApprovalEmaiSubject和SSW_ApprovalEmailBody作为提醒邮件的模板。<br>&emsp;&emsp;在工作流版本或工作流节点上设置提醒邮件模板有2种方式，一种是直接在邮件标题和邮件内容里写入模板内容。另一种则以：“SSW_EmailTemplate:邮件标题/内容参数名”的形式，分别写入邮件标题和邮件内容。邮件标题/内容参数则需要在系统参数表里进行定义，参数类别和参数值类别分别是“1，2”和“1，3”。<br>&emsp;&emsp;在模板中可使用的获取流程运行时上下文信息内容的语法如下：</p>
+<ul>
+<li><strong>{Context:SSWF.工作流列表字段名称}</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>从工作流上下文信息中获取相应的内容，例如：{Context:SSWF.Applicant}代表工作流申请人。</p>
+
+            </blockquote></li>
+<li><strong>{Context:业务列表字段名称}</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>从流程相关的业务单据中获取相应的内容，例如：{Context:Title}代表业务单据的Title字段内容。</p>
+
+            </blockquote></li>
+<li><strong>{Context:SSW.WebUrl}</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>代表当前系统的根网站Web链接。</p>
+
+            </blockquote></li>
+<li><strong>{Context:SSWF.查阅项字段.查阅项字段属性}</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>代表工作流信息中的查阅项字段相关的列表属性，例如：{Context:SSWF.Applicant.EnglishName}代表申请人的英文姓名。</p>
+
+            </blockquote></li>
+<li><strong>{Context:查阅项字段.查阅项字段属性}</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>代表业务单据信息中的查阅项字段相关的列表属性，例如：{Context:Vendor.Title}代表业务单据中的供应商名称。</p>
+
+            </blockquote>
+
+</li>
+</ul>
+<h3 id="电子邮件模板样例" class="article-heading"><a href="#电子邮件模板样例" class="headerlink" title="电子邮件模板样例"></a>电子邮件模板样例<a class="article-anchor" href="#电子邮件模板样例" aria-hidden="true"></a></h3><h4 id="发送给审批用户" class="article-heading"><a href="#发送给审批用户" class="headerlink" title="发送给审批用户"></a>发送给审批用户<a class="article-anchor" href="#发送给审批用户" aria-hidden="true"></a></h4><p>&emsp;&emsp;在流程中发送给审批用户的电子邮件模板样例：</p>
+<ul>
+<li><strong>标题</strong>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">工作流任务通知 &#x2F; Workflow Task Reminder: &#123;Context:SSWF.WorkflowCategory&#125;, &#123;Context:SSWF.Applicant.Title&#125; (&#123;Context:SSWF.WorkflowNumber&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><strong>内容</strong>  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft YaHei', Tahoma; font-size: small;"</span>&gt;</span></span><br><span class="line">    您好，&#123;Context:SSWFT.Approver.Title&#125;，</span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    有一条工作流任务正在等待您的处理。</span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">'0'</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft YaHei', Tahoma; font-size:small;"</span> <span class="attr">width</span>=<span class="string">'80%'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:10px"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:100px"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>申请人：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.Applicant.Title&#125; <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>申请时间：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.SubmitTime&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>申请类别：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowCategory.Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>单据编号：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowNumber&#125; <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>主题<span class="tag">&lt;/<span class="name">b</span>&gt;</span>：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">'2'</span>&gt;</span>请点击<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'&#123;Context:SSW.WebUrl&#125;'</span>&gt;</span>这里<span class="tag">&lt;/<span class="name">a</span>&gt;</span>进入工作流系统处理。<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">Dear &#123;Context:SSWFT.Approver.Title&#125;,</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">There is a pending task in workflow system waiting for your process.</span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">'0'</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft YaHei', Tahoma; font-size:small;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:10px"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:100px"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Applicant<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.Applicant.Title&#125; <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Submit Time<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.SubmitTime&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Category<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowCategory.Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Application No.<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowNumber&#125; <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Subject<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">'2'</span>&gt;</span>You may access workflow system by click <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'&#123;Context:SSW.WebUrl&#125;'</span>&gt;</span>here<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="申请被拒绝退回给申请人" class="article-heading"><a href="#申请被拒绝退回给申请人" class="headerlink" title="申请被拒绝退回给申请人"></a>申请被拒绝退回给申请人<a class="article-anchor" href="#申请被拒绝退回给申请人" aria-hidden="true"></a></h4><p>&emsp;&emsp;申请被拒绝并退回给流程发起人时，系统发送给申请人使用的邮件通知模板样例：</p>
+<ul>
+<li><strong>标题</strong>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">申请被拒绝 &#x2F; Application Rejected: &#123;Context:SSWF.WorkflowCategory&#125;, &#123;Context:SSWF.Applicant.Title&#125; (&#123;Context:SSWF.WorkflowNumber&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><strong>内容</strong>  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft YaHei', Tahoma; font-size: small;"</span>&gt;</span></span><br><span class="line">    您好，&#123;Context:SSWFT.Approver.Title&#125;，</span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    您的单据在审批过程中被拒绝并退回。</span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">'0'</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft YaHei', Tahoma; font-size: small;"</span> <span class="attr">width</span>=<span class="string">"80%"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:10px"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:100px"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>申请时间：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.SubmitTime&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>申请类别：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowCategory.Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>单据编号：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowNumber&#125; <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>主题<span class="tag">&lt;/<span class="name">b</span>&gt;</span>：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">'2'</span>&gt;</span>请点击<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'&#123;Context:SSW.WebUrl&#125;'</span>&gt;</span>这里<span class="tag">&lt;/<span class="name">a</span>&gt;</span>进入工作流系统处理。<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">Dear &#123;Context:SSWFT.Approver.Title&#125;,</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">Your application has been rejected and returned.</span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">'0'</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft YaHei', Tahoma; font-size: small;"</span> <span class="attr">width</span>=<span class="string">"80%"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:10px"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:100px"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Submit Time<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.SubmitTime&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Category<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowCategory.Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Application No.<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowNumber&#125; <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Subject<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">'2'</span>&gt;</span>You may access workflow system by click <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'&#123;Context: SSW.WebUrl &#125;'</span>&gt;</span>here<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="审批完成发给申请人" class="article-heading"><a href="#审批完成发给申请人" class="headerlink" title="审批完成发给申请人"></a>审批完成发给申请人<a class="article-anchor" href="#审批完成发给申请人" aria-hidden="true"></a></h4><p>&emsp;&emsp;审批完成后给申请人发送的通知邮件模板样例：</p>
+<ul>
+<li><strong>标题</strong>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">申请已通过 &#x2F; Application Approved: &#123;Context:SSWF.WorkflowCategory&#125;, &#123;Context:SSWF.Applicant.Title&#125; (&#123;Context:SSWF.WorkflowNumber&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><strong>内容</strong>  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft YaHei', Tahoma; font-size: small;"</span>&gt;</span></span><br><span class="line">    您好，&#123;Context:SSWF.Applicant.Title&#125;，</span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    您的申请已经审批通过。</span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">'0'</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft YaHei', Tahoma; font-size: small;"</span> <span class="attr">width</span>=<span class="string">"80%"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:10px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:100px;"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>申请时间：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.SubmitTime&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>申请类别：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowCategory&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>单据编号：<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowNumber&#125; <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>主题<span class="tag">&lt;/<span class="name">b</span>&gt;</span>：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">'2'</span>&gt;</span>请点击<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'&#123;Context: SSW.WebUrl&#125;'</span>&gt;</span>这里<span class="tag">&lt;/<span class="name">a</span>&gt;</span>进入工作流系统查看详细信息。<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">Dear &#123; Context:SSWF.Applicant.Title&#125;,</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">Your application has been approved.</span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">'0'</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft YaHei', Tahoma; font-size: small;"</span> <span class="attr">width</span>=<span class="string">"80%"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:10px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:100px;"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Submit Time<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.SubmitTime&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Category<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowCategory&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Application No.<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:SSWF.WorkflowNumber&#125; <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Subject<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;Context:Title&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">'2'</span>&gt;</span>You may access workflow system by click <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'&#123;Context: SSW.WebUrl &#125;'</span>&gt;</span>here<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="电子邮件审批设置" class="article-heading"><a href="#电子邮件审批设置" class="headerlink" title="电子邮件审批设置"></a>电子邮件审批设置<a class="article-anchor" href="#电子邮件审批设置" aria-hidden="true"></a></h2><p>&emsp;&emsp;电子邮件审批，是指审批用户通过直接回复系统发送的审批提醒邮件，在回复邮件的第一行写入代表同意或拒绝的关键字，以完成审批操作的过程。<br>&emsp;&emsp;要实现电子邮件审批，需要在系统中做如下的设置：</p>
+<ul>
+<li>传入邮件设置，也即将发送提醒邮件的邮箱配置为可以允许系统收取该邮箱的邮件。系统可接受的账户类型包括IMAP和POP，设置方式参照下图所示：  <div width="100%" class="text-center"><img class="pb-4 text-center class" height="80%" width="80%" src="images/aportal-2020-04-02-13-57-25.png"></div>
+  <div width="100%" class="text-center"><img class="pb-4 text-center class" height="80%" width="80%" src="images/aportal-2020-04-02-13-58-20.png"></div>
+  <blockquote class="callout border-danger bg-soft-danger">
+              <p>注：传入邮件设置在工作流引擎程序中设置。工作流引擎可以由水杉提供的云机托管，或用户自行运营云机托管。</p>
+
+            </blockquote></li>
+<li>在审批节点上将“允许邮件审批”设置为“是”。  <blockquote class="callout border-info bg-soft-info">
+              <p>系统默认支持的关键字包括：</p>
+<ul>
+<li>代表同意的关键字： 同意，好，Agree，Yes，OK。</li>
+<li>代表拒绝的关键字： 拒绝，不同意，Reject，No，Disagree。</li>
+</ul>
+<p>系统还支持自定义的同意或拒绝的关键字，分别使用下面两个系统参数进行定义，多个关键字使用竖线或逗号或分号进行（|,;）分隔。</p>
+<ul>
+<li>SSW_AgreedKeys： 自定义同意关键字<ul>
+<li>参数类别： 系统参数（值=1）。</li>
+<li>参数值类型： 多行文本（值=3）。</li>
+</ul>
+</li>
+<li>SSW_DisagreedKeys： 自定义拒绝关键字<ul>
+<li>参数类别： 系统参数（值=1）。</li>
+<li>参数值类型： 多行文本（值=3）。</li>
+</ul>
+</li>
+</ul>
+
+            </blockquote>
+
+</li>
+</ul>
+<h2 id="逻辑公式设置" class="article-heading"><a href="#逻辑公式设置" class="headerlink" title="逻辑公式设置"></a>逻辑公式设置<a class="article-anchor" href="#逻辑公式设置" aria-hidden="true"></a></h2><h3 id="变量和常量" class="article-heading"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量<a class="article-anchor" href="#变量和常量" aria-hidden="true"></a></h3><h4 id="引用工作流变量" class="article-heading"><a href="#引用工作流变量" class="headerlink" title="引用工作流变量"></a>引用工作流变量<a class="article-anchor" href="#引用工作流变量" aria-hidden="true"></a></h4><blockquote class="callout border-info bg-soft-info">
+              <p>$VAR.流程变量名称（或系统常量名称）。</p>
+
+            </blockquote>
+
+<h4 id="引用业务单据主表字段" class="article-heading"><a href="#引用业务单据主表字段" class="headerlink" title="引用业务单据主表字段"></a>引用业务单据主表字段<a class="article-anchor" href="#引用业务单据主表字段" aria-hidden="true"></a></h4><blockquote class="callout border-info bg-soft-info">
+              <p>$SYW.字段名称（必须是字段Internal Name）。</p>
+
+            </blockquote>
+
+<h4 id="引用流程字段" class="article-heading"><a href="#引用流程字段" class="headerlink" title="引用流程字段"></a>引用流程字段<a class="article-anchor" href="#引用流程字段" aria-hidden="true"></a></h4><blockquote class="callout border-info bg-soft-info">
+              <p>$SSW.字段名称（必须是字段Internal Name）。</p>
+
+            </blockquote>
+
+<h4 id="级联引用查阅项字段引用列表包含的其他字段" class="article-heading"><a href="#级联引用查阅项字段引用列表包含的其他字段" class="headerlink" title="级联引用查阅项字段引用列表包含的其他字段"></a>级联引用查阅项字段引用列表包含的其他字段<a class="article-anchor" href="#级联引用查阅项字段引用列表包含的其他字段" aria-hidden="true"></a></h4><blockquote class="callout border-info bg-soft-info">
+              <p>$SYW.查阅项字段名.查阅列表的其他字段，如果引用的“查阅列表的其他字段”也是查阅项，则可以根据同样规则继续以”.”的方式进一步引用该查阅项字段引用列表的其他字段，以此类推。</p>
+
+            </blockquote>
+
+<h4 id="引用上下文变量" class="article-heading"><a href="#引用上下文变量" class="headerlink" title="引用上下文变量"></a>引用上下文变量<a class="article-anchor" href="#引用上下文变量" aria-hidden="true"></a></h4><blockquote class="callout border-info bg-soft-info">
+              <p>$CON，可以通过变量上下文变量进一步引用下列变量：</p>
+
+            </blockquote>
+
+<ul>
+<li><strong>$CON.Applicant.AllRoles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程申请人的所有角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.Applicant.Roles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程申请人在当前流程的部门（或Department0，如果设置了）的所有角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.Applicant.UpRoles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程申请人在当前流程的部门（或Department0，如果设置了）的向上相对角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.LastApprover.AllRoles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程最近审批人的所有角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.LastApprover.Roles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程最近审批人在当前流程的部门（或Department0，如果设置了）的所有角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.LastApprover.UpRoles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程最近审批人在当前流程的部门（或Department0，如果设置了）的向上相对角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.Creator.AllRoles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程创建人的所有角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.Creator.Roles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程创建人在当前流程的部门（或Department0，如果设置了）的所有角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.Creator.UpRoles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程创建人在当前流程的部门（或Department0，如果设置了）的向上相对角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.Department.Roles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程的部门（或Department0，如果设置了）的所有角色。</p>
+
+            </blockquote></li>
+<li><strong>$CON.Department.UpRoles</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>当前流程的部门 （或Department0，如果设置了）的所有向上角色。</p>
+
+            </blockquote>
+
+</li>
+</ul>
+<h4 id="日期时间变量" class="article-heading"><a href="#日期时间变量" class="headerlink" title="日期时间变量"></a>日期时间变量<a class="article-anchor" href="#日期时间变量" aria-hidden="true"></a></h4><ul>
+<li><strong>$DTC.Today</strong><blockquote class="callout border-success bg-soft-success">
+              <p>当天日期对应的ticks值。</p>
+
+            </blockquote></li>
+<li><strong>$DTC.Now</strong><blockquote class="callout border-success bg-soft-success">
+              <p>当时日期时间对应的ticks值。</p>
+
+            </blockquote></li>
+<li><strong>$DTC.Year</strong><blockquote class="callout border-success bg-soft-success">
+              <p>当时时间对应的年份。</p>
+
+            </blockquote></li>
+<li><strong>$DTC.Month</strong><blockquote class="callout border-success bg-soft-success">
+              <p>当时时间对应的月份。</p>
+
+            </blockquote></li>
+<li><strong>$DTC.Day</strong><blockquote class="callout border-success bg-soft-success">
+              <p>当时时间对应的日。</p>
+
+            </blockquote></li>
+<li><strong>$DTC.Hour</strong><blockquote class="callout border-success bg-soft-success">
+              <p>当时时间对应的小时。</p>
+
+            </blockquote></li>
+<li><strong>$DTC.Minute</strong><blockquote class="callout border-success bg-soft-success">
+              <p>当时时间对应的分钟。</p>
+
+            </blockquote></li>
+<li><strong>$DTC.Second</strong><blockquote class="callout border-success bg-soft-success">
+              <p>当时时间对应的秒。</p>
+
+            </blockquote>
+<blockquote class="callout border-danger bg-soft-danger">
+              <p>注：ticks值代0001年1月1日午夜12:00以来所经过时间以 100 毫微秒为间隔表示时的数字</p>
+
+            </blockquote>
+
+</li>
+</ul>
+<h4 id="常量" class="article-heading"><a href="#常量" class="headerlink" title="常量"></a>常量<a class="article-anchor" href="#常量" aria-hidden="true"></a></h4><ul>
+<li><strong>文本类型</strong><blockquote class="callout border-success bg-soft-success">
+              <p>使用半角双引号包含，例如：“文本1”。</p>
+
+            </blockquote></li>
+<li><strong>数字类型</strong><blockquote class="callout border-success bg-soft-success">
+              <p>直接写数字，例如：88。</p>
+
+            </blockquote></li>
+<li><strong>日期类型</strong><blockquote class="callout border-success bg-soft-success">
+              <p>以yyyy-MM-dd的格式书写，例如：2015-01-01。</p>
+
+            </blockquote></li>
+<li><strong>是否类型</strong><blockquote class="callout border-success bg-soft-success">
+              <p>True，False。</p>
+
+            </blockquote>
+
+</li>
+</ul>
+<h3 id="逻辑计算符" class="article-heading"><a href="#逻辑计算符" class="headerlink" title="逻辑计算符"></a>逻辑计算符<a class="article-anchor" href="#逻辑计算符" aria-hidden="true"></a></h3><table style="width: 90%; border: 2px solid rgba(119,131,143,.1);">
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">==</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">等于</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">用于相同类型的变量或常量之间的比较</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">!=</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">不等于</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">用于相同类型的变量或常量之间的比较</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">></td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">大于</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">用于数字类型的变量或常量之间的比较</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">>=</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">大于等于</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">用于数字类型的变量或常量之间的比较</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);"><</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">小于</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">用于数字类型的变量或常量之间的比较</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&lt;=</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">小于等于</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">用于数字类型的变量或常量之间的比较</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">like</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">包含</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">判断左侧字符串变量或常量是否包含右侧的字符串变量或常量</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">notlike</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">不包含</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">判断左侧字符串变量或常量是否不包含右侧的字符串变量或常量</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">startwith</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">以…开始</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">判断左侧字符串变量或常量是否是否以右侧的字符串变量或常量开头</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">endwith</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">以…结尾</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">判断左侧字符串变量或常量是否是否以右侧的字符串变量或常量结尾</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">!</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">逻辑非</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">对右侧的逻辑判断公式或逻辑类型变量或常量进行否定操作</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&&</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">逻辑与</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">连接逻辑判断公式或逻辑类型的变量或常量，进行与操作</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">||</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">逻辑或</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">连接逻辑判断公式或逻辑类型的变量或常量，进行或操作</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">()</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">括号</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">可以将多个逻辑判断公式使用多层括号加上逻辑非、逻辑与、逻辑或操作进行关联</td>
+</tr>
+</table>
+
+<h3 id="特殊符号" class="article-heading"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号<a class="article-anchor" href="#特殊符号" aria-hidden="true"></a></h3><table style="width: 90%; border: 2px solid rgba(119,131,143,.1);">
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;amp;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">(</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;lbrackets;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">)</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;rbrackets;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">></td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;gt;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);"><</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;lt;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">>=</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;geq;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&lt;=</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;leq;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">=</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;eq;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">!</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;em;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">|</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;vline;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">/</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;slash;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">\</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;backslash;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">"</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;quot;</td>
+</tr>
+<tr>
+    <td style="border: 2px solid rgba(119,131,143,.1);">空格</td>
+    <td style="border: 2px solid rgba(119,131,143,.1);">&amp;nbsp;</td>
+</tr>
+</table>
+
+<h3 id="常见示例" class="article-heading"><a href="#常见示例" class="headerlink" title="常见示例"></a>常见示例<a class="article-anchor" href="#常见示例" aria-hidden="true"></a></h3><ol>
+<li>是否变量和常量的比较<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$VAR.是否变量_1 == True</span><br></pre></td></tr></table></figure></li>
+<li>文本变量和常量比较<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$VAR.文本变量_1 == “我是一个常量”</span><br></pre></td></tr></table></figure></li>
+<li>文本变量和包含特殊字符的常量（包含一个空格）比较<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$VAR.文本变量_1 == “我是一个&amp;nbsp;常量”</span><br></pre></td></tr></table></figure></li>
+<li>数字变量和常量比较<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$VAR.数字变量_1 &gt;= <span class="number">2000</span></span><br></pre></td></tr></table></figure></li>
+<li>判断文本变量是否包含一个字符串<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$VAR.文本变量_1 like “abc”</span><br></pre></td></tr></table></figure></li>
+<li>判断文本变量是否不包含一个字符串<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$VAR.文本变量_1 notlike “abc”</span><br></pre></td></tr></table></figure></li>
+<li>判断文本变量是否以一个字符串开始<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$VAR.文本变量_1 startwith “abc”</span><br></pre></td></tr></table></figure></li>
+<li>返回一个逻辑变量（是否类型）的否定值<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">!$VAR.是否变量_1</span><br></pre></td></tr></table></figure></li>
+<li>多个逻辑判断公式连接<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">(($VAR.是否变量_1 == True) &amp;&amp; ($VAR.文本变量_1 == “我是一个常量”)) || ($VAR.数字变量_1 &gt;= <span class="number">2000</span>)</span><br></pre></td></tr></table></figure></li>
+<li>业务列表查阅项为空判断<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$SYW.字段名称 == “<span class="literal">null</span>”</span><br></pre></td></tr></table></figure></li>
+<li>查阅字段的级联表达式<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$SSW.Department2.DepartmentType==<span class="string">"管理中心"</span></span><br></pre></td></tr></table></figure></li>
+<li>$CON.Roles 表示当前申请人的所有角色，UpRoles表示向上相对角色,LastApprover.Roles 表示最后审批人的所有角色，LastApprover.UpRoles 表示最后审批人的向上相对角色<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">$CON.Roles like <span class="string">"部门主管"</span> &amp;&amp; $CON.UpRoles like <span class="string">"ABC"</span> &amp;&amp; $CON.LastApprover.Roles like <span class="string">"部门主管"</span> &amp;&amp; $CON.LastApprover.UpRoles like <span class="string">"ABCD"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="多语言设置" class="article-heading"><a href="#多语言设置" class="headerlink" title="多语言设置"></a>多语言设置<a class="article-anchor" href="#多语言设置" aria-hidden="true"></a></h2><p>&emsp;&emsp;APortal工作流系统默认可支持简体中文和英文两种界面语言。界面语言对应的信息存储在网站列表：/Lists/SSF_Resource中。<br>&emsp;&emsp;如果在系统中创建了新的业务列表，并且希望能以多语言形式在工作流中心的单据列表和表单上显示时，可以将自定义的资源文件信息写入/Lists/SSF_Resource，写入格式如下：</p>
+<ul>
+<li><strong>标题</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>列表名称，例如：SS_Form。</p>
+
+            </blockquote></li>
+<li><strong>ModuleID</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>列表Url（由”/Lists/”+列表名构成），例如：/Lists/SS_Form。</p>
+
+            </blockquote></li>
+<li><strong>ResourceKey</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>字段定义名称（Internal Name）。</p>
+
+            </blockquote></li>
+<li><strong>Res_2052</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>中文状态下显示名。</p>
+
+            </blockquote></li>
+<li><strong>Res_1033</strong>  <blockquote class="callout border-success bg-soft-success">
+              <p>英文状态下显示名。</p>
+
+            </blockquote>
+
+</li>
+</ul>
+<p>&emsp;&emsp;资源文件信息写入并保存后，刷新相关的列表或表单页面，就可以看到新定义的相应语言状态下的显示名。</p>
+
             <!-- Pager Nav -->
             <div class="row">
                 <div class="col-sm-6">
