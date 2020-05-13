@@ -8,6 +8,17 @@
     
     <entry>
       <title></title>
+      <link href="/aportal/about.html"/>
+      <url>/aportal/about.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
       <link href="/aportal/index.html"/>
       <url>/aportal/index.html</url>
       
