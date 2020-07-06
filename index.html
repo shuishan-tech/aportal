@@ -51,7 +51,7 @@
 <body>
   <!-- Search header-->
  <!-- ========== HEADER ========== -->
- <header id="header" class="u-header u-header--abs-top-md u-header--bg-transparent u-header--show-hide-md"
+ <header id="header" class="u-header u-header--abs-top-md u-header--bg-transparent u-header--show-hide-md  mian-header"
  data-header-fix-moment="500"
  data-header-fix-effect="slide">
 <div class="u-header__section">
@@ -60,7 +60,7 @@
 <div class="d-flex align-items-center">
    <!-- Language -->
    <div class="position-relative">
-    <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center" href="javascript:;" role="button"
+    <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center white" href="javascript:;" role="button"
        aria-controls="languageDropdown"
        aria-haspopup="true"
        aria-expanded="false"
@@ -78,8 +78,8 @@
     </a>
 
     <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
-      <a class="dropdown-item active" href="#">中文</a>
-      <a class="dropdown-item" href="#">English</a>
+      <a class="dropdown-item active" href="#" >中文</a>
+      <a class="dropdown-item" href="#" >English</a>
     </div>
   </div>
   <!-- End Language -->
@@ -108,24 +108,16 @@
    <!-- End Jump To -->
 
    <!-- Links -->
-   <div class="d-sm-inline-block ml-sm-auto text-right">
-     <ul class="list-inline mb-0">
+   <div class="d-none d-sm-inline-block ml-sm-auto">
+    <ul class="list-inline mb-0">
       <li class="list-inline-item mr-0">
-       
-       <a class="u-header__navbar-link" href="mailto:aportal@shuishan-tech.net" rel="external nofollow noreferrer">
-          <i class="fas fa-envelope font-size-1"></i>
-          aportal@shuishan-tech.net
-       </a>
+        <a class="u-header__navbar-link" href="/aportal/faq.html">常见问题</a>
       </li>
       <li class="list-inline-item mr-0">
-       
-       <a class="u-header__navbar-link" href="tel:400-094-0365" rel="external nofollow noreferrer">
-          <i class="fas fa-phone font-size-1"></i>
-          400-094-0365
-       </a>
+        <a class="u-header__navbar-link" href="/aportal/contacts.html">联系我们</a>
       </li>
-     </ul>
-   </div>
+    </ul>
+  </div>
    <!-- End Links -->
  </div>
 
@@ -182,7 +174,8 @@
 <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
  <!-- Logo -->
  <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="index.html" aria-label="Front">
-  <img src="/aportal/images/Aportal.svg" alt="" width="150px" height="80px">
+  <!-- <img src="/aportal/images/Aportal.svg" alt="" width="150px" height="80px"> -->
+  <p class="main_header_img" ></p>
   <!-- <span class="u-header__navbar-brand-text">portal</span> -->
  </a>
  <!-- End Logo -->
@@ -206,7 +199,7 @@
      <!-- Home -->
 
      <li class="nav-item u-header__nav-item">
-      <a class="nav-link u-header__nav-link" href="/aportal/index1.html">首页</a>
+      <a class="nav-link u-header__nav-link" href="/aportal/">首页</a>
      </li>
      <!-- End Home -->
 
@@ -247,663 +240,297 @@
 <!-- ========== END HEADER ========== -->
 
 <!-- End header-->
-<!-- Search Content -->
-<div id="searchSlideDown" class="dropdown-unfold u-search-slide-down" aria-labelledby="searchSlideDownInvoker">
-  <form>
-    <!-- Input Group -->
-    <div class="input-group input-group-borderless u-search-slide-down__input rounded mb-2">
-      <div class="input-group-prepend">
-        <span class="input-group-text">
-          <span class="fas fa-search"></span>
-        </span>
-      </div>
-      <input type="search" class="form-control" placeholder="Search Front" aria-label="Search Front">
-      <div class="input-group-append">
-        <a class="input-group-text" href="javascript:;"
-           aria-label="close"
-           data-unfold-event="click"
-           data-unfold-hide-on-scroll="false"
-           data-unfold-target="#searchSlideDown"
-           data-unfold-type="css-animation"
-           data-unfold-animation-in="active"
-           data-unfold-animation-out="fadeOutUp"
-           data-unfold-delay="0"
-           data-unfold-duration="800"
-           data-unfold-overlay='{
-            "className": "u-search-slide-down-bg-overlay",
-            "background": "rgba(55, 125, 255, .1)",
-            "animationSpeed": 400
-           }'>
-          <span class="fas fa-times" aria-hidden="true"></span>
-        </a>
-      </div>
-    </div>
-    <!-- End Input Group -->
+<main id="content" role="main">
 
-    <!-- Suggestions Content -->
-    <div class="rounded bg-white u-search-slide-down__suggestions py-3 px-5">
-      <ul class="list-group list-group-flush list-group-borderless mb-0">
-        <li><a class="list-group-item list-group-item-action" href="../pages/about-agency.html">About Front</a></li>
-        <li><a class="list-group-item list-group-item-action" href="../../starter/index.html">Getting Started</a></li>
-        <li><a class="list-group-item list-group-item-action" href="../../documentation/index.html">Documentation</a></li>
-      </ul>
-    </div>
-    <!-- End Suggestions Content -->
-  </form>
-</div>
-<!-- End Search Content -->
- <!-- ========== MAIN CONTENT ========== -->
- <main id="content" role="main">
-  <!-- Hero Section -->
-  <div class="container space-2 space-top-md-5 space-top-lg-4 space-bottom-lg-1">
-    <div class="row justify-content-lg-between mb-7">
-      <div class="col-lg-5 mb-7 mb-lg-0">
-        <h1 class="h2 font-weight-medium mb-3">关于 APortal</h1>
-        <p>
-          APortal是上海水杉网络科技有限公司基于SharePoint平台研发的工作流平台。APortal帮助企业在基于Office 365部署的SharePoint Online站点或企业内部SharePoint服务器上快速搭建工作流平台。基于APortal，可以快速实施企业内部常见的业务系统。
-        </p>
-
-        <div class="d-flex align-items-center flex-wrap">
-          <a class="btn btn-primary btn-wide transition-3d-hover mb-2 mb-sm-0 mr-3" href="/aportal/docs/gettingstarted">开始使用</a>
-          <!-- <a class="btn btn-soft-primary btn-wide transition-3d-hover" href="../pages/login-simple.html">开始使用</a> -->
-
-          <!-- Fancybox -->
-          <!-- <a class="js-fancybox media align-items-center u-media-player min-width-21 ml-3" href="javascript:;"
-             data-src="//vimeo.com/167434033"
-             data-speed="700"
-             data-animate-in="zoomIn"
-             data-animate-out="zoomOut"
-             data-caption="Front - Responsive Website Template">
-            <span class="u-media-player__icon u-media-player__icon--primary mr-3">
-              <span class="fas fa-play u-media-player__icon-inner"></span>
-            </span>
-            <span class="media-body">
-              视频介绍
-            </span>
-          </a> -->
-          <!-- End Fancybox -->
+    <!-- Hero Section -->
+   <!-- Hero Section -->
+   <div id="SVGheroComponents" class="svg-preloader bg-primary position-relative overflow-hidden">
+    <!-- Content -->
+    <div class="container position-relative space-3 space-top-md-5 space-lg-4 z-index-2">
+      <div class="w-md-80 w-xl-60 text-center mx-md-auto">
+        <div class="mb-7">
+          <h1 class="display-4 text-white mb-4">APortal</h1>
+          <p class="lead text-white mb-4">基于Office 365的云端工作流框架</p>
         </div>
+        <a class="btn btn-light btn-wide transition-3d-hover" href="/aportal/docs/gettingstarted">开始使用</a>
+        <a class="btn text-white" href="#miao1">了解更多<i class="fas fa-angle-right fa-sm ml-1"></i></a>
       </div>
-
-      <div class="col-lg-6">
-        <!-- SVG Illustration -->
-        <figure id="SVGHero" class="svg-preloader ie-hiker-man w-md-75 w-lg-100">
-          <img class="js-svg-injector"  width="100%" height="350px" src="/aportal/images/hiker-man1.svg" alt="Image Description"
-               >
-        </figure>
-        <!-- End SVG Illustration -->
-      </div>
+      <!-- End Subscribe Form -->
     </div>
+    <!-- End Content -->
+
+    <!-- SVG Top Left Shapes -->
+    <figure class="position-absolute top-0 left-0 w-60 ie-double-ellipse-top-left">
+      <img class="js-svg-injector" src="/aportal/images/double-ellipse-top-left.svg" alt="Image Description"
+           data-parent="#SVGheroComponents">
+    </figure>
+    <!-- End SVG Top Left Shapes -->
+
+    <!-- SVG Bottom Right Shapes -->
+    <figure class="position-absolute right-0 bottom-0 w-15 ie-double-ellipse-bottom-right">
+      <img class="js-svg-injector" src="/aportal/images/double-ellipse-bottom-right.svg" alt="Image Description"
+           data-parent="#SVGheroComponents">
+    </figure>
+    <!-- End SVG Bottom Right Shapes -->
+    <!-- SVG Bottom Shape -->
+    <figure class="position-absolute right-0 bottom-0 left-0" style="bottom:-1px">
+      <img class="js-svg-injector" src="/aportal/images/curved-1.svg" alt="Image Description"
+           data-parent="#SVGheroComponents">
+    </figure>
+    <!-- End SVG Bottom Shape -->
   </div>
   <!-- End Hero Section -->
-
-  <!-- SVG Top Shape -->
-  <figure>
-    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
-         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
-      <polygon class="fill-gray-100" points="0,273 1921,273 1921,0 "/>
-    </svg>
-  </figure>
-  <!-- End SVG Top Shape -->
-
-  <!-- Features Section -->
-  <div class="bg-light">
-    <div class="container space-top-0 space-top-lg-0 text-center">
-    <div class="mb-9">
-      <h2 class="h1 font-weight-medium">APortal - 云端工作流平台</h2>
-    </div>
-
-    <div class="position-relative pt-11 pb-7">
-      <div class="position-relative z-index-2 p-2 p-sm-0">
-        <!-- News Carousel -->
-        <div class="js-slick-carousel u-slick u-slick--equal-height u-slick--gutters-3 mb-5"
-              data-slides-show="3"
-              data-slides-scroll="1"
-              data-pagi-classes="d-lg-none u-slick__pagination u-slick__pagination--white mt-5 mb-0"
-              data-responsive='[{
-                "breakpoint": 1200,
-                "settings": {
-                  "slidesToShow": 3
-                }
-              }, {
-                "breakpoint": 992,
-                "settings": {
-                  "slidesToShow": 2
-                }
-              }, {
-                "breakpoint": 768,
-                "settings": {
-                  "slidesToShow": 2
-                }
-              }, {
-                "breakpoint": 554,
-                "settings": {
-                  "slidesToShow": 1
-                }
-              }]'>
-          <!-- Card Block -->
-          <div class="js-slide mt-1 mb-2">
-            <div class="w-100 bg-white shadow-soft rounded py-6 px-4 position-relative">
-              <h3 class="h5 font-weight-semi-bold mb-5">组织结构管理 & 工作流设计</h3>
-
-              <figure id="featuresSVG1" class="svg-preloader max-width-27 w-100 mx-auto mb-4">
-                <img class="js-svg-injector" src="/aportal/images/workflowdesign.svg" alt="Image Description"
-                      data-parent="#featuresSVG1">
-              </figure>
-              <p class="text-left">小至单层部门的小型企业，多至集团公司/分子公司/多层级部门的大型组织的部门结构管理。</p>
-              <p class="text-left">各种复杂流程功能：节点跳转、流程驳回、流程追回、前后加签、追加审批人、要求解释、预审、超时提醒等近百种流转特色操作。</p>
-              <a class="text-primary font-weight-medium position-absolute bottom-0 right-0 pr-1 pb-1" href="/aportal/docs/introduction/orgchart.html">
-                更多详情
-                <span class="btn btn-icon btn-sm btn-outline-primary rounded-circle ml-2">
-                  <span class="fas fa-arrow-right btn-icon__inner"></span>
-                </span>
-              </a>
-            </div>
-          </div>
-          <!-- End Card Block -->
-
-          <!-- Card Block -->
-          <div class="js-slide mt-1 mb-2">
-            <div class="w-100 bg-white shadow-soft rounded py-6 px-4 position-relative">
-              <h3 class="h5 font-weight-semi-bold mb-5">表单配置</h3>
-
-              <figure id="featuresSVG3" class="svg-preloader max-width-27 w-100 mx-auto mb-4">
-                <img class="js-svg-injector" src="/aportal/images/formdesign.svg" alt="Image Description"
-                      data-parent="#featuresSVG3">
-              </figure>
-
-              <p class="text-left">在线表单设计器帮助用户快速配置和生成表单页面，实现栏目、菜单、按钮及数据的规则定制及权限控制。</p>
-              <p class="text-left">表单配置遵循HTML5和前端布局规则，自动适应屏幕类型和尺寸。</p>
-              <p class="text-left">表单数据与OneDrive，SharePoint列表无缝集成，实现表单数据和文档附件直接分目录存储和归档。</p>
-              <a class="text-primary font-weight-medium position-absolute bottom-0 right-0 pr-1 pb-1" href="/aportal/docs/introduction/form.html">
-                更多详情
-                <span class="btn btn-icon btn-sm btn-outline-primary rounded-circle ml-2">
-                  <span class="fas fa-arrow-right btn-icon__inner"></span>
-                </span>
-              </a>
-            </div>
-          </div>
-          <!-- End Card Block -->
-
-          <!-- Card Block -->
-          <div class="js-slide mt-1 mb-2">
-            <div class="w-100 bg-white shadow-soft rounded py-6 px-4 position-relative">
-              <h3 class="h5 font-weight-semi-bold mb-5">工作流中心</h3>
-
-              <figure id="featuresSVG3" class="svg-preloader max-width-27 w-100 mx-auto mb-4">
-                <img class="js-svg-injector" src="/aportal/images/workflowcenter.svg" alt="Image Description"
-                      data-parent="#featuresSVG3">
-              </figure>
-              <p class="text-left">在APortal工作流中心，用户可以对自己权限范围内的流程进行填写发起、审批、搜索查阅、数据导出等操作。</p>
-              <p class="text-left">通过APortal微信小程序，用户还可以随时随地移动接入工作流中心，对自己的审批任务进行处理，对相关流程进行实时追踪。</p>
-              <a class="text-primary font-weight-medium position-absolute bottom-0 right-0 pr-1 pb-1" href="/aportal/docs/introduction/center.html">
-                更多详情
-                <span class="btn btn-icon btn-sm btn-outline-primary rounded-circle ml-2">
-                  <span class="fas fa-arrow-right btn-icon__inner"></span>
-                </span>
-              </a>
-            </div>
-          </div>
-          <!-- End Card Block -->
+    <!-- End Hero Section -->
+    
+    <!-- Features Section -->
+    <div class="container space-2" id="miao1">
+      <!-- Title -->
+      <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <!-- <h2 class="h1">功能亮点</h2> -->
+        <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-2">
+          <span class="btn btn-xs btn-soft-success btn-pill mb-2">功能亮点</span>
         </div>
+        <p>APortal帮助您快速实现业务流程自动化</p>
       </div>
-
-      <!-- Background -->
-      <div class="gradient-half-primary-v5 position-absolute top-0 right-0 bottom-0 left-0 rounded-lg mx-sm-7"></div>
-    </div>
-  </div>
-  </div>
-  <!-- End Features Section -->
-  
-  <!-- SVG Bottom Shape -->
-  <figure>
-    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
-         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
-      <polygon class="fill-gray-100" points="1921,0 0,0 0,273 "/>
-    </svg>
-  </figure>
-  <!-- End SVG Bottom Shape -->
-
-  <!-- Features Section -->
-    <div class="container">
-      <div class="space-2 space-lg-2">
-        <div class="row align-items-lg-center">
-  
-          <div class="col-lg-5 order-lg-1">
-            <div class="mb-5">
-              <h2 class="font-weight-medium">安装和使用管理工具</h2>
-              <p>使用 PowerShell 包管理工具安装 APortal 管理工具，使用 APortal 管理工具为您的Office 365 网站赋予丰富的 APortal 能力。</p>
+      <!-- End Title -->
+    
+      <div class="row mx-n2">
+        <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-lg-0">
+          <!-- Icon Blocks -->
+          <a class="card h-100 transition-3d-hover" href="#">
+            <div class="card-body">
+              <figure class="ie-height-56 w-100 max-width-8 mb-4">
+                <img class="img-fluid" src="/aportal/images/icon-9.svg" alt="SVG">
+              </figure>
+              <h4 class="text-body">组织结构</h4>
+              <p class="font-size-1 text-body mb-0">强大而灵活的组织结构管理方式：小至单层部门的小型企业，多至集团公司/分、子公司/多层级部门的大型组织。</p>
             </div>
-  
-            <!-- List -->
-            <div class="row mb-4">
-              <div class="col-6">
-                <div class="media align-items-center text-secondary mb-3">
-                  <img class="mr-2" src="/aportal/css/images/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
-                  <div class="media-body">
-                    在线安装管理工具
-                  </div>
-                </div>
-                <div class="media align-items-center text-secondary mb-3">
-                  <img class="mr-2" src="/aportal/css/images/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
-                  <div class="media-body">
-                    在线升级网站资产
-                  </div>
-                </div>
-                <div class="media align-items-center text-secondary mb-3">
-                  <img class="mr-2" src="/aportal/css/images/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
-                  <div class="media-body">
-                    一键设置网站
-                  </div>
-                </div>
-              </div>
-  
+            <div class="card-footer border-0 pt-0">
+              <span class="font-size-1">了解更多 <i class="fas fa-angle-right fa-sm ml-1"></i></span>
             </div>
-            <!-- End List -->
-  
-            <a class="btn btn-primary transition-3d-hover" href="/aportal/docs/gettingstarted/installation.html">管理工具使用详解 <small class="fas fa-arrow-right ml-1"></small></a>
-          </div>
-
-
-          <div class="col-lg-7 order-lg-2 mb-0 mb-lg-0">
-            <!-- <div class="pr-lg-5"> -->
-              <div class="rounded min-height-155 position-relative">
-                <div class="card card-frame content-centered-y col my-card">
-                  <div class="card-body my-card-body">
-                    PS > <span class="card-body-span" id="card-body-span"> Install-Module -Name APortal.PowerShell</span>  
-                    <span class="btn-primary btn my-btn" type id="card-body-btn"><i class="fas fa-copy fa-lg"></i></span>
-                  </div>
-                </div>
-              </div>
-            <!-- </div> -->
-          </div>
+          </a>
+          <!-- End Icon Blocks -->
+        </div>
+    
+        <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-lg-0">
+          <!-- Icon Blocks -->
+          <a class="card h-100 transition-3d-hover" href="#">
+            <div class="card-body">
+              <figure class="ie-height-56 w-100 max-width-8 mb-4">
+                <img class="img-fluid" src="/aportal/images/icon-3.svg" alt="SVG">
+              </figure>
+              <h4 class="text-body">流程设计</h4>
+              <p class="font-size-1 text-body mb-0">多种复杂流程功能：节点跳转，流程追回，前、后加签，临时追加审批人，要求解释，预审，超时提醒，流程自动代理等近百种流程特色功能和操作。</p>
+            </div>
+            <div class="card-footer border-0 pt-0">
+              <span class="font-size-1">了解更多 <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+            </div>
+          </a>
+          <!-- End Icon Blocks -->
+        </div>
+    
+        <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-sm-0">
+          <!-- Icon Blocks -->
+          <a class="card h-100 transition-3d-hover" href="#">
+            <div class="card-body">
+              <figure class="ie-height-56 w-100 max-width-8 mb-4">
+                <img class="img-fluid" src="/aportal/images/icon-5.svg" alt="SVG">
+              </figure>
+              <h4 class="text-body">表单配置</h4>
+              <p class="font-size-1 text-body mb-0">在线表单设计器帮助用户快速配置和生成表单页面。符合HTML5标准和前端布局规则，自动适应屏幕类型。</p>
+              <p class="font-size-1 text-body mb-0">表单数据与OneDrive和SharePoint列表无缝集成。</p>
+            </div>
+            <div class="card-footer border-0 pt-0">
+              <span class="font-size-1">了解更多 <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+            </div>
+          </a>
+          <!-- End Icon Blocks -->
+        </div>
+    
+        <div class="col-sm-6 col-lg-3 px-2">
+          <!-- Icon Blocks -->
+          <a class="card h-100 transition-3d-hover" href="#">
+            <div class="card-body">
+              <figure class="ie-height-56 w-100 max-width-8 mb-4">
+                <img class="img-fluid" src="/aportal/images/icon-2.svg" alt="SVG">
+              </figure>
+              <h4 class="text-body">工作流中心</h4>
+              <p class="font-size-1 text-body mb-0">在APortal工作流中心，用户可以填写并提交流程，审批、搜索、导出流程数据。</p>
+              <p class="font-size-1 text-body mb-0">通过APortal微信小程序，用户还可以随时随地移动接入工作流中心，对自己的审批任务进行处理，实时跟踪流程状态。</p>
+            </div>
+            <div class="card-footer border-0 pt-0">
+              <span class="font-size-1">了解更多 <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+            </div>
+          </a>
+          <!-- End Icon Blocks -->
         </div>
       </div>
     </div>
-  <!-- End Features Section -->
+    <!-- End Features Section -->
+    
+    
+        <!-- Blog News Section -->
+        <div class="gradient-half-primary-v2">
+          <div class="container space-2 space-md-3 px-lg-7">
+            <!-- Title -->
+            <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+              <span class="btn btn-xs btn-soft-success btn-pill mb-2">新闻 &amp; 博客</span>
+            </div>
+            <!-- End Title -->
+    
+             <!-- News Carousel -->
+        <div class="js-slick-carousel u-slick u-slick--equal-height u-slick--gutters-3"
+             data-slides-show="3"
+             data-slides-scroll="1"
+             data-arrows-classes="d-none d-lg-inline-block u-slick__arrow u-slick__arrow--offset u-slick__arrow-centered--y rounded-circle"
+             data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-inner u-slick__arrow-inner--left"
+             data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-inner u-slick__arrow-inner--right"
+             data-pagi-classes="text-center u-slick__pagination mt-7 mb-0"
+             data-responsive='[{
+               "breakpoint": 992,
+               "settings": {
+                 "slidesToShow": 2
+               }
+             }, {
+               "breakpoint": 768,
+               "settings": {
+                 "slidesToShow": 1
+               }
+             }, {
+               "breakpoint": 554,
+               "settings": {
+                 "slidesToShow": 1
+               }
+             }]'>
+          <!-- Blog News -->
+          <a class="js-slide bg-img-hero gradient-overlay-half-dark-v1 transition-3d-hover rounded-pseudo my-4" href="https://blog.shuishan-tech.com/aportalshi-shi-yu-suan-guan-li-liu-cheng/" target="_blank" rel="noopener external nofollow noreferrer" style="background-image: url(images/photo-of-golden-cogwheel-on-black-background-3785930.jpg);">
+            <article class="align-self-end w-100 text-center p-6">
+              <h3 class="h4 text-white">APortal实施预算管理流程</h3>
+              <div class="mt-4">
+                <strong class="d-block text-white-70 mb-2">LIZHENG</strong>
+                <div class="u-avatar mx-auto">
+                  <img class="img-fluid rounded-circle" src="/aportal/images/100x100/img3.jpg" alt="Image Description">
+                </div>
+              </div>
+            </article>
+          </a>
+          <!-- End Blog News -->
 
-  <!-- Clients Section -->
-<div class="container space-1">
-  <div class="mx-lg-auto">
-    <div class="text-center mb-4">
-      <h2 class="u-divider u-divider--text">荣誉客户</h2>
-    </div>
-    <!-- Clients Section -->
-  <div class="row justify-content-center text-center">
-    <div class="col-sm-6 col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/%E5%BE%AE%E8%BD%AF.png" alt="Image Description">
-    </div>
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/LVMH.png" alt="Image Description">
-    </div>
+          <!-- Blog News -->
+          <div class="js-slide position-relative bg-white shadow-sm transition-3d-hover rounded my-4">
+            <article class="align-self-end w-100 text-center p-6">
+              <h3 class="h6 font-weight-normal">大型企业的采购管理，大至机器设备、生产原材料，小至办公用品，日常耗材，往往种类繁多，涉及的供应商千差万别。如何让采购过程即合规合法，又能够高效地完成，避免因繁琐低效的采购流程对日常工作和生产造成阻滞。这无疑是众多企业的采购总监、采购经理们每天面临的挑战。我们的客户采购经理M先生同样遇到类似的问题。</h3>
+              <div class="my-4">
+                <strong class="d-block mb-2">LIZHENG</strong>
+                <div class="u-avatar mx-auto">
+                  <img class="img-fluid rounded-circle" src="/aportal/images/100x100/img2.jpg" alt="Image Description">
+                </div>
+              </div>
+              <a class="btn btn-sm btn-soft-primary btn-wide transition-3d-hover" href="https://blog.shuishan-tech.com/ji-yu-aportalhe-office-365ping-tai-de-dian-zi-hua-cai-gou-xi-tong-2/" target="_blank" rel="noopener external nofollow noreferrer">阅读全文</a>
+            </article>
+          </div>
+          <!-- End Blog News -->
 
-    <div class="w-100"></div>
+          <!-- Blog News -->
+          <a class="js-slide bg-img-hero gradient-overlay-half-dark-v1 transition-3d-hover rounded-pseudo my-4" href="https://blog.shuishan-tech.com/ji-yu-aportalping-tai-shi-xian-ecnliu-cheng/" target="_blank" rel="noopener external nofollow noreferrer" style="background-image: url(images/adult-architect-blueprint-business-416405.jpg);">
+            <article class="align-self-end w-100 text-center p-6">
+              <h3 class="h4 text-white">基于APortal平台实现ECN流程</h3>
+              <div class="mt-4">
+                <strong class="d-block text-white-70 mb-2">LIZHENG</strong>
+                <div class="u-avatar mx-auto">
+                  <img class="img-fluid rounded-circle" src="/aportal/images/100x100/img1.jpg" alt="Image Description">
+                </div>
+              </div>
+            </article>
+          </a>
+          <!-- End Blog News -->
 
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/interplex.png" alt="Image Description">
-    </div>
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/%E7%A7%91%E9%94%90.png" alt="Image Description">
-    </div>
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/%E6%96%B0%E4%B8%96%E7%95%8C%E7%99%BE%E8%B4%A7.png" alt="Image Description">
-    </div>
+          <!-- Blog News -->
+          <div class="js-slide position-relative bg-white shadow-sm transition-3d-hover rounded my-4">
+            <article class="align-self-end w-100 text-center p-6">
+              <h3 class="h6 font-weight-normal">大型集团企业的旗下品牌和分子公司众多，各个品牌和分子公司的业务之间既有共性，又有特性。如何让新入职员工尽快掌握众多品牌相关信息......</h3>
+              <div class="my-4">
+                <strong class="d-block mb-2">LIZHENG</strong>
+                <div class="u-avatar mx-auto">
+                  <img class="img-fluid rounded-circle" src="/aportal/images/100x100/img3.jpg" alt="Image Description">
+                </div>
+              </div>
+              <a class="btn btn-sm btn-soft-primary btn-wide transition-3d-hover" href="https://blog.shuishan-tech.com/ji-yu-aportalkuang-jia-da-jian-yuan-gong-ru-zhi-pei-xun-ping-tai/" target="_blank" rel="noopener external nofollow noreferrer">阅读全文</a>
+            </article>
+          </div>
+          <!-- End Blog News -->
 
-    <div class="w-100"></div>
-
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/%E7%BD%97%E7%9B%96%E7%89%B9.png" alt="Image Description">
-    </div>
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/%E7%88%B1%E6%96%AF%E8%BE%BE%E5%85%8B.png" alt="Image Description">
-    </div>
-    <div class="col-md-3 mb-8 mb-md-0">
-      <img class="u-clients" src="/aportal/images/collaborator/k11.png" alt="Image Description">
-    </div>
-
-    <div class="w-100"></div>
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/%E6%96%AF%E5%87%AF.png" alt="Image Description">
-    </div>
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/brother.png" alt="Image Description">
-    </div>
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/%E6%B5%99%E5%A4%A7%E7%BD%91%E6%96%B0.png" alt="Image Description">
-    </div>
-    <div class="col-md-3 mb-8">
-      <img class="u-clients" src="/aportal/images/collaborator/%E5%9B%BA%E9%93%82.png" alt="Image Description">
-    </div>
-
-    <div class="w-100"></div>
-    <div class="col-md-4 mb-8 mb-md-0">
-      <img class="u-clients" src="/aportal/images/collaborator/%E5%9B%BD%E6%B3%B0%E5%90%9B%E5%AE%89.png" alt="Image Description">
-    </div>
-    <div class="col-md-4 mb-8 mb-md-0">
-      <img class="u-clients" src="/aportal/images/collaborator/ecm.png" alt="Image Description">
-    </div>
-    <div class="col-md-4 mb-8 mb-md-0">
-      <img class="u-clients" src="/aportal/images/collaborator/%E6%97%A5%E7%AB%8B.png" alt="Image Description">
-    </div>
-   
-  </div>
-  
-<!-- End Clients Section -->
-  </div>
-</div>
-
-<!-- End Clients Section -->
-</main>
-<!-- ========== END MAIN CONTENT ========== -->
- <!-- Go to Top -->
- <a class="js-go-to u-go-to" href="#"
- data-position='{"bottom": 15, "right": 15 }'
- data-type="fixed"
- data-offset-top="400"
- data-compensation="#header"
- data-show-effect="slideInUp"
- data-hide-effect="slideOutDown">
- <span class="fas fa-arrow-up u-go-to__inner"></span>
+          <!-- Blog News -->
+          <a class="js-slide bg-img-hero gradient-overlay-half-dark-v1 transition-3d-hover rounded-pseudo my-4" href="https://blog.shuishan-tech.com/aportalzhu-li-zhi-zao-ye-fa-piao-xiao-yan-liu-cheng/" target="_blank" rel="noopener external nofollow noreferrer" style="background-image: url(images/--1-2.jpg);">
+            <article class="align-self-end w-100 text-center p-6">
+              <h3 class="h4 text-white">APortal助力制造业发票校验流程</h3>
+              <div class="mt-4">
+                <strong class="d-block text-white-70 mb-2">LIZHENG</strong>
+                <div class="u-avatar mx-auto">
+                  <img class="img-fluid rounded-circle" src="/aportal/images/100x100/img4.jpg" alt="Image Description">
+                </div>
+              </div>
+            </article>
+          </a>
+          <!-- End Blog News -->
+        </div>
+        <!-- End News Carousel -->
+          </div>
+        </div>
+        <!-- End Blog News Section -->
+      </main>
+<!-- ========== FOOTER ========== -->
+<a class="js-go-to u-go-to" href="#"
+data-position='{"bottom": 15, "right": 15 }'
+data-type="fixed"
+data-offset-top="400"
+data-compensation="#header"
+data-show-effect="slideInUp"
+data-hide-effect="slideOutDown">
+<span class="fas fa-arrow-up u-go-to__inner"></span>
 </a>
-<!-- End Go to Top -->
-<!-- ========== SECONDARY CONTENTS ========== -->
-  <!-- Account Sidebar Navigation -->
-  <aside id="sidebarContent" class="u-sidebar" aria-labelledby="sidebarNavToggler">
-    <div class="u-sidebar__scroller">
-      <div class="u-sidebar__container">
-        <div class="u-header-sidebar__footer-offset">
-          <!-- Toggle Button -->
-          <div class="d-flex align-items-center pt-4 px-7">
-            <button type="button" class="close ml-auto"
-                    aria-controls="sidebarContent"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    data-unfold-event="click"
-                    data-unfold-hide-on-scroll="false"
-                    data-unfold-target="#sidebarContent"
-                    data-unfold-type="css-animation"
-                    data-unfold-animation-in="fadeInRight"
-                    data-unfold-animation-out="fadeOutRight"
-                    data-unfold-duration="500">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!-- End Toggle Button -->
-
-          <!-- Content -->
-          <div class="js-scrollbar u-sidebar__body">
-            <div class="u-sidebar__content u-header-sidebar__content">
-              <form class="js-validate">
-                <!-- Login -->
-                <div id="login" data-target-group="idForm">
-                  <!-- Title -->
-                  <header class="text-center mb-7">
-                    <h2 class="h4 mb-0">Welcome Back!</h2>
-                    <p>Login to manage your account.</p>
-                  </header>
-                  <!-- End Title -->
-
-                  <!-- Form Group -->
-                  <div class="form-group">
-                    <div class="js-form-message js-focus-state">
-                      <label class="sr-only" for="signinEmail">Email</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="signinEmailLabel">
-                            <span class="fas fa-user"></span>
-                          </span>
-                        </div>
-                        <input type="email" class="form-control" name="email" id="signinEmail" placeholder="Email" aria-label="Email" aria-describedby="signinEmailLabel" required
-                               data-msg="Please enter a valid email address."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Form Group -->
-
-                  <!-- Form Group -->
-                  <div class="form-group">
-                    <div class="js-form-message js-focus-state">
-                      <label class="sr-only" for="signinPassword">Password</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="signinPasswordLabel">
-                            <span class="fas fa-lock"></span>
-                          </span>
-                        </div>
-                        <input type="password" class="form-control" name="password" id="signinPassword" placeholder="Password" aria-label="Password" aria-describedby="signinPasswordLabel" required
-                               data-msg="Your password is invalid. Please try again."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Form Group -->
-
-                  <div class="d-flex justify-content-end mb-4">
-                    <a class="js-animation-link small link-muted" href="javascript:;"
-                       data-target="#forgotPassword"
-                       data-link-group="idForm"
-                       data-animation-in="slideInUp">Forgot Password?</a>
-                  </div>
-
-                  <div class="mb-2">
-                    <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">Login</button>
-                  </div>
-
-                  <div class="text-center mb-4">
-                    <span class="small text-muted">Do not have an account?</span>
-                    <a class="js-animation-link small" href="javascript:;"
-                       data-target="#signup"
-                       data-link-group="idForm"
-                       data-animation-in="slideInUp">Signup
-                    </a>
-                  </div>
-
-                  <div class="text-center">
-                    <span class="u-divider u-divider--xs u-divider--text mb-4">OR</span>
-                  </div>
-
-                  <!-- Login Buttons -->
-                  <div class="d-flex">
-                    <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1" href="#">
-                      <span class="fab fa-facebook-square mr-1"></span>
-                      Facebook
-                    </a>
-                    <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0" href="#">
-                      <span class="fab fa-google mr-1"></span>
-                      Google
-                    </a>
-                  </div>
-                  <!-- End Login Buttons -->
-                </div>
-
-                <!-- Signup -->
-                <div id="signup" style="display: none; opacity: 0;" data-target-group="idForm">
-                  <!-- Title -->
-                  <header class="text-center mb-7">
-                    <h2 class="h4 mb-0">Welcome to Front.</h2>
-                    <p>Fill out the form to get started.</p>
-                  </header>
-                  <!-- End Title -->
-
-                  <!-- Form Group -->
-                  <div class="form-group">
-                    <div class="js-form-message js-focus-state">
-                      <label class="sr-only" for="signupEmail">Email</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="signupEmailLabel">
-                            <span class="fas fa-user"></span>
-                          </span>
-                        </div>
-                        <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Email" aria-label="Email" aria-describedby="signupEmailLabel" required
-                               data-msg="Please enter a valid email address."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Input -->
-
-                  <!-- Form Group -->
-                  <div class="form-group">
-                    <div class="js-form-message js-focus-state">
-                      <label class="sr-only" for="signupPassword">Password</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="signupPasswordLabel">
-                            <span class="fas fa-lock"></span>
-                          </span>
-                        </div>
-                        <input type="password" class="form-control" name="password" id="signupPassword" placeholder="Password" aria-label="Password" aria-describedby="signupPasswordLabel" required
-                               data-msg="Your password is invalid. Please try again."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Input -->
-
-                  <!-- Form Group -->
-                  <div class="form-group">
-                    <div class="js-form-message js-focus-state">
-                      <label class="sr-only" for="signupConfirmPassword">Confirm Password</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="signupConfirmPasswordLabel">
-                            <span class="fas fa-key"></span>
-                          </span>
-                        </div>
-                        <input type="password" class="form-control" name="confirmPassword" id="signupConfirmPassword" placeholder="Confirm Password" aria-label="Confirm Password" aria-describedby="signupConfirmPasswordLabel" required
-                               data-msg="Password does not match the confirm password."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Input -->
-
-                  <div class="mb-2">
-                    <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">Get Started</button>
-                  </div>
-
-                  <div class="text-center mb-4">
-                    <span class="small text-muted">Already have an account?</span>
-                    <a class="js-animation-link small" href="javascript:;"
-                       data-target="#login"
-                       data-link-group="idForm"
-                       data-animation-in="slideInUp">Login
-                    </a>
-                  </div>
-
-                  <div class="text-center">
-                    <span class="u-divider u-divider--xs u-divider--text mb-4">OR</span>
-                  </div>
-
-                  <!-- Login Buttons -->
-                  <div class="d-flex">
-                    <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1" href="#">
-                      <span class="fab fa-facebook-square mr-1"></span>
-                      Facebook
-                    </a>
-                    <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0" href="#">
-                      <span class="fab fa-google mr-1"></span>
-                      Google
-                    </a>
-                  </div>
-                  <!-- End Login Buttons -->
-                </div>
-                <!-- End Signup -->
-
-                <!-- Forgot Password -->
-                <div id="forgotPassword" style="display: none; opacity: 0;" data-target-group="idForm">
-                  <!-- Title -->
-                  <header class="text-center mb-7">
-                    <h2 class="h4 mb-0">Recover Password.</h2>
-                    <p>Enter your email address and an email with instructions will be sent to you.</p>
-                  </header>
-                  <!-- End Title -->
-
-                  <!-- Form Group -->
-                  <div class="form-group">
-                    <div class="js-form-message js-focus-state">
-                      <label class="sr-only" for="recoverEmail">Your email</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="recoverEmailLabel">
-                            <span class="fas fa-user"></span>
-                          </span>
-                        </div>
-                        <input type="email" class="form-control" name="email" id="recoverEmail" placeholder="Your email" aria-label="Your email" aria-describedby="recoverEmailLabel" required
-                               data-msg="Please enter a valid email address."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Form Group -->
-
-                  <div class="mb-2">
-                    <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">Recover Password</button>
-                  </div>
-
-                  <div class="text-center mb-4">
-                    <span class="small text-muted">Remember your password?</span>
-                    <a class="js-animation-link small" href="javascript:;"
-                       data-target="#login"
-                       data-link-group="idForm"
-                       data-animation-in="slideInUp">Login
-                    </a>
-                  </div>
-                </div>
-                <!-- End Forgot Password -->
-              </form>
-            </div>
-          </div>
-          <!-- End Content -->
-        </div>
-
-        <!-- Footer -->
-        <footer id="SVGwaveWithDots" class="svg-preloader u-sidebar__footer u-sidebar__footer--account">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item pr-3">
-              <a class="u-sidebar__footer--account__text" href="../pages/privacy.html">Privacy</a>
-            </li>
-            <li class="list-inline-item pr-3">
-              <a class="u-sidebar__footer--account__text" href="../pages/terms.html">Terms</a>
-            </li>
-            <li class="list-inline-item">
-              <a class="u-sidebar__footer--account__text" href="../pages/help.html">
-                <i class="fas fa-info-circle"></i>
-              </a>
-            </li>
-          </ul>
-
-          <!-- SVG Background Shape -->
-          <div class="position-absolute right-0 bottom-0 left-0">
-            <img class="js-svg-injector" src="../../assets/svg/components/wave-bottom-with-dots.svg" alt="Image Description"
-                   data-parent="#SVGwaveWithDots">
-          </div>
-          <!-- End SVG Background Shape -->
-        </footer>
-        <!-- End Footer -->
+<footer class="bg-navy">
+  <div class="container space-2">
+    <div class="row mb-7">
+      <div class="col-lg-3 mb-5 mb-lg-0">
+        <a class="d-inline-flex align-items-center mb-2" href="index.html" aria-label="Front">
+          <img src="/aportal/images/Aportal(white).svg" width="150px">
+        </a>
       </div>
+
+      <div class="col-6 col-lg-2 mb-5 mb-lg-0">
+        <h4 class="h6 text-white font-weight-medium">关于</h4>
+        <ul class="list-unstyled font-size-1">
+          <li class="py-2"><a class="text-white-70" href="/aportal/aboutus.html">关于我们</a></li>
+          <li class="py-2"><a class="text-white-70" href="/aportal/customers.html">客户</a></li>
+          <li class="py-2"><a class="text-white-70" href="/aportal/contacts.html">联系方式</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-2 mb-5 mb-lg-0">
+        <h4 class="h6 text-white font-weight-medium">资源</h4>
+        <ul class="list-unstyled font-size-1">
+          <li class="py-2"><a class="text-white-70" href="about-agency.html">帮助文档</a></li>
+          <li class="py-2"><a class="text-white-70" href="careers.html">使用教程</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2">
+          <h4 class="h6 text-white font-weight-medium mb-3">公众号</h4>
+          <img src="/aportal/images/others/wechat.jpg" width="150px">
+      </div>
+      <div class="col-lg-2">
+        <h4 class="h6 text-white font-weight-medium mb-3">小程序</h4>
+        <img src="/aportal/images/others/wechat1.jpg" width="150px">
     </div>
-  </aside>
-  <!-- End Account Sidebar Navigation -->
-  <!-- ========== END SECONDARY CONTENTS ========== -->
-  <!-- ========== FOOTER ========== -->
-<footer class="container text-center space-2">
-  <!-- Logo -->
-  <img src="/aportal/images/Aportal.svg" alt="" width="150px" height="80px">
-  <!-- End Logo -->
-  <p class="small text-muted mb-0">2012-2020 shuishan-tech.com. All rights reserved.</p>
-  <!-- <p class="small text-muted mb-0">地址：上海市浦东新区新金桥路 1122 号 2311 室 邮编：201206</p> -->
-  <p class="small text-muted mb-0"><a href="http://www.beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank" class="text">沪ICP备12020978号-2<br></a></p>
+    </div>
+    <p class="small text-muted">&copy; shuishan-tech 2020. All rights reserved.</p>
+    <p class="small text-muted mb-0"><a href="http://www.beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank" class="text">沪ICP备12020978号-2<br></a></p>
+  </div>
 </footer>
+
 <!-- ========== END FOOTER ========== -->
+
    <!-- JS Global Compulsory -->
  
 <script src="/aportal/js/vendor/jquery/dist/jquery.min.js"></script>
