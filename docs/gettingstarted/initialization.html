@@ -54,7 +54,7 @@
     <nav id="logoAndNav" class="navbar navbar-dark fixed-top bg-primary flex-nowrap p-0">
       <div class="col-md-3 col-xl-2 bg-md-primary-darker navbar-brand  u-header__navbar-brand u-header__navbar-brand-center navbar-brand-center mr-0 py-2">
         <a class="u-header__navbar-brand-text-white d-flex" href="/aportal/index.html" aria-label="Front">
-          <img class="js-svg-injector"   height="48px" src="/aportal/images/Aportal(white).svg" alt="Image Description" />
+          <img class="js-svg-injector"   height="48px" src="/aportal/images/logowhite.png" alt="Image Description" />
         </a>
         <!-- <a class="small ml-3" href="getting-started/changelog.html"> -->
           <span class="lead ml-1 pl-2 docstitle"> 文档</span>
@@ -159,7 +159,7 @@ data-hide-effect="slideOutDown">
     <div class="row mb-7">
       <div class="col-lg-3 mb-5 mb-lg-0">
         <a class="d-inline-flex align-items-center mb-2" href="index.html" aria-label="Front">
-          <img src="/aportal/images/Aportal(white).svg" width="150px">
+          <img src="/aportal/images/logowhite.png" width="150px">
         </a>
       </div>
 
@@ -167,7 +167,7 @@ data-hide-effect="slideOutDown">
         <h4 class="h6 text-white font-weight-medium">关于</h4>
         <ul class="list-unstyled font-size-1">
           <li class="py-2"><a class="text-white-70" href="/aportal/aboutus.html">关于我们</a></li>
-          <li class="py-2"><a class="text-white-70" href="/aportal/customers.html">客户</a></li>
+          <li class="py-2"><a class="text-white-70" href="/aportal/customers.html">客户列表</a></li>
           <li class="py-2"><a class="text-white-70" href="/aportal/contacts.html">联系方式</a></li>
         </ul>
       </div>
@@ -290,7 +290,7 @@ data-hide-effect="slideOutDown">
      });
 
      // initialization of svg injector module
-     $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+     $.HSCore.components.HSSVGIngector&&$.HSCore.components.HSSVGIngector.init('.js-svg-injector');
    });
 
    $(document).on('ready', function () {

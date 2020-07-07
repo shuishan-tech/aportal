@@ -173,7 +173,7 @@
 <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
  <!-- Logo -->
  <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="index.html" aria-label="Front">
-  <img src="/aportal/images/Aportal.svg" alt="" width="150px" height="80px">
+  <img src="/aportal/images/Aportal.png" alt="" width="150px" >
   <!-- <span class="u-header__navbar-brand-text">portal</span> -->
  </a>
  <!-- End Logo -->
@@ -225,7 +225,7 @@
      </li>
 
      <li class="nav-item u-header__nav-item">
-      <a class="nav-link u-header__nav-link" href="/aportal/about.html">关于</a>
+      <a class="nav-link u-header__nav-link" href="/aportal/aboutus.html">关于我们</a>
      </li>
    </ul>
  </div>
@@ -240,18 +240,10 @@
 
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
-
-    <!-- Title -->
-    <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-6">
-      <h2>Source, enterprise, and more than 33,000 of you</h2>
-    </div>
-    <!-- End Title -->
-
     <!-- Clients Logos -->
-    <div class="container">
+    <div class="container mt-11 pt-11">
       <!-- Title -->
       <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
-        <span class="btn btn-xs btn-soft-success btn-pill mb-2">Help</span>
         <h2 class="text-primary">不负所<span class="font-weight-semi-bold">托</span></h2>
       </div>
       <!-- End Title -->
@@ -375,7 +367,7 @@
 
   <!-- Testimonials Carousel Main -->
   <div id="testimonialsNavMain" class="js-slick-carousel u-slick mb-4" data-infinite="true" data-autoplay="true"
-    data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination">
+    data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination" data-autoplay-speed="5000">
     <div class="js-slide">
       <!-- Testimonials -->
       <div class="w-md-80 w-lg-60 text-center mx-auto">
@@ -414,19 +406,19 @@
     data-is-thumbs="true" data-nav-for="#testimonialsNavMain">
     <div class="js-slide">
       <div class="u-avatar mx-auto">
-        <img class="img-fluid rounded-circle" src="/aportal/images/100x100/img3.jpg" alt="Image Description">
+        <img class="img-fluid rounded-circle" src="/aportal/images/100x100/customer1.png" alt="Image Description">
       </div>
     </div>
 
     <div class="js-slide">
       <div class="u-avatar mx-auto">
-        <img class="img-fluid rounded-circle" src="/aportal/images/100x100/img2.jpg" alt="Image Description">
+        <img class="img-fluid rounded-circle" src="/aportal/images/100x100/customer1.png" alt="Image Description">
       </div>
     </div>
 
     <div class="js-slide">
       <div class="u-avatar mx-auto">
-        <img class="img-fluid rounded-circle" src="/aportal/images/100x100/img1.jpg" alt="Image Description">
+        <img class="img-fluid rounded-circle" src="/aportal/images/100x100/customer1.png" alt="Image Description">
       </div>
     </div>
   </div>
@@ -450,7 +442,7 @@ data-hide-effect="slideOutDown">
     <div class="row mb-7">
       <div class="col-lg-3 mb-5 mb-lg-0">
         <a class="d-inline-flex align-items-center mb-2" href="index.html" aria-label="Front">
-          <img src="/aportal/images/Aportal(white).svg" width="150px">
+          <img src="/aportal/images/logowhite.png" width="150px">
         </a>
       </div>
 
@@ -458,7 +450,7 @@ data-hide-effect="slideOutDown">
         <h4 class="h6 text-white font-weight-medium">关于</h4>
         <ul class="list-unstyled font-size-1">
           <li class="py-2"><a class="text-white-70" href="/aportal/aboutus.html">关于我们</a></li>
-          <li class="py-2"><a class="text-white-70" href="/aportal/customers.html">客户</a></li>
+          <li class="py-2"><a class="text-white-70" href="/aportal/customers.html">客户列表</a></li>
           <li class="py-2"><a class="text-white-70" href="/aportal/contacts.html">联系方式</a></li>
         </ul>
       </div>
@@ -576,7 +568,7 @@ data-hide-effect="slideOutDown">
      });
 
      // initialization of svg injector module
-     $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+     $.HSCore.components.HSSVGIngector&&$.HSCore.components.HSSVGIngector.init('.js-svg-injector');
    });
 
    $(document).on('ready', function () {
