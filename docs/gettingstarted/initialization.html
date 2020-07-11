@@ -101,7 +101,7 @@
           <div id="sidebarNav" class="js-scrollbar hs-sidebar-sticky">
             <!-- <h5 class="hs-sidebar__heading">Getting started</h5> -->
             <ul class="hs-sidebar__nav">
-              <h5 class="hs-sidebar__heading"><a href="/aportal/docs/about/index.html">关于</a></h5><ul class="hs-sidebar__nav"></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/gettingstarted/index.html">开始使用</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/preinstallation.html" class="hs-sidebar__link " >开始之前</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/installation.html" class="hs-sidebar__link " >安装</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/introduction/index.html">使用详解</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/orgchart.html" class="hs-sidebar__link " >组织结构管理</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/workflow.html" class="hs-sidebar__link " >工作流设计</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/form.html" class="hs-sidebar__link " >表单设计</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/center.html" class="hs-sidebar__link " >工作流中心</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/admin.html" class="hs-sidebar__link " >系统管理</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/common/index.html">常见问题</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/common/install365.html" class="hs-sidebar__link " >新建 SharePint 网站集和网站</a></li></ul>
+              <h5 class="hs-sidebar__heading"><a href="/aportal/docs/about/index.html">关于</a></h5><ul class="hs-sidebar__nav"></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/gettingstarted/index.html">开始使用</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/preinstallation.html" class="hs-sidebar__link " >准备</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/installation.html" class="hs-sidebar__link " >安装</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/initialization.html" class="hs-sidebar__link active" >设置</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/thefirstworkflow/index.html">第一支流程</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/thefirstworkflow/createlist.html" class="hs-sidebar__link " >创建列表</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/thefirstworkflow/designform.html" class="hs-sidebar__link " >设计表单</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/thefirstworkflow/designworkflow.html" class="hs-sidebar__link " >设计流程并发布</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/thefirstworkflow/submitworkflow.html" class="hs-sidebar__link " >提交流程</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/introduction/index.html">使用详解</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/orgchart.html" class="hs-sidebar__link " >组织结构管理</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/workflow.html" class="hs-sidebar__link " >工作流设计</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/form.html" class="hs-sidebar__link " >表单设计</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/center.html" class="hs-sidebar__link " >工作流中心</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/weapp.html" class="hs-sidebar__link " >微信小程序</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/admin.html" class="hs-sidebar__link " >系统管理</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/common/index.html">常见问题</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/common/install365.html" class="hs-sidebar__link " >新建 SharePint 网站集和网站</a></li></ul>
             </ul>
           </div>
         </div>
@@ -117,24 +117,109 @@
               <!-- <li class="hd-doc-section-nav-item active"><a href="#quick-start">Quick start</a></li>
               <li class="hd-doc-section-nav-item"><a href="#starter-template">Starter template</a></li>
               <li class="hd-doc-section-nav-item"><a href="#responsive-meta-tag">Responsive meta tag</a></li> -->
-              
+              <li class="hd-doc-section-nav-item">
+      <a href="#系统参数设置">系统参数设置</a></li><li class="hd-doc-section-nav-item">
+      <a href="#组织结构和用户">组织结构和用户</a><ul><li class="hd-doc-section-nav-item"><a href="#编辑公司">编辑公司</a></li><li class="hd-doc-section-nav-item"><a href="#编辑部门">编辑部门</a></li><li class="hd-doc-section-nav-item"><a href="#编辑用户">编辑用户</a></li></ul></li>
             </ul>
           </div>
           <!-- End Section Nav -->
 
           <div class="col-xl-9 order-xl-1">
             <div class="hs-docs-content-divider">
-              <h1>初始设置</h1>
+              <h1>设置</h1>
             </div>
-            
+            <p>&emsp;&emsp;在安装好 APortal 管理工具，且设置好启用 APortal 功能的 SharePoint Online 网站后，需要对网站进行初始设置，为下一步创建表单和流程做准备。</p>
+<h2 id="系统参数设置" class="article-heading"><a href="#系统参数设置" class="headerlink" title="系统参数设置"></a>系统参数设置<a class="article-anchor" href="#系统参数设置" aria-hidden="true"></a></h2><p>&emsp;&emsp;在系统参数列表SSF_Parameters中存在下列基本参数。</p>
+<table style="width: 90%; border: 2px solid rgba(119,131,143,.1);">
+    <tr>
+        <td style="border: 2px solid rgba(119,131,143,.1);"><b>参数名称 <br>Title</b></td>
+        <td style="border: 2px solid rgba(119,131,143,.1);"><b>参数类 <br>Parameter Type</b></td>
+        <td style="border: 2px solid rgba(119,131,143,.1);"><b>值类型 <br>Value Type</b></td>
+        <td style="border: 2px solid rgba(119,131,143,.1);"><b>值 <br>Value</b></td>
+        <td style="border: 2px solid rgba(119,131,143,.1);"><b>说明</b></td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid rgba(119,131,143,.1);">SSF_CurrentVersion</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">1</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">3</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">V1</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">用于控制包括界面菜单，工作流中心导航栏等界面元素的刷新。</td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid rgba(119,131,143,.1);">SSF_DateOnlyFormat</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">1</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">3</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">YYYY/MM/DD</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">系统中显示的日期格式。</td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid rgba(119,131,143,.1);">SSF_DateTimeFormat</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">1</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">3</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">YYYY/MM/DD HH:mm</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">系统中显示的日期+时间格式。</td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid rgba(119,131,143,.1);">SSW_ApprovalEmailSubject</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">1</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">3</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">参照《系统邮件模板设置》</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">系统中用于发送审批任务提醒的电子邮件标题和内容模板。</td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid rgba(119,131,143,.1);">SSW_ApprovalEmailBody</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">1</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">6</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">参照《系统邮件模板设置》</td>
+        <td style="border: 2px solid rgba(119,131,143,.1);">系统中用于发送审批任务提醒的电子邮件标题和内容模板。</td>
+    </tr>
+</table>
+
+<h2 id="组织结构和用户" class="article-heading"><a href="#组织结构和用户" class="headerlink" title="组织结构和用户"></a>组织结构和用户<a class="article-anchor" href="#组织结构和用户" aria-hidden="true"></a></h2><p>&emsp;&emsp;APortal安装完成后，将在站点上创建1个公司 – APortal Company、1个部门 – APortal、1个用户 – Admin。通过下面的页面进入APortal组织结构管理模块：</p>
+<blockquote class="callout border-info bg-soft-info">
+              <p>站点URL/SitePages/orgcenter.aspx</p>
+
+            </blockquote>
+
+<div width="100%" class="text-center"><img class="pb-4 text-center class" height="80%" width="80%" src="images/aportal-2020-07-09-13-12-40.png"></div>
+
+<h3 id="编辑公司" class="article-heading"><a href="#编辑公司" class="headerlink" title="编辑公司"></a>编辑公司<a class="article-anchor" href="#编辑公司" aria-hidden="true"></a></h3><p>&emsp;&emsp;每个APortal站点仅支持一个公司，如果需要修改默认的公司名称（APortal），可在左侧组织结构树中选择顶点 <span class="p-1 rounded mb-2 bg-primary text-white">APortal Company</span>，然后点击 <span class="p-1 rounded mb-2 bg-primary text-white">编辑</span> 进入公司信息编辑页面，编辑公司名称，简称，邮件等信息，完成后点击 <span class="p-1 rounded mb-2 bg-primary text-white">保存</span> 按钮保存修改的信息。</p>
+<div width="100%" class="text-center"><img class="pb-4 text-center class" height="80%" width="80%" src="images/aportal-2020-07-09-13-14-28.png"></div>
+
+<h3 id="编辑部门" class="article-heading"><a href="#编辑部门" class="headerlink" title="编辑部门"></a>编辑部门<a class="article-anchor" href="#编辑部门" aria-hidden="true"></a></h3><p>&emsp;&emsp;如果有更多的分子公司，工厂，事业部等，可以以公司下的部门形式构建。如果需要修改系统默认创建的部门名称，可从左侧组织结构树中点击选择 <span class="p-1 rounded mb-2 bg-primary text-white">APortal</span>，然后点击 <span class="p-1 rounded mb-2 bg-primary text-white">编辑</span> 进入部门信息编辑页面，编辑部门名称、上级部门（如果是根部门则无上级部门），部门代码，部门精力等属性，编辑完成后点击 <span class="p-1 rounded mb-2 bg-primary text-white">保存</span> 按钮保存编辑后的部门信息。</p>
+<div width="100%" class="text-center"><img class="pb-4 text-center class" height="80%" width="80%" src="images/aportal-2020-07-09-13-15-48.png"></div>
+
+<h3 id="编辑用户" class="article-heading"><a href="#编辑用户" class="headerlink" title="编辑用户"></a>编辑用户<a class="article-anchor" href="#编辑用户" aria-hidden="true"></a></h3><p>&emsp;&emsp;APortal安装完成后，用户需要将APortal创建的第一个用户：Admin，与站点的管理员帐号联系起来，方法是：</p>
+<ul>
+<li>在左侧组织结构树中选择APortal部门，右侧将显示APortal部门下的用户列表</li>
+<li>从用户列表中选择名为 <span class="p-1 rounded mb-2 bg-primary text-white">Admin</span> 的用户，点击『编辑』按钮编辑Admin用户信息，将 <span class="p-1 rounded mb-2 bg-primary text-white">Login Name</span> 字段的值修改为实际站点管理员帐号，例如：<a href="mailto:admin@aportaldev.onmicrosoft.com" rel="external nofollow noreferrer">admin@aportaldev.onmicrosoft.com</a>。</li>
+<li>编辑完成后点击 <span class="p-1 rounded mb-2 bg-primary text-white">保存</span> 按钮保存编辑后的用户信息，如下图：</li>
+</ul>
+<div width="100%" class="text-center"><img class="pb-4 text-center class" height="80%" width="80%" src="images/aportal-2020-07-09-13-17-39.png"></div>
+
+<blockquote class="callout border-danger bg-soft-danger">
+              <p>请注意，每个用户都必须关联一个部门，上述Admin用户已经默认关联了名为APortal的部门。除非已经在系统中维护了实际的业务部门，否则不要删除或修改Admin用户的部门。</p>
+
+            </blockquote>
+
             <!-- Pager Nav -->
             <div class="row mb-5">
-              <div class="col-sm-6">
-                <a class="card shadow p-4 transition-3d-hover" href="/aportal/docs/about/index.html">
+                <div class="col-sm-6">
+                  <a class="card shadow text-right p-4 transition-3d-hover" href="/aportal/docs/gettingstarted/installation.html">
+                    <span class="media align-items-center">
+                      <span class="fas fa-arrow-left mr-2"></span>
+                      <span class="media-body">
+                        <span class="d-block text-secondary">上一页</span>
+                        <span class="d-block font-weight-semi-bold">安装</span>
+                      </span>
+                    </span>
+                  </a>
+                </div><div class="col-sm-6">
+                <a class="card shadow p-4 transition-3d-hover" href="/aportal/docs/thefirstworkflow/index.html">
                   <span class="media align-items-center">
                     <span class="media-body">
                       <span class="d-block text-secondary">下一页</span>
-                      <span class="d-block font-weight-semi-bold">关于</span>
+                      <span class="d-block font-weight-semi-bold">第一支流程</span>
                     </span>
                     <span class="fas fa-arrow-right ml-2"></span>
                   </span>

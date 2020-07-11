@@ -101,7 +101,7 @@
           <div id="sidebarNav" class="js-scrollbar hs-sidebar-sticky">
             <!-- <h5 class="hs-sidebar__heading">Getting started</h5> -->
             <ul class="hs-sidebar__nav">
-              <h5 class="hs-sidebar__heading"><a href="/aportal/docs/about/index.html">关于</a></h5><ul class="hs-sidebar__nav"></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/gettingstarted/index.html">开始使用</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/preinstallation.html" class="hs-sidebar__link active" >开始之前</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/installation.html" class="hs-sidebar__link " >安装</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/introduction/index.html">使用详解</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/orgchart.html" class="hs-sidebar__link " >组织结构管理</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/workflow.html" class="hs-sidebar__link " >工作流设计</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/form.html" class="hs-sidebar__link " >表单设计</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/center.html" class="hs-sidebar__link " >工作流中心</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/admin.html" class="hs-sidebar__link " >系统管理</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/common/index.html">常见问题</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/common/install365.html" class="hs-sidebar__link " >新建 SharePint 网站集和网站</a></li></ul>
+              <h5 class="hs-sidebar__heading"><a href="/aportal/docs/about/index.html">关于</a></h5><ul class="hs-sidebar__nav"></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/gettingstarted/index.html">开始使用</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/preinstallation.html" class="hs-sidebar__link active" >准备</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/installation.html" class="hs-sidebar__link " >安装</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/gettingstarted/initialization.html" class="hs-sidebar__link " >设置</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/thefirstworkflow/index.html">第一支流程</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/thefirstworkflow/createlist.html" class="hs-sidebar__link " >创建列表</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/thefirstworkflow/designform.html" class="hs-sidebar__link " >设计表单</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/thefirstworkflow/designworkflow.html" class="hs-sidebar__link " >设计流程并发布</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/thefirstworkflow/submitworkflow.html" class="hs-sidebar__link " >提交流程</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/introduction/index.html">使用详解</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/orgchart.html" class="hs-sidebar__link " >组织结构管理</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/workflow.html" class="hs-sidebar__link " >工作流设计</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/form.html" class="hs-sidebar__link " >表单设计</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/center.html" class="hs-sidebar__link " >工作流中心</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/weapp.html" class="hs-sidebar__link " >微信小程序</a></li><li class="hs-sidebar__item"><a href="/aportal/docs/introduction/admin.html" class="hs-sidebar__link " >系统管理</a></li></ul><h5 class="hs-sidebar__heading"><a href="/aportal/docs/common/index.html">常见问题</a></h5><ul class="hs-sidebar__nav"><li class="hs-sidebar__item"><a href="/aportal/docs/common/install365.html" class="hs-sidebar__link " >新建 SharePint 网站集和网站</a></li></ul>
             </ul>
           </div>
         </div>
@@ -117,23 +117,39 @@
               <!-- <li class="hd-doc-section-nav-item active"><a href="#quick-start">Quick start</a></li>
               <li class="hd-doc-section-nav-item"><a href="#starter-template">Starter template</a></li>
               <li class="hd-doc-section-nav-item"><a href="#responsive-meta-tag">Responsive meta tag</a></li> -->
-              
+              <li class="hd-doc-section-nav-item">
+      <a href="#环境准备">环境准备</a></li><li class="hd-doc-section-nav-item">
+      <a href="#PowerShell-执行环境准备">PowerShell 执行环境准备</a><ul><li class="hd-doc-section-nav-item"><a href="#TLS-设置">TLS 设置</a></li><li class="hd-doc-section-nav-item"><a href="#Execution-Policies-设置">Execution Policies 设置</a></li><li class="hd-doc-section-nav-item"><a href="#IE-增强的安全配置设置">IE 增强的安全配置设置</a></li></ul></li>
             </ul>
           </div>
           <!-- End Section Nav -->
 
           <div class="col-xl-9 order-xl-1">
             <div class="hs-docs-content-divider">
-              <h1>开始之前</h1>
+              <h1>准备</h1>
             </div>
-            <p>&emsp;&emsp;APortal for Office 365 系列文章是针对 APortal 的产品使用介绍。APortal 基于微软Office 365 ，为 Office 365 和企业用户带来技术增值和业务增值。</p>
-<p>&emsp;&emsp;本章介绍如何基于APortal平台逐步完成一个工作流的配置和发布。</p>
-<p>&emsp;&emsp;开始之前，请先确定已经获取了下列的信息、权限和基础架构支持。</p>
-<ol>
+            <p>&emsp;&emsp;开始之前，需要完成下列准备工作。</p>
+<h2 id="环境准备" class="article-heading"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备<a class="article-anchor" href="#环境准备" aria-hidden="true"></a></h2><ul>
 <li>一个基于Office 365 SharePoint Online平台的网站集（Site Collection），并拥有该网站集的管理员账号。</li>
-<li>基于1中所述网站集创建了一个子网站用于承载APortal工作流平台相关的数据列表，例如：<br><a href="https://YourCompanyName.SharePoint.com/sites/SiteCollectionName/workflow" target="_blank" rel="noopener external nofollow noreferrer">https://YourCompanyName.SharePoint.com/sites/SiteCollectionName/workflow</a></li>
-<li>一台安装Windows 10或Windows Server 2012以上操作系统，可运行Windows PowerShell的计算机。</li>
-</ol>
+<li>基于上条所述网站集创建了一个子网站用于承载APortal工作流平台相关的数据和页面。<blockquote class="callout border-info bg-soft-info">
+              <p>例如： <a href="https://YourCompanyName.SharePoint.com/sites/SiteCollectionName/workflow" target="_blank" rel="noopener external nofollow noreferrer">https://YourCompanyName.SharePoint.com/sites/SiteCollectionName/workflow</a></p>
+
+            </blockquote></li>
+<li>一台安装Windows 10或Windows Server 2012以上操作系统，可运行Windows PowerShell，可连接Internet的计算机。</li>
+<li>确定Windows PowerShell版本为5.0或5.1。</li>
+<li>确定.Net Framework 版本为4.5或以上（不支持.Net Core）。</li>
+</ul>
+<h2 id="PowerShell-执行环境准备" class="article-heading"><a href="#PowerShell-执行环境准备" class="headerlink" title="PowerShell 执行环境准备"></a>PowerShell 执行环境准备<a class="article-anchor" href="#PowerShell-执行环境准备" aria-hidden="true"></a></h2><p>&emsp;&emsp;为了 APortal 命令行管理工具安装顺利，需要在安装前检查当前 PowerShell 执行环境一些参数，如下：</p>
+<h3 id="TLS-设置" class="article-heading"><a href="#TLS-设置" class="headerlink" title="TLS 设置"></a>TLS 设置<a class="article-anchor" href="#TLS-设置" aria-hidden="true"></a></h3><p>&emsp;&emsp;从 2020 年 4 月开始，PowerShell Gallery 只支持 TLS 1.2 版本，参考 PowerShell 技术博客 <a href="https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/" target="_blank" rel="noopener external nofollow noreferrer">PowerShell Gallery TLS Support</a>。因此在执行安装 APortal 管理工具前需要设置当前执行环境的 TLS 版本为 1.2。</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">[<span class="type">Net.ServicePointManager</span>]::SecurityProtocol = [<span class="type">Net.SecurityProtocolType</span>]::Tls12</span><br></pre></td></tr></table></figure>
+
+<h3 id="Execution-Policies-设置" class="article-heading"><a href="#Execution-Policies-设置" class="headerlink" title="Execution Policies 设置"></a>Execution Policies 设置<a class="article-anchor" href="#Execution-Policies-设置" aria-hidden="true"></a></h3><p>&emsp;&emsp;PowerShell Execution Policies 是一项安全功能，可控制 PowerShell 加载配置文件和运行脚本的条件。 此功能有助于防止执行恶意脚本。具体信息请参考: <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7" target="_blank" rel="noopener external nofollow noreferrer">About Execution Policies</a>。</p>
+<p>&emsp;&emsp;安装 APortal 管理工具需要设置当前用户的执行权限，具体代码如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-Scope</span> CurrentUser <span class="literal">-ExecutionPolicy</span> RemoteSigned</span><br></pre></td></tr></table></figure>
+
+<h3 id="IE-增强的安全配置设置" class="article-heading"><a href="#IE-增强的安全配置设置" class="headerlink" title="IE 增强的安全配置设置"></a>IE 增强的安全配置设置<a class="article-anchor" href="#IE-增强的安全配置设置" aria-hidden="true"></a></h3><p>&emsp;&emsp;在 Windows Server 上，为了降低服务器暴露于来自基于 Web 内容的潜在攻击的风险，默认情况下 IE 增加的安全配置处于开启状态， 不能通过 IE 浏览器 打开非信任的网页链接。安装 APortal 管理工具后，使用<code>Set-APortalWeb</code>命令设置 SharePoint Online 网站，需要使用 Web 登录，因此，需要关闭 IE 增强的安全配置，让浏览器能够打开您需要配置 APortal 的网站。</p>
+<div width="100%" class="text-center"><img class="pb-4 text-center class" height="80%" width="80%" src="images/aportal-2020-07-09-10-42-26.png"></div>
+<div width="100%" class="text-center"><img class="pb-4 text-center class" height="50%" width="50%" src="images/aportal-2020-07-09-10-49-36.png"></div>
 
             <!-- Pager Nav -->
             <div class="row mb-5">
