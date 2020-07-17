@@ -10,12 +10,13 @@
   <meta name="Keywords" content="SharePoint Online, SharePoint, Office 365, Workflow">
   <meta name="description" content="APortal是上海水杉网络科技有限公司基于SharePoint平台研发的工作流平台。APortal帮助企业在基于Office 365部署的SharePoint Online站点或企业内部SharePoint服务器上快速搭建工作流平台。基于APortal，可以快速实施企业内部常见的业务系统。" />
   <!-- Favicon -->
-  <link rel="shortcut icon" href="/aportal/images/aportal.ico">
-  <!-- 
-<link rel="shortcut icon" href="/aportal/aportal.ico.css">
- -->
   
-<link rel="stylesheet" href="/aportal/css/font-awesome/css/fontawesome-all.min.css">
+  <link rel="shortcut icon" href="/aportal/images/aportal.ico">
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300.css">
+
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
   
 <link rel="stylesheet" href="/aportal/css/animate.min.css">
@@ -44,204 +45,90 @@
   
 <link rel="stylesheet" href="/aportal/css/dzsparallaxer.css">
 
+
   <!-- Google Fonts -->
-  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
   <script src="//api.map.baidu.com/api?v=2.0&s=1&ak=RTxGbGIL98crUZyCCRW2Dq6HyOqFXbuL" type="text/javascript"></script>
 <meta name="generator" content="Hexo 4.2.1"></head>
 <body>
   <!-- Search header-->
  <!-- ========== HEADER ========== -->
- <header id="header" class="u-header u-header--abs-top-md u-header--bg-transparent u-header--show-hide-md"
+ <header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md"
  data-header-fix-moment="500"
  data-header-fix-effect="slide">
-<div class="u-header__section">
-<!-- Topbar -->
-<div class="container u-header__hide-content pt-2">
-<div class="d-flex align-items-center">
-   <!-- Language -->
-   <div class="position-relative">
-    <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center" href="javascript:;" role="button"
-       aria-controls="languageDropdown"
-       aria-haspopup="true"
-       aria-expanded="false"
-       data-unfold-event="hover"
-       data-unfold-target="#languageDropdown"
-       data-unfold-type="css-animation"
-       data-unfold-duration="300"
-       data-unfold-delay="300"
-       data-unfold-hide-on-scroll="true"
-       data-unfold-animation-in="slideInUp"
-       data-unfold-animation-out="fadeOut">
-       <img class="dropdown-item-icon" src="/aportal/images/cn.svg" alt="SVG">
-      <span class="d-inline-block d-sm-none">中文</span>
-      <span class="d-none d-sm-inline-block">中文</span>
-    </a>
+ <div class="u-header__section">
+  <div id="logoAndNav" class="container">
+    <!-- Nav -->
+    <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+      <!-- Logo -->
+      <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="/" aria-label="Front">
+        <p class="main_header_img red-icon "></p>
+        <!-- <img src="/aportal/images/Aportal.png" alt="" width="150px" > -->
+        <!-- <span class="u-header__navbar-brand-text">portal</span> -->
+      </a>
+      <!-- End Logo -->
 
-    <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
-      <a class="dropdown-item active" href="#">中文</a>
-      <a class="dropdown-item" href="#">English</a>
-    </div>
+      <!-- Responsive Toggle Button -->
+      <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white" aria-label="Toggle navigation"
+        aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+        <span id="hamburgerTrigger" class="u-hamburger__box">
+          <span class="u-hamburger__inner"></span>
+        </span>
+      </button>
+      <!-- End Responsive Toggle Button -->
+
+      <!-- Navigation -->
+      <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+        <ul class="navbar-nav u-header__navbar-nav">
+          <!-- Home -->
+
+          <li class="nav-item u-header__nav-item">
+            <a class="nav-link u-header__nav-link" href="/aportal/">首页</a>
+          </li>
+          <!-- End Home -->
+
+          <!-- Pages -->
+          <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp"
+            data-animation-out="fadeOut">
+            <a id="pagesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle"
+              href="/aportal/docs/gettingstarted" aria-haspopup="true" aria-expanded="false"
+              aria-labelledby="pagesSubMenu">文档</a>
+
+            <!-- Pages - Submenu -->
+            <ul id="blogSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer"
+              aria-labelledby="blogMegaMenu" style="min-width: 230px;">
+              <li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/about/index.html">关于</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/gettingstarted/index.html">开始使用</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/thefirstworkflow/index.html">第一支流程</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/introduction/index.html">使用详解</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/common/index.html">常见问题</a></li>
+            </ul>
+            <!-- End Pages - Submenu -->
+          </li>
+          <!-- End Pages -->
+
+          <li class="nav-item u-header__nav-item">
+            <a class="nav-link u-header__nav-link" href="https://blog.shuishan-tech.com" target="_blank" rel="noopener external nofollow noreferrer">博客</a>
+          </li>
+
+          <li class="nav-item u-header__nav-item">
+            <a class="nav-link u-header__nav-link" href="https://blog.shuishan-tech.com/tag/case-study/" target="_blank" rel="noopener external nofollow noreferrer">案例分享</a>
+          </li>
+
+          <li class="nav-item  hs-has-sub-menu   u-header__nav-item" data-event="hover" data-animation-in="slideInUp"
+            data-animation-out="fadeOut">
+            <a id='aboutusMegaMenu' class="nav-link u-header__nav-link u-header__nav-link-toggle" aria-haspopup="true"
+              aria-expanded="false" href="javascript:void(0);" aria-labelledby="aboutusSubMenu">关于</a>
+            <!-- Pages - Submenu -->
+            <ul id="aboutusSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer"
+              aria-labelledby="aboutusSubMenu" style="min-width: 230px;">
+              <li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/aboutus.html">关于我们</a></li>
+              <li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/customers.html">客户列表</a></li>
+              <li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/contacts.html">联系方式</a></li>
+            </ul>
+            <!-- End Pages - Submenu -->
+          </li>
+        </ul>
+      </div>
+      <!-- End Navigation -->
+    </nav>
+    <!-- End Nav -->
   </div>
-  <!-- End Language -->
- <div class="ml-auto">
-   <!-- Jump To -->
-   <!-- <div class="d-inline-block d-sm-none position-relative mr-2">
-     <a id="jumpToDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center" href="javascript:;" role="button"
-        aria-controls="jumpToDropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-        data-unfold-event="hover"
-        data-unfold-target="#jumpToDropdown"
-        data-unfold-type="css-animation"
-        data-unfold-duration="300"
-        data-unfold-delay="300"
-        data-unfold-hide-on-scroll="true"
-        data-unfold-animation-in="slideInUp"
-        data-unfold-animation-out="fadeOut">
-       Jump to
-     </a>
-
-     <div id="jumpToDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="jumpToDropdownInvoker">
-       <a class="dropdown-item" href="../../html/pages/contacts-agency.html">联系我们</a>
-     </div>
-   </div> -->
-   <!-- End Jump To -->
-
-   <!-- Links -->
-   <div class="d-sm-inline-block ml-sm-auto text-right">
-     <ul class="list-inline mb-0">
-      <li class="list-inline-item mr-0">
-       
-       <a class="u-header__navbar-link" href="mailto:aportal@shuishan-tech.net" rel="external nofollow noreferrer">
-          <i class="fas fa-envelope font-size-1"></i>
-          aportal@shuishan-tech.net
-       </a>
-      </li>
-      <li class="list-inline-item mr-0">
-       
-       <a class="u-header__navbar-link" href="tel:400-094-0365" rel="external nofollow noreferrer">
-          <i class="fas fa-phone font-size-1"></i>
-          400-094-0365
-       </a>
-      </li>
-     </ul>
-   </div>
-   <!-- End Links -->
- </div>
-
- <ul class="list-inline ml-2 mb-0">
-   <!-- Search -->
-   <!-- <li class="list-inline-item">
-     <a id="searchSlideDownInvoker" class="btn btn-xs btn-icon btn-text-secondary u-search-slide-down-trigger" href="javascript:;" role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-        aria-controls="searchSlideDown"
-        data-unfold-type="css-animation"
-        data-unfold-hide-on-scroll="false"
-        data-unfold-target="#searchSlideDown"
-        data-unfold-animation-in="active"
-        data-unfold-animation-out="fadeOutUp"
-        data-unfold-delay="0"
-        data-unfold-duration="800"
-        data-unfold-overlay='{
-         "className": "u-search-slide-down-bg-overlay",
-         "background": "rgba(55, 125, 255, .1)",
-         "animationSpeed": 400
-        }'>
-       <span class="fas fa-search btn-icon__inner u-search-slide-down-trigger__icon"></span>
-     </a>
-   </li> -->
-   <!-- End Search -->
-
-   <!-- Account Login -->
-   <li class="list-inline-item">
-     <!-- Account Sidebar Toggle Button -->
-     <!-- <a id="sidebarNavToggler" class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
-        aria-controls="sidebarContent"
-        aria-haspopup="true"
-        aria-expanded="false"
-        data-unfold-event="click"
-        data-unfold-hide-on-scroll="false"
-        data-unfold-target="#sidebarContent"
-        data-unfold-type="css-animation"
-        data-unfold-animation-in="fadeInRight"
-        data-unfold-animation-out="fadeOutRight"
-        data-unfold-duration="500">
-       <span class="fas fa-user-circle btn-icon__inner font-size-1"></span>
-     </a> -->
-     <!-- End Account Sidebar Toggle Button -->
-   </li>
-   <!-- End Account Login -->
- </ul>
-</div>
-</div>
-<!-- End Topbar -->
-
-<div id="logoAndNav" class="container">
-<!-- Nav -->
-<nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
- <!-- Logo -->
- <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="/" aria-label="Front">
-  <img src="/aportal/images/Aportal.svg" alt="" width="150px" height="80px">
-  <!-- <span class="u-header__navbar-brand-text">portal</span> -->
- </a>
- <!-- End Logo -->
-
- <!-- Responsive Toggle Button -->
- <button type="button" class="navbar-toggler btn u-hamburger"
-         aria-label="Toggle navigation"
-         aria-expanded="false"
-         aria-controls="navBar"
-         data-toggle="collapse"
-         data-target="#navBar">
-   <span id="hamburgerTrigger" class="u-hamburger__box">
-     <span class="u-hamburger__inner"></span>
-   </span>
- </button>
- <!-- End Responsive Toggle Button -->
-
- <!-- Navigation -->
- <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-   <ul class="navbar-nav u-header__navbar-nav">
-     <!-- Home -->
-
-     <li class="nav-item u-header__nav-item">
-      <a class="nav-link u-header__nav-link" href="/aportal/index1.html">首页</a>
-     </li>
-     <!-- End Home -->
-
-     <!-- Pages -->
-     <li class="nav-item hs-has-sub-menu u-header__nav-item"
-         data-event="hover"
-         data-animation-in="slideInUp"
-         data-animation-out="fadeOut">
-       <a id="pagesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="/aportal/docs/gettingstarted" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">文档</a>
-
-       <!-- Pages - Submenu -->
-       <ul id="blogSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" aria-labelledby="blogMegaMenu" style="min-width: 230px;">
-        <li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/about/index.html">关于</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/gettingstarted/index.html">开始使用</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/thefirstworkflow/index.html">第一支流程</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/introduction/index.html">使用详解</a></li><li><a class="nav-link u-header__sub-menu-nav-link" href="/aportal/docs/common/index.html">常见问题</a></li>
-      </ul>
-       <!-- End Pages - Submenu -->
-     </li>
-     <!-- End Pages -->
-
-     <li class="nav-item u-header__nav-item">
-      <a class="nav-link u-header__nav-link" href="https://blog.shuishan-tech.com" target="_blank" rel="noopener external nofollow noreferrer">博客</a>
-     </li>
-
-     <li class="nav-item u-header__nav-item">
-      <a class="nav-link u-header__nav-link" href="https://blog.shuishan-tech.com/tag/case-study/" target="_blank" rel="noopener external nofollow noreferrer">案例分享</a>
-     </li>
-
-     <li class="nav-item u-header__nav-item">
-      <a class="nav-link u-header__nav-link" href="/aportal/about.html">关于</a>
-     </li>
-   </ul>
- </div>
- <!-- End Navigation -->
-</nav>
-<!-- End Nav -->
-</div>
 </div>
 </header>
 <!-- ========== END HEADER ========== -->
