@@ -1,12 +1,7 @@
 <!-- ========== FOOTER ========== -->
-<a class="js-go-to u-go-to" href="#"
-data-position='{"bottom": 15, "right": 15 }'
-data-type="fixed"
-data-offset-top="400"
-data-compensation="#header"
-data-show-effect="slideInUp"
-data-hide-effect="slideOutDown">
-<span class="fas fa-arrow-up u-go-to__inner"></span>
+<a class="js-go-to u-go-to" href="#" data-position='{"bottom": 15, "right": 15 }' data-type="fixed"
+  data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown">
+  <span class="fas fa-arrow-up u-go-to__inner"></span>
 </a>
 <footer class="bg-navy">
   <div class="container space-2">
@@ -15,6 +10,22 @@ data-hide-effect="slideOutDown">
         <a class="d-inline-flex align-items-center mb-2" href="index.html" aria-label="Front">
           <img src="<%= url_for('images/logod.svg')%>" width="150px">
         </a>
+        <div class="d-sm-inline-block ml-sm-auto text-left">
+          <ul class="list-unstyled">
+            <li class="py-2">
+              <a class="text-white-70 font-size-1" href="tel:400-094-0365">
+                <i class="fas fa-phone"></i>
+                400-094-0365
+              </a>
+            </li>
+            <li class="py-2">
+              <a class="text-white-70 font-size-1" href="mailto:aportal@shuishan-tech.net">
+                <i class="fas fa-envelope"></i>
+                aportal@shuishan-tech.net
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="col-6 col-lg-2 mb-5 mb-lg-0">
@@ -33,18 +44,19 @@ data-hide-effect="slideOutDown">
           <li class="py-2"><a class="text-white-70" href="<%= url_for('/docs/introduction/') %>">使用教程</a></li>
         </ul>
       </div>
-      
+
       <div class="col-lg-2">
-          <h4 class="h6 text-white font-weight-medium mb-3">公众号</h4>
-          <img src="<%= url_for('images/others/wechat.jpg') %>" width="150px">
+        <h4 class="h6 text-white font-weight-medium mb-3">公众号</h4>
+        <img src="<%= url_for('images/others/wechat.jpg') %>" width="150px">
       </div>
       <div class="col-lg-2">
         <h4 class="h6 text-white font-weight-medium mb-3">小程序</h4>
         <img src="<%= url_for('images/others/wechat1.jpg') %>" width="150px">
-    </div>
+      </div>
     </div>
     <p class="small text-muted">&copy; 上海水杉网络科技有限公司 2012-2020</p>
-    <p class="small text-muted mb-0"><a href="http://www.beian.miit.gov.cn/" target="_blank" class="text">沪ICP备12020978号-2<br></a></p>
+    <p class="small text-muted mb-0"><a href="http://www.beian.miit.gov.cn/" target="_blank"
+        class="text">沪ICP备12020978号-2<br></a></p>
   </div>
 </footer>
 
