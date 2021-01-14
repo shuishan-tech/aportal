@@ -1,16 +1,1 @@
-(function($){
-  $(window).on('load',()=>{
-    $('#card-body-btn').on('click',()=>{
-      const input = document.createElement('input');
-      document.body.appendChild(input);
-      input.setAttribute('value', document.getElementById('card-body-span').innerHTML);
-      input.select();
-      document.execCommand("Copy");
-      document.body.removeChild(input);
-    })
-    $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
-      duration: 400,
-      customOffsetTop: -60
-    });
-  })
-})(jQuery);
+!function(e){e(window).on("load",()=>{e("#card-body-btn").on("click",()=>{const e=document.createElement("input");document.body.appendChild(e),e.setAttribute("value",document.getElementById("card-body-span").innerHTML),e.select(),document.execCommand("Copy"),document.body.removeChild(e)}),e.HSCore.components.HSScrollNav.init(e(".js-scroll-nav"),{duration:400,customOffsetTop:-60})})}(jQuery);
