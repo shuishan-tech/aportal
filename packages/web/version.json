@@ -1,5 +1,5 @@
 {
-    "currentVersion": "0.8.0",
+    "currentVersion": "0.9.0",
     "versions": [
         {
             "version": "0.0.1",
@@ -65,6 +65,11 @@
             "version":  "0.8.0",
             "date":  "2021-8-27",
             "description":  "Add some lists and fields."
+        },
+        {
+            "version":  "0.9.0",
+            "date":  "2021-8-27",
+            "description":  "rebuild web xml."
         }
     ]
 }
