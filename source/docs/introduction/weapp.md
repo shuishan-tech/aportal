@@ -22,7 +22,7 @@ date: 2020-07-11 09:28:06
 ### 小程序登录
 
 &emsp;&emsp;首次登录小程序时，用户将被导向APortal小程序验证页面。在APortal小程序验证页面输入手机号码后，点击 {% label primary@获取验证码%} 按钮，验证码系统将向该手机号码发送验证码。用户输入正确的验证码后，点击 {% label primary@验证%} 按钮。如果通过验证，则小程序页面转向 {% label primary@我的任务%} 。
-{% fullimg images/aportal-2020-07-11-09-36-14.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-36-14.jpg,  class, 30%,30% %}
 已经通过验证的手机再次登录小程序时，无需再次验证。如果要退出当前的用户登录，可以在小程序的设置页面点击 {% label danger@注销%} 按钮。
 
 ## 小程序操作
@@ -35,10 +35,10 @@ date: 2020-07-11 09:28:06
 #### 我的任务
 
 &emsp;&emsp;在我的任务页面中，用户可以查看等待自己审批的单据，或是已经审批过的单据。进入我的任务页面时，默认列出等待当前用户审批的所有单据。
-{% fullimg images/aportal-2020-07-11-09-39-08.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-39-08.jpg,  class, 30%,30% %}
 
 &emsp;&emsp;在 {% label primary@我的任务%} 页面，用户可以通过点击左上角的菜单按钮，在弹出菜单中选择 {% label primary@我的任务/已审批%} 进入已审批任务列表页面。
-{% fullimg images/aportal-2020-07-11-09-48-33.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-48-33.jpg,  class, 30%,30% %}
 
 &emsp;&emsp;用户可以点击单据区块打开页面中查看单据详情，并进行审批操作。单据详情页面中包含3个区域：
 
@@ -47,41 +47,41 @@ date: 2020-07-11 09:28:06
 {% note info%}
     包含单据主表信息。
 {%endnote%}
-{% fullimg images/aportal-2020-07-11-09-40-13.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-40-13.jpg,  class, 30%,30% %}
 
 ##### 明细
 
 {% note info%}
     如果该单据包含明细信息，则在明细区域列出单据所有的明细信息供审批人员查看。
 {%endnote%}
-{% fullimg images/aportal-2020-07-11-09-42-07.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-42-07.jpg,  class, 30%,30% %}
 
 ##### 工作流
 
 {% note info%}
     和单据相关的工作流流转信息，用户可以查看在自己之前其他审批人员提交的审批意见。
 {%endnote%}
-{% fullimg images/aportal-2020-07-11-09-43-14.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-43-14.jpg,  class, 30%,30% %}
 
 &emsp;&emsp;审批用户可以点击页面下方的 {% label primary@同意%} 或 {% label danger@拒绝%} 或其他按钮（根据流程设置出现），对单据进行审批处理。在弹出窗口内输入审批意见（可选）后点击 {% label primary@确定%} 按钮提交审批。
-{% fullimg images/aportal-2020-07-11-09-44-51.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-44-51.jpg,  class, 30%,30% %}
 
 
 #### 我的单据
 
 &emsp;&emsp;在我的单据页面上列出当前用户提交的所有单据，根据单据状态分为 {% label primary@进行中%} 和 {% label primary@已完成%} 两个部分，进入 {% label primary@我的单据%} 列表时默认显示进行中的单据。
-{% fullimg images/aportal-2020-07-11-09-51-12.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-51-12.jpg,  class, 30%,30% %}
 
 &emsp;&emsp;在列表中点击单据进入单据详情页面查看单据信息，单据信息页面包含单据主表信息，明细信息（如果有）和工作流信息3个区域。
-{% fullimg images/aportal-2020-07-11-09-52-06.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-52-06.jpg,  class, 30%,30% %}
 
 &emsp;&emsp;在我的单据页面左上角点击菜单按钮，选择 {% label primary@已完成单据%}，可切换到已完成单据列表页面，列出所有当前用户提交，且单据状态为已完成的单据。
-{% fullimg images/aportal-2020-07-11-09-52-53.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-52-53.jpg,  class, 30%,30% %}
 
 ## 小程序设置
 
 &emsp;&emsp;在APortal小程序中点击 {% label primary@设置%} 标签，进入 {% label primary@设置%} 页面。在我的信息页面中列出当前用户的主要信息。
-{% fullimg images/aportal-2020-07-11-09-54-20.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-54-20.jpg,  class, 30%,30% %}
 
 #### 切换语言
 
@@ -91,4 +91,4 @@ date: 2020-07-11 09:28:06
 #### 帐号注销
 
 &emsp;&emsp;如果需要从当前帐号注销，可点击 {% label primary@我的信息%} 页面下方的 {% label primary@注销%} 按钮，确认后可从当前帐号注销.
-{% fullimg images/aportal-2020-07-11-09-57-14.png,  class, 30%,30% %}
+{% fullimg images/aportal-2020-07-11-09-57-14.jpg,  class, 30%,30% %}
